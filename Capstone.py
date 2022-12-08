@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Predict Pitcher vs. Hitter At-Bat Outcomes⚾️")
+st.title("Predict MLB At-Bat Outcomes⚾️")
 
 def main_page():    
     #from PIL import Image 
