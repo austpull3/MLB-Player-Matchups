@@ -48,7 +48,7 @@ def page2():
         
 page_names_to_funcs = {
     "Welcome Page": main_page,
-    
+    "At-Bat Predictor": page2
     }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
