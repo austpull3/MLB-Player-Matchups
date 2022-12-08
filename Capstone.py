@@ -6,8 +6,8 @@ def main_page():
     from PIL import Image 
     image1 = Image.open('Images/mlb.png')
     st.image(image1, caption = "https://en.wikipedia.org/wiki/Major_League_Baseball_logo")
-    image3 = Image.open('Images/judgehitting')
-    image4 = Image.open('Images/justinv')
+    image3 = Image.open('Images/judgehitting.jpeg')
+    image4 = Image.open('Images/justinv.jpeg')
     image5 = Image.open('Images/vs.jpeg')
 
     
