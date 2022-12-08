@@ -25,6 +25,18 @@ def main_page():
     if st.sidebar.checkbox(" Select For Help 🔍"):
         st.sidebar.info("This is the welcome page which describes how to interact with the different pages and the purpose of the Streamlit app.")
         st.sidebar.markdown("### Above ⬆ is a drop down of different pages to navigate through. Select the page you are interested in exploring.")
+        
+    import os
+    from PIL import Image
+    
+    output = "./PDFs'
+    source = "Images/"
+    
+    for file in os.listdir(source):
+        if file.split('.')[-1] in ('png', 'jpeg'):
+            image = Image.open(os.path.join(source, file))
+            imagec = image.convert('RGB')
+            imagec.save(os.path.join(output, '{0}.pdf'.format(file.split('.')[-2])))
 
 def page2():
     import base64
