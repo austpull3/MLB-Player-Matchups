@@ -30,7 +30,7 @@ def main_page():
         #Import necessary libraries
     import pandas as pd
 
-    df = pd.read_csv("/Users/austinpullar/Desktop/bh2.csv")
+    df = pd.read_csv("bh2.csv")
     st.write(df.head())
     
    
