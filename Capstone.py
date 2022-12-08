@@ -6,6 +6,19 @@ def main_page():
     from PIL import Image 
     image1 = Image.open('Images/mlb.png')
     st.image(image1, caption = "https://en.wikipedia.org/wiki/Major_League_Baseball_logo")
+    image3 = Image.open('Images/judgehitting')
+    image4 = Image.open('Images/justinv')
+    image5 = Image.open('Images/vs.jpeg')
+
+    
+    with col:
+        st.image(image3)
+    with col2:
+        st.header(" ")
+        st.write(" ")
+        st.image(image5)
+    with col3:
+        st.image(image4)
 
     st.sidebar.markdown("# Welcome!⚾️")
     st.sidebar.markdown(" ")
