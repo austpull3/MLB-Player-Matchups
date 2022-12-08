@@ -9,6 +9,7 @@ def main_page():
     image3 = Image.open('Images/judgehitting.jpeg')
     image4 = Image.open('Images/justinv.jpeg')
     image5 = Image.open('Images/vs.jpeg')
+    st.markdown("##")
     st.markdown("### Explore the predicted at-bat outcomes of the games best!")
     col, col2, col3 = st.columns(3)
   
