@@ -42,7 +42,7 @@ def page2():
             """,
             unsafe_allow_html=True
             )
-    add_bg_from_local('fenway.jpeg')
+    add_bg_from_local('Images/fenway.jpeg')
 
    
         
