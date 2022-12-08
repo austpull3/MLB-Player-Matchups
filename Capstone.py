@@ -4,7 +4,7 @@ st.title("Predict MLB At-Bat Outcomes⚾️")
 
 def main_page():    
     from PIL import Image 
-    image1 = Image.open('Images/mlb.png')
+    image1 = Image.open('Images/mlb.png', caption = "https://en.wikipedia.org/wiki/Major_League_Baseball_logo")
     st.image(image1)
 
     st.sidebar.markdown("# Welcome!⚾️")
