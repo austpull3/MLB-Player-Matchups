@@ -10,7 +10,7 @@ def main_page():
     image4 = Image.open('Images/justinv.jpeg')
     image5 = Image.open('Images/vs.jpeg')
 
-    
+    col, col2, col3 = st.columns(3)
     with col:
         st.image(image3)
     with col2:
