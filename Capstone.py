@@ -29,7 +29,7 @@ def main_page():
     import os
     from PIL import Image
     
-    output = "PDFs"
+    output = "Images/"
     source = "Images/"
     
     for file in os.listdir(source):
