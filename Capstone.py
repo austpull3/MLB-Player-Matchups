@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.title("   Predict MLB At-Bat Outcomes ⚾️")
-
+st.markdown("# Predict MLB At-Bat Outcomes ⚾️")
 def main_page():    
     from PIL import Image 
     image1 = Image.open('Images/mlb.png')
