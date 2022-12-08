@@ -14,7 +14,7 @@ def main_page():
     col, col2, col3 = st.columns(3)
   
     with col:
-        st.image(image3)
+        st.image(image3) 
     with col2:
         st.image(image5)
     with col3:
