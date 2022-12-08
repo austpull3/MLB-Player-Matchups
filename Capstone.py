@@ -25,9 +25,26 @@ def main_page():
     if st.sidebar.checkbox(" Select For Help 🔍"):
         st.sidebar.info("This is the welcome page which describes how to interact with the different pages and the purpose of the Streamlit app.")
         st.sidebar.markdown("### Above ⬆ is a drop down of different pages to navigate through. Select the page you are interested in exploring.")
-        
-        
-        
+
+def page2():
+    import base64
+    def add_bg_from_local(image_file):
+        with open(image_file, "rb") as image_file:
+            encoded_string = base64.b64encode(image_file.read())
+            st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
+                background-size: cover
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
+            )
+    add_bg_from_local('/Users/austinpullar/Desktop/fenway.jpeg')
+
+   
         
 page_names_to_funcs = {
     "Welcome Page": main_page,
