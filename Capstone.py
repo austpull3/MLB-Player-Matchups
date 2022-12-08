@@ -35,9 +35,9 @@ def main_page():
     
     st.markdown("### Select a Barplot to Display Rent Option Frequencies:")
     barplots = st.selectbox("           ", ['a'])
-       if barplots == 'a':
-           st.markdown("### Count of Parking Options:")
-           st.bar_chart(df.events.value_counts())
+    if barplots == 'a':
+        st.markdown("### Count of Parking Options:")
+        st.bar_chart(df.events.value_counts())
 
 def page2():
     import base64
