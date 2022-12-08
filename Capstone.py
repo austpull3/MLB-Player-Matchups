@@ -11,6 +11,7 @@ def main_page():
     image5 = Image.open('Images/vs.jpeg')
 
     col, col2, col3 = st.columns(3)
+    st.markdown("## Explore the predicted at-bat outcome of the games best!")
     with col:
         st.image(image3)
     with col2:
