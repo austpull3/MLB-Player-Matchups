@@ -28,16 +28,7 @@ def main_page():
         
     
         #Import necessary libraries
-    from tensorflow import keras
-    import matplotlib.pylab as plt
-    import warnings
-    warnings.filterwarnings("ignore")
-    import numpy as np
     import pandas as pd
-    import seaborn as sns
-    import tensorflow.keras.backend as K
-    from tensorflow.keras.layers import Dense, Activation, Dropout
-    from tensorflow.keras.models import Sequential
 
     df = pd.read_csv("/Users/austinpullar/Desktop/bh2.csv")
     st.write(df.head())
