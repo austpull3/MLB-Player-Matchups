@@ -15,7 +15,6 @@ def main_page():
         st.image(image3)
     with col2:
         st.header(" ")
-        st.write(" ")
         st.image(image5)
     with col3:
         st.image(image4)
