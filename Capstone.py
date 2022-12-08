@@ -3,9 +3,9 @@ import streamlit as st
 st.title("Predict MLB At-Bat Outcomes⚾️")
 
 def main_page():    
-    #from PIL import Image 
-    #image1 = Image.open('/Users/austinpullar/Desktop/house3.jpeg')
-    #st.image(image1)
+    from PIL import Image 
+    image1 = Image.open('mlb.png', caption = "https://en.wikipedia.org/wiki/Major_League_Baseball_logo")
+    st.image(image1)
 
     st.sidebar.markdown("# Welcome!⚾️")
     st.sidebar.markdown(" ")
