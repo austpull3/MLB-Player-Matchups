@@ -26,6 +26,23 @@ def main_page():
         st.sidebar.info("This is the welcome page which describes how to interact with the different pages and the purpose of the Streamlit app.")
         st.sidebar.markdown("### Above ⬆ is a drop down of different pages to navigate through. Select the page you are interested in exploring.")
         
+    
+        #Import necessary libraries
+    from tensorflow import keras
+    import matplotlib.pylab as plt
+    import warnings
+    warnings.filterwarnings("ignore")
+    import numpy as np
+    import pandas as pd
+    import seaborn as sns
+    import tensorflow.keras.backend as K
+    from tensorflow.keras.layers import Dense, Activation, Dropout
+    from tensorflow.keras.models import Sequential
+
+    df = pd.read_csv("/Users/austinpullar/Desktop/bh2.csv")
+    st.write(df.head())
+    
+   
 
 def page2():
     import base64
