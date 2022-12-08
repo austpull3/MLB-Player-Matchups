@@ -37,7 +37,7 @@ def main_page():
             image = Image.open(os.path.join(source, file))
             imagec = image.convert('RGB')
             imagec.save(os.path.join(output, '{0}.pdf'.format(file.split('.')[-2])))
-            image6 = Image.open('Images2/mlb.png')
+            image6 = Image.open(imagec)
 
 def page2():
     import base64
