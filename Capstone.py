@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Predict MLB Player Matchup At-Bat Outcomes ⚾️")
+st.title("Predict MLB At-Bat Outcomes ⚾️")
 
 def main_page():    
     from PIL import Image 
@@ -9,9 +9,9 @@ def main_page():
     image3 = Image.open('Images/judgehitting.jpeg')
     image4 = Image.open('Images/justinv.jpeg')
     image5 = Image.open('Images/vs.jpeg')
-
+    st.markdown("### Explore the predicted at-bat outcomes of the games best!")
     col, col2, col3 = st.columns(3)
-    st.markdown("## Explore the predicted at-bat outcome of the games best!")
+  
     with col:
         st.image(image3)
     with col2:
