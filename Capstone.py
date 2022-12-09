@@ -34,38 +34,45 @@ def main_page():
     df = pd.read_csv("bh2.csv") 
     st.write(df.head())
     
-        # Create and cache a Plotly figure
-    @st.experimental_memo
-    def create_figure(df):
-        fig = go.Figure() 
-        fig.add_trace(
-        go.Bar(
-        x=df["events"],
-        y=df["events"],
-        hovertemplate="Contestant=%s<br>Fruit=%%{x}<br>Number Eaten=%%{y}<extra></extra>"
-        ))
-        fig.update_layout(legend_title_text="Contestant")
-        fig.update_xaxes(title_text="Fruit")
-        fig.update_yaxes(title_text="Number Eaten")
-        return fig
-    
-    fig = create_figure(df)
+    import streamlit as st
+    import matplotlib.pyplot as plt
+    from fpdf import FPDF
+    import base64
+    import numpy as np
+    from tempfile import NamedTemporaryFile
 
-    # Create an in-memory buffer
-    buffer = io.BytesIO()
+    from sklearn.datasets import load_iris
 
-    # Save the figure as a pdf to the buffer
-    fig.write_image(file=buffer, format="pdf")
+    def create_download_link(val, filename):
+        b64 = base64.b64encode(val)  # val looks like b'...'
+        return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
 
-    # Download the pdf from the buffer
-    st.download_button(
-        label="Download PDF",
-        data=buffer,
-        file_name="figure.pdf",
-        mime="application/pdf",
-    )
 
-    st.plotly_chart(fig)
+    df = load_iris(as_frame=True)["data"]
+
+
+    figs = []
+
+    for col in df.columns:
+        fig, ax = plt.subplots()
+        ax.plot(df[col])
+        st.pyplot(fig)
+        figs.append(fig)
+
+    export_as_pdf = st.button("Export Report")
+
+    if export_as_pdf:
+        pdf = FPDF()
+        for fig in figs:
+            pdf.add_page()
+            with NamedTemporaryFile(delete=False, suffix=".png") as tmpfile:
+                    fig.savefig(tmpfile.name)
+                    pdf.image(tmpfile.name, 10, 10, 200, 100)
+        html = create_download_link(pdf.output(dest="S").encode("latin-1"), "testfile")
+        st.markdown(html, unsafe_allow_html=True)
+
+
+
     
 
 def page2():
