@@ -49,9 +49,10 @@ def main_page():
     figs = []
 
     for col in df.columns:
-          fig.plot(df['events'])
-          st.pyplot(fig)
-          figs.append(fig)
+        fig, ax = plt.subplots()
+        ax.plot(df['events'])
+        st.pyplot(fig)
+        figs.append(fig)
 
     export_as_pdf = st.button("Export Report")
 
