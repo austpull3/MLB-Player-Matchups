@@ -33,15 +33,42 @@ def main_page():
     df = pd.read_csv("bh2.csv") 
     st.write(df.head())
     
-    st.markdown("### Select a Barplot to Display Rent Option Frequencies:")
-    barplots = st.selectbox("           ", ['a'])
-    if barplots == 'a':
-        st.markdown("### Count of Parking Options:")
-        aa = st.bar_chart(df.events.value_counts())
-        
-    import io
+        # Create and cache a Plotly figure
+    @st.experimental_memo
+    def create_figure(df):
+        fig = go.Figure()
+            fig.add_trace(
+                go.Bar(
+                    x=group["events"],
+                    y=group["events"],
+                    name=contestant,
+                    hovertemplate="Contestant=%s<br>Fruit=%%{x}<br>Number Eaten=%%{y}<extra></extra>"
+                    % contestant,
+                )
+            )
+        fig.update_layout(legend_title_text="Contestant")
+        fig.update_xaxes(title_text="Fruit")
+        fig.update_yaxes(title_text="Number Eaten")
+        return fig
+
+    df = load_data()
+    fig = create_figure(df)
+
+    # Create an in-memory buffer
     buffer = io.BytesIO()
-    aa.write_image(file = buffer, format = "pdf")
+
+    # Save the figure as a pdf to the buffer
+    fig.write_image(file=buffer, format="pdf")
+
+    # Download the pdf from the buffer
+    st.download_button(
+        label="Download PDF",
+        data=buffer,
+        file_name="figure.pdf",
+        mime="application/pdf",
+    )
+
+    st.plotly_chart(fig)
     
 
 def page2():
