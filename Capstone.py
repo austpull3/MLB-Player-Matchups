@@ -37,7 +37,7 @@ def main_page():
         # Create and cache a Plotly figure
     @st.experimental_memo
     def create_figure(df):
-        fig = go.Figure()
+        fig = go.Figure() 
         fig.add_trace(
         go.Bar(
         x=df["events"],
