@@ -49,7 +49,7 @@ def main_page():
     figs = []
 
  
-    ax.plot(df['events'])
+    fig.plot(df['events'])
     st.pyplot(fig)
     figs.append(fig)
 
