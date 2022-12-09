@@ -40,14 +40,10 @@ def main_page():
     import numpy as np
     from tempfile import NamedTemporaryFile
 
-    from sklearn.datasets import load_iris
 
     def create_download_link(val, filename):
         b64 = base64.b64encode(val)  # val looks like b'...'
         return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
-
-
-    df = load_iris(as_frame=True)["data"]
 
 
     figs = []
