@@ -41,9 +41,7 @@ def main_page():
         go.Bar(
         x=df["events"],
         y=df["events"],
-        name=contestant,
         hovertemplate="Contestant=%s<br>Fruit=%%{x}<br>Number Eaten=%%{y}<extra></extra>"
-        % contestant,
         ))
         fig.update_layout(legend_title_text="Contestant")
         fig.update_xaxes(title_text="Fruit")
