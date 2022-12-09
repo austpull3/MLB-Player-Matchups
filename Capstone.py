@@ -37,7 +37,11 @@ def main_page():
     barplots = st.selectbox("           ", ['a'])
     if barplots == 'a':
         st.markdown("### Count of Parking Options:")
-        st.bar_chart(df.events.value_counts())
+        aa = st.bar_chart(df.events.value_counts())
+        
+    import io
+    buffer = io.BytesIO()
+    
 
 def page2():
     import base64
