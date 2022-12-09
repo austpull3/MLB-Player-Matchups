@@ -48,8 +48,7 @@ def main_page():
 
     figs = []
 
-    for col in df.columns:
-        fig, ax = plt.subplots()
+ 
         ax.plot(df['events'])
         st.pyplot(fig)
         figs.append(fig)
