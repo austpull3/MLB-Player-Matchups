@@ -50,7 +50,7 @@ def main_page():
 
     for col in df.columns:
         fig, ax = plt.subplots()
-        ax.plot(df['events'])
+        ax.plot(df['col'])
         st.pyplot(fig)
         figs.append(fig)
 
