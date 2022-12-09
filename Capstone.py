@@ -49,8 +49,7 @@ def main_page():
         fig.update_xaxes(title_text="Fruit")
         fig.update_yaxes(title_text="Number Eaten")
         return fig
-
-    df = load_data()
+    
     fig = create_figure(df)
 
     # Create an in-memory buffer
