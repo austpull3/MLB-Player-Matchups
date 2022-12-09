@@ -39,8 +39,8 @@ def main_page():
         fig = go.Figure()
         fig.add_trace(
         go.Bar(
-        x=group["events"],
-        y=group["events"],
+        x=df["events"],
+        y=df["events"],
         name=contestant,
         hovertemplate="Contestant=%s<br>Fruit=%%{x}<br>Number Eaten=%%{y}<extra></extra>"
         % contestant,
