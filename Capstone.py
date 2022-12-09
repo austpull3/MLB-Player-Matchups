@@ -37,15 +37,14 @@ def main_page():
     @st.experimental_memo
     def create_figure(df):
         fig = go.Figure()
-            fig.add_trace(
-                go.Bar(
-                    x=group["events"],
-                    y=group["events"],
-                    name=contestant,
-                    hovertemplate="Contestant=%s<br>Fruit=%%{x}<br>Number Eaten=%%{y}<extra></extra>"
-                    % contestant,
-                )
-            )
+        fig.add_trace(
+        go.Bar(
+        x=group["events"],
+        y=group["events"],
+        name=contestant,
+        hovertemplate="Contestant=%s<br>Fruit=%%{x}<br>Number Eaten=%%{y}<extra></extra>"
+        % contestant,
+        ))
         fig.update_layout(legend_title_text="Contestant")
         fig.update_xaxes(title_text="Fruit")
         fig.update_yaxes(title_text="Number Eaten")
