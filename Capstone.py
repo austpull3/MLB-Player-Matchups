@@ -41,6 +41,7 @@ def main_page():
         
     import io
     buffer = io.BytesIO()
+    aa.write_image(file = buffer, format = "pdf")
     
 
 def page2():
