@@ -34,7 +34,6 @@ def main_page():
     df = pd.read_csv("bh2.csv") 
     st.write(df.head())
     
-    import streamlit as st
     import matplotlib.pyplot as plt
     from fpdf import FPDF
     import base64
