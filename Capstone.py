@@ -29,7 +29,7 @@ def main_page():
     
         #Import necessary libraries
     import pandas as pd
-
+    import plotly.graph_objects as go
     df = pd.read_csv("bh2.csv") 
     st.write(df.head())
     
