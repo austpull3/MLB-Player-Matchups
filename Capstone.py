@@ -41,7 +41,9 @@ def main_page():
     a = statcast_batter('2022-04-07', '2022-10-02', 621020)
     st.write(a.events.value_counts())
     a = a[a['pitcher']== 453286]
-    st.bokeh_chart(spraychart(a, 'braves', title='Dansby Swanson vs Max Scherser', colorby='player'))
+    s = spraychart(a, 'braves', title='Dansby Swanson vs Max Scherser', colorby='player')
+    fig3, ax3 = plt.subplots()
+    ax3.plot(s)
     
 
 def page2():
