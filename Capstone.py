@@ -39,6 +39,7 @@ def main_page():
     st.write(data.head())
     from pybaseball import statcast_batter, spraychart
     a = statcast_batter('2022-04-07', '2022-10-02', 621020)
+    st.write(a.events.value_counts())
 
     
 
