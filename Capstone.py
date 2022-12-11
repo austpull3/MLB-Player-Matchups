@@ -35,6 +35,7 @@ def main_page():
     st.write(df.head())
     
     from pybaseball import statcast
+    data = pd.read_csv("dans.csv")
 
     
 
