@@ -44,7 +44,7 @@ def main_page():
     st.write(a.events.value_counts())
     a = a[a['pitcher']== 453286]
     s = spraychart(a, 'braves', title='Dansby Swanson vs Max Scherser', colorby='player')
-    fig= Figure()
+    fig= Figure(spraychart(a, 'braves', title='Dansby Swanson vs Max Scherser', colorby='player'))
     fig.set_size_inches(10, 8, forward = True)
     spraychart(a, 'braves', title='Dansby Swanson vs Max Scherser', colorby='player')
     st.pyplot(fig)
