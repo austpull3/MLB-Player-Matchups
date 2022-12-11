@@ -12,7 +12,7 @@ def main_page():
     st.markdown("##")
     st.markdown("### Explore the predicted at-bat outcomes of the games best!")
     col, col2, col3 = st.columns(3)
-  
+   
     with col:
         st.image(image3) 
     with col2:
