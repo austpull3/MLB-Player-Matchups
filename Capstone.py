@@ -46,7 +46,7 @@ def main_page():
     s = spraychart(a, 'braves', title='Dansby Swanson vs Max Scherser', colorby='player')
     fig= Figure()
     fig.set_size_inches(10, 8, forward = True)
-    axes = fig.subplots()
+    axes = fig.subplots(nrows = 2, ncols = 2)
     spraychart(a, 'braves', title='Dansby Swanson vs Max Scherser', colorby='player', ax = axes[0,0])
     st.pyplot(fig)
     
