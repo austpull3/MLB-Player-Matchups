@@ -35,7 +35,6 @@ def main_page():
     st.write(df.head())
     
     from pybaseball import statcast
-    data = statcast(start_dt = '2022-04-07', end_dt = '2022-10-02')
 
     
 
