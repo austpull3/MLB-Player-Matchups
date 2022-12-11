@@ -43,8 +43,12 @@ def main_page():
     st.write(a.events.value_counts())
     a = a[a['pitcher']== 453286]
     s = spraychart(a, 'braves', title='Dansby Swanson vs Max Scherser', colorby='player')
-    fig3, ax3 = plt.subplots()
-    ax3.plot(s)
+    fig= Figure()
+    fig.set_size_inches(10, 8, forward = True)
+    axes = fig.subplots()
+    spraychart(a, 'braves', title='Dansby Swanson vs Max Scherser', colorby='player', ax = axes[0,0])
+    st.pyplot(fig)
+    
     
 
 def page2():
