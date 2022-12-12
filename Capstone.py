@@ -47,18 +47,16 @@ def main_page():
     from pybaseball import playerid_lookup
     if st.selectbox("Select player", ['Dansby Swanson']):
         st.write(playerid_lookup('Swanson', 'Dansby'))
-        import warnings
-        warnings.filterwarnings('ignore')
-        import numpy as np
-        import matplotlib.pyplot as plt
-        import seaborn as sns
-        img = plt.imread("Images/braves.png")
-        fig = plt.figure(figsize = (20,20))
-        fig, ax = plt.subplots()
-        ax.imshow(img, extent = [-100,500,385,-50])
-        ax.scatter(a.hc_x, a.hc_y)
-        ax.spines[['top', 'bottom', 'left', 'right']].set_visible(False)
-        plt.show()
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    img = plt.imread("Images/braves.png")
+    fig = plt.figure(figsize = (20,20))
+    fig, ax = plt.subplots()
+    ax.imshow(img, extent = [-100,500,385,-50])
+    ax.scatter(a.hc_x, a.hc_y)
+    ax.spines[['top', 'bottom', 'left', 'right']].set_visible(False)
+    plt.show()
     
     
     
