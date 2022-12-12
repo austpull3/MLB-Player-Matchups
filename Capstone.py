@@ -78,6 +78,7 @@ def main_page():
     
     from PIL import Image 
     image7 = Image.open('Images/dansby.png')
+    st.image(image7)
     
     
     
