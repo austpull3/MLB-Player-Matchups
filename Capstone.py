@@ -120,8 +120,10 @@ def page2():
     if league == "NL":
         st.write("You selected the National League.")
     else:
-        st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Teoscar Hernandez: TOR (RF/R)'])
-
+        alteam = st.radio("Select an American League Team.", ('Blue Jays', 'Orioles', 'Ray's, 'Red Sox', 'Yankees', 'Guardians', 'Royals', 'Tigers', 'Twins', 'White Sox', 'Angels', 'Astros', 'Athletics', 'Mariners', 'Rangers'))
+        if alteam == "Blue Jays":
+            st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Teoscar Hernandez: TOR (RF/R)'])
+ 
    
         
 page_names_to_funcs = {
