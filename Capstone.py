@@ -47,50 +47,10 @@ def main_page():
     from pybaseball import playerid_lookup
     if st.selectbox("Select player", ['Dansby Swanson']):
         st.write(playerid_lookup('Swanson', 'Dansby'))
-    import numpy as np
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-    img = plt.imread("Images/braves.png")
-    fig = plt.figure(figsize = (20,20))
-    fig, ax = plt.subplots()
-    ax.imshow(img, extent = [-100,500,385,-50])
-    ax.scatter(a.hc_x, a.hc_y)
-    ax.spines[['top', 'bottom', 'left', 'right']].set_visible(False)
-    # disabling xticks by Setting xticks to an empty list
-    plt.xticks([]) 
-
-    # disabling yticks by setting yticks to an empty list
-    plt.yticks([]) 
-    st.pyplot(fig)
-    
-    img = plt.imread("Images/diamond.png")
-    fig = plt.figure(figsize = (23,20))
-    fig, ax = plt.subplots()
-    ax.imshow(img, extent = [-100,500,385,-50])
-    ax.scatter(a.hc_x, a.hc_y)
-    ax.spines[['top', 'bottom', 'left', 'right']].set_visible(False)
-    # disabling xticks by Setting xticks to an empty list
-    plt.xticks([]) 
-
-    # disabling yticks by setting yticks to an empty list
-    plt.yticks([]) 
-    st.pyplot(fig)
     
     from PIL import Image 
     image7 = Image.open('Images/dansby.png')
     st.image(image7)
-    
-    import numpy as np
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-    img = plt.imread("Images/dansby.png")
-    fig = plt.figure(figsize = (20,20))
-    fig, ax = plt.subplots()
-    ax.imshow(img, extent = [-100,500,385,-50])
-    ax.scatter(a.hc_x, a.hc_y)
-    ax.spines[['top', 'bottom', 'left', 'right']].set_visible(False)
-    plt.show()
-    st.pyplot(fig)
 
     
     
