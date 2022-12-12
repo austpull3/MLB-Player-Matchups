@@ -40,8 +40,6 @@ def main_page():
     data = pd.read_csv("dans.csv")
     st.write(data.head())
     from pybaseball import statcast_batter, spraychart
-    sc = statcast('2022-04-07', '2022-10-02')
-    st.write(sc.head())
     a = statcast_batter('2022-04-07', '2022-10-02', 621020)
     st.write(a.events.value_counts())
     a = a[a['pitcher']== 453286]
