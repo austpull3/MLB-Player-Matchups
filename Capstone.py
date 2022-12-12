@@ -82,7 +82,7 @@ def page2():
         col4, col5, col6 = st.columns(3)
         with col4:
             st.write("You selected the National League.")
-            nlteam = st.radio("Select a National League Team.", ('Braves', 'Marlins', 'Mets', 'Nationals', ' Phillies', 'Brewers', 'Cardinals', 'Cubs', 'Pirates', 'Reds', 'D-backs', 'Dodgers', 'Giants', 'Padres', 'Rockies'))
+            nlteam = st.radio("Select a National League Team.", ('Braves', 'Marlins', 'Mets', 'Nationals', 'Phillies', 'Brewers', 'Cardinals', 'Cubs', 'Pirates', 'Reds', 'D-backs', 'Dodgers', 'Giants', 'Padres', 'Rockies'))
             if nlteam == "Braves":
                 with col5:
                     from PIL import Image 
@@ -106,8 +106,8 @@ def page2():
             elif nlteam == "Phillies": 
                 with col5:
                     from PIL import Image 
-                    nationals = Image.open('Images/nationals.png')
-                    st.image(nationals)
+                    phillies = Image.open('Images/phillies.jpeg')
+                    st.image(phillies)
                     
             elif nlteam == "Brewers":
                 with col5:
