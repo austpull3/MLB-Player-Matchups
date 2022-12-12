@@ -120,6 +120,10 @@ def page2():
     if league == "NL":
         st.write("You selected the National League.")
         nlteam = st.radio("Select a National League Team.", ('Braves', 'Marlins', 'Mets', 'Nationals', ' Phillies', 'Brewers', 'Cardinals', 'Cubs', 'Pirates', 'Reds', 'D-backs', 'Dodgers', 'Giants', 'Padres', 'Rockies'))
+        if nlteam == "Braves":
+            from PIL import Image 
+            braves = Image.open('Images/braves logo.png')
+            st.image(braves)
     else:
         alteam = st.radio("Select an American League Team.", ('Blue Jays', 'Orioles', 'Rays', 'Red Sox', 'Yankees', 'Guardians', 'Royals', 'Tigers', 'Twins', 'White Sox', 'Angels', 'Astros', 'Athletics', 'Mariners', 'Rangers'))
         if alteam == "Blue Jays":
