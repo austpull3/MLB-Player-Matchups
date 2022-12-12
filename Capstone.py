@@ -83,7 +83,7 @@ def main_page():
     import numpy as np
     import matplotlib.pyplot as plt
     import seaborn as sns
-    img = plt.imread("dansby.png")
+    img = plt.imread("Images/dansby.png")
     fig = plt.figure(figsize = (20,20))
     fig, ax = plt.subplots()
     ax.imshow(img, extent = [-100,500,385,-50])
