@@ -35,8 +35,6 @@ def main_page():
     import io
     df = pd.read_csv("bh2.csv") 
     st.write(df.head())
-    df1 = pd.read_csv("mlb1.zip/mlb1.csv") 
-    st.write(df1.head())
     
     from pybaseball import statcast
     data = pd.read_csv("dans.csv")
