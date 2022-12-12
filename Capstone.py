@@ -64,7 +64,7 @@ def main_page():
     st.pyplot(fig)
     
     img = plt.imread("Images/diamond.png")
-    fig = plt.figure(figsize = (20,20))
+    fig = plt.figure(figsize = (23,20))
     fig, ax = plt.subplots()
     ax.imshow(img, extent = [-100,500,385,-50])
     ax.scatter(a.hc_x, a.hc_y)
