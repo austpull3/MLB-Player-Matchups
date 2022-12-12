@@ -114,6 +114,11 @@ def page2():
             unsafe_allow_html=True
             )
     add_bg_from_local('Images/tmobile.jpeg')
+    league = st.radio("Select National League or American League:", ("NL", "AL"))
+    if league == "NL":
+        st.write("You selected the National League.")
+    else:
+        st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Teoscar Hernandez: TOR (RF/R)'])
 
    
         
