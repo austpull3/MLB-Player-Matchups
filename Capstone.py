@@ -98,6 +98,7 @@ def main_page():
     
 
 def page2():
+    '''
     import base64
     def add_bg_from_local(image_file):
         with open(image_file, "rb") as image_file:
@@ -114,6 +115,7 @@ def page2():
             unsafe_allow_html=True
             )
     add_bg_from_local('Images/tmobile.jpeg')
+    '''
     league = st.radio("Select National League or American League:", ("NL", "AL"))
     if league == "NL":
         st.write("You selected the National League.")
