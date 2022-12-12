@@ -122,7 +122,7 @@ def page2():
         nlteam = st.radio("Select a National League Team.", ('Braves', 'Marlins', 'Mets', 'Nationals', ' Phillies', 'Brewers', 'Cardinals', 'Cubs', 'Pirates', 'Reds', 'D-backs', 'Dodgers', 'Giants', 'Padres', 'Rockies'))
         if nlteam == "Braves":
             col4, col5, col6 = st.columns(3)
-            with col6:
+            with col5:
                 from PIL import Image 
                 braves = Image.open('Images/braves logo.png')
                 st.image(braves)
