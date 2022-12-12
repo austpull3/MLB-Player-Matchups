@@ -133,6 +133,11 @@ def page2():
                     from PIL import Image 
                     marlins = Image.open('Images/marlins.png')
                     st.image(marlins)
+            elif nlteam == "Mets":
+                with col5:
+                    from PIL import Image 
+                    mets = Image.open('Images/mets.png')
+                    st.image(mets)
             
     else:
         alteam = st.radio("Select an American League Team.", ('Blue Jays', 'Orioles', 'Rays', 'Red Sox', 'Yankees', 'Guardians', 'Royals', 'Tigers', 'Twins', 'White Sox', 'Angels', 'Astros', 'Athletics', 'Mariners', 'Rangers'))
