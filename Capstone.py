@@ -178,7 +178,7 @@ def page2():
                 with col5:
                     from PIL import Image 
                     dbacks = Image.open('Images/dbacks.png')
-                    st.image(reds)
+                    st.image(dbacks)
             elif nlteam == "Dodgers":
                 with col5:
                     from PIL import Image 
