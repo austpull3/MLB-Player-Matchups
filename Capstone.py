@@ -129,7 +129,7 @@ def page2():
                 hitter = 665489
             else:
                 hitter = 606192
-            pitcher = st.selectbox("Please select a pitcher.", ['Tyler Wells: BAL (R)', 'Dean Kremer BAL (R)', 'Spenser Watkins BAL (R)'])
+            pitcher = st.selectbox("Please select a pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)'])
    
         
 page_names_to_funcs = {
