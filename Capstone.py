@@ -106,7 +106,7 @@ def page2():
             elif nlteam == "Phillies": 
                 with col5:
                     from PIL import Image 
-                    phillies = Image.open('Images/phillies.png')
+                    phillies = Image.open('Images/phillies.jpeg')
                     st.image(phillies)
             elif nlteam == "Brewers":
                 with col5:
