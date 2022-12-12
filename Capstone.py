@@ -184,22 +184,22 @@ def page2():
                     from PIL import Image 
                     lad = Image.open('Images/laa.png')
                     st.image(lad)
-           elif nlteam == "Dodgers":
+            elif nlteam == "Dodgers":
                 with col5:
                     from PIL import Image 
                     lad = Image.open('Images/laa.png')
                     st.image(lad)
-           elif nlteam == "Giants":
+            elif nlteam == "Giants":
                 with col5:
                     from PIL import Image 
                     g = Image.open('Images/giants.jpeg')
                     st.image(g)
-           elif nlteam == "Padres":
+            elif nlteam == "Padres":
                 with col5:
                     from PIL import Image 
                     sd = Image.open('Images/sd.jpeg')
                     st.image(sd)
-           elif nlteam == "Rockies":
+            elif nlteam == "Rockies":
                 with col5:
                     from PIL import Image 
                     col = Image.open('Images/col.png')
