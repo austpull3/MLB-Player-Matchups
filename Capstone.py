@@ -44,7 +44,7 @@ def main_page():
     st.write(a.events.value_counts())
     a = a[a['pitcher']== 453286]
     s = spraychart(a, 'braves', title='Dansby Swanson vs Max Scherser', colorby='player')
-    plt.draw()
+    plt.draw(s)
     plt.show()
     
     
