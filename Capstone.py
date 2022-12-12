@@ -80,6 +80,18 @@ def main_page():
     image7 = Image.open('Images/dansby.png')
     st.image(image7)
     
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    img = plt.imread("dansby.png")
+    fig = plt.figure(figsize = (20,20))
+    fig, ax = plt.subplots()
+    ax.imshow(img, extent = [-100,500,385,-50])
+    ax.scatter(dat.hc_x, dat.hc_y)
+    ax.spines[['top', 'bottom', 'left', 'right']].set_visible(False)
+    plt.show()
+    st.pyplot(fig)
+
     
     
     
