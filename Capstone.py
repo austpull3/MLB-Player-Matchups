@@ -129,6 +129,7 @@ def page2():
                 hitter = 665489
             else:
                 hitter = 606192
+            pitcher = st.selectbox("Please select a pitcher.", ['Tyler Wells: BAL (R)', 'Dean Kremer BAL (R)', 'Spenser Watkins BAL (R)'])
    
         
 page_names_to_funcs = {
