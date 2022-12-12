@@ -47,6 +47,10 @@ def main_page():
     from pybaseball import playerid_lookup
     if st.selectbox("Select player", ['Dansby Swanson']):
         st.write(playerid_lookup('Swanson', 'Dansby'))
+        import warnings
+        warnings.filterwarnings('ignore')
+        spraychart(a, 'braves', title='Dansby Swanson vs Max Scherzer (2022)', colorby='events')
+        plt.show()
     
     
     
