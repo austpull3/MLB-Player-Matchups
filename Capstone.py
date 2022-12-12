@@ -174,6 +174,16 @@ def page2():
                     from PIL import Image 
                     reds = Image.open('Images/reds.webp')
                     st.image(reds)
+            elif nlteam == "D-backs":
+                with col5:
+                    from PIL import Image 
+                    dbacks = Image.open('Images/dbacks.png')
+                    st.image(reds)
+            elif nlteam == "Dodgers":
+                with col5:
+                    from PIL import Image 
+                    lad = Image.open('Images/laa.png')
+                    st.image(lad)
     else:
         alteam = st.radio("Select an American League Team.", ('Blue Jays', 'Orioles', 'Rays', 'Red Sox', 'Yankees', 'Guardians', 'Royals', 'Tigers', 'Twins', 'White Sox', 'Angels', 'Astros', 'Athletics', 'Mariners', 'Rangers'))
         if alteam == "Blue Jays":
