@@ -191,6 +191,7 @@ def page2():
                     st.image(lad)
             elif nlteam == "Giants":
                 with col5:
+                    st.markdown(" ")
                     from PIL import Image 
                     g = Image.open('Images/giants.jpeg')
                     st.image(g)
