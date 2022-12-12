@@ -87,7 +87,7 @@ def main_page():
     fig = plt.figure(figsize = (20,20))
     fig, ax = plt.subplots()
     ax.imshow(img, extent = [-100,500,385,-50])
-    ax.scatter(dat.hc_x, dat.hc_y)
+    ax.scatter(a.hc_x, a.hc_y)
     ax.spines[['top', 'bottom', 'left', 'right']].set_visible(False)
     plt.show()
     st.pyplot(fig)
