@@ -128,7 +128,6 @@ def page2():
                     braves = Image.open('Images/braves logo.png')
                     st.image(braves)
                     st.write("")
-                    st.write(" ")
     else:
         alteam = st.radio("Select an American League Team.", ('Blue Jays', 'Orioles', 'Rays', 'Red Sox', 'Yankees', 'Guardians', 'Royals', 'Tigers', 'Twins', 'White Sox', 'Angels', 'Astros', 'Athletics', 'Mariners', 'Rangers'))
         if alteam == "Blue Jays":
