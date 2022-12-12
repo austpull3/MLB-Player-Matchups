@@ -103,7 +103,7 @@ def page2():
                     from PIL import Image 
                     nationals = Image.open('Images/nationals.png')
                     st.image(nationals)
-            elif nlteam == "Phillies":
+            elif nlteam == "Phillies": 
                 with col5:
                     from PIL import Image 
                     phillies = Image.open('Images/phillies.png')
