@@ -56,7 +56,7 @@ def main_page():
     ax.imshow(img, extent = [-100,500,385,-50])
     ax.scatter(a.hc_x, a.hc_y)
     ax.spines[['top', 'bottom', 'left', 'right']].set_visible(False)
-    plt.show()
+    st.pyplot(fig)
     
     
     
