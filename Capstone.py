@@ -159,7 +159,7 @@ def page2():
                     from PIL import Image 
                     cards = Image.open('Images/cardinals.png')
                     st.image(cards)
-             elif nlteam == "Cubs":
+            elif nlteam == "Cubs":
                 with col5:
                     from PIL import Image 
                     cubs = Image.open('Images/cubs.png')
