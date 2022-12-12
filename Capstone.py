@@ -49,7 +49,15 @@ def main_page():
         st.write(playerid_lookup('Swanson', 'Dansby'))
         import warnings
         warnings.filterwarnings('ignore')
-        spraychart(a, 'braves', title='Dansby Swanson vs Max Scherzer (2022)', colorby='events')
+        import numpy as np
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        img = plt.imread("braves.png")
+        fig = plt.figure(figsize = (20,20))
+        fig, ax = plt.subplots()
+        ax.imshow(img, extent = [-100,500,385,-50])
+        ax.scatter(dat.hc_x, dat.hc_y)
+        ax.spines[['top', 'bottom', 'left', 'right']].set_visible(False)
         plt.show()
     
     
