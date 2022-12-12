@@ -46,7 +46,7 @@ def main_page():
     spraychart(a, 'braves', title='Dansby Swanson vs Max Scherser', colorby='player')
     from pybaseball import playerid_lookup
     if st.selectbox("Select player", ['Dansby Swanson']):
-        playerid_lookup('Swanson', 'Dansby')
+        st.write(playerid_lookup('Swanson', 'Dansby'))
     
     
     
