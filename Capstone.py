@@ -188,7 +188,7 @@ def page2():
             plot = st.text_input("Enter player's key_mlbam:")
             if plot:
                 data = statcast_batter('2021-01-01', '2021-12-31', 514888)
-                s = spraychart(data, 'astros')
+                s = spraychart(data, 'generic')
                 fig = s.figure
                 # Display the spraychart
                 st.pyplot(fig)
