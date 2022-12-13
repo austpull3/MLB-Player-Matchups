@@ -200,7 +200,7 @@ def page2():
         last_name = st.text_input('Enter a players last name:')
 
         if first_name and last_name:
-            player_info = playerid_lookup(first_name, last_name)
+            player_info = playerid_lookup(last_name, first_name)
             st.write(player_info)
         
         pitcherdiv = st.radio("Select pitcher from the AL or NL.", ('AL', 'NL'))
