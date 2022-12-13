@@ -1,5 +1,6 @@
 import streamlit as st
 import plotly.express as px
+from pybaseball import playerid_lookup
 
 st.title("Predict MLB At-Bat Outcomes ⚾️") 
 
