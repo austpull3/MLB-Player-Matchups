@@ -179,10 +179,10 @@ def page2():
             else:
                 hitter = 606192
         
-        first = st.text_input('Enter a player name:')
-        last = st.text_input('Enter a player name:')
-        if first & last:
-            player_info = playerid_lookup(last, first)
+        player_name = st.text_input('Enter last name of player:')
+
+        if player_name:
+            player_info = playerid_lookup(player_name)
             st.write(player_info)
         
         pitcherdiv = st.radio("Select pitcher from the AL or NL.", ('AL', 'NL'))
