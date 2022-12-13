@@ -179,7 +179,7 @@ def page2():
                 hitter = 665489
             else:
                 hitter = 606192
-        
+        '''
         player_name = st.text_input('Enter last name of player:')
 
         if player_name:
@@ -196,6 +196,7 @@ def page2():
                 st.write(tot)
                 fig2 = px.bar(data, x = 'events', y = "pitch_type", animation_frame = "game_date", animation_group = "events")
                 st.write(fig2)
+        '''
         first_name = st.text_input('Enter a players first name:')
         last_name = st.text_input('Enter a players last name:')
 
