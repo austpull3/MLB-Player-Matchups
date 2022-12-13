@@ -177,6 +177,8 @@ def page2():
                 hitter = 665489
             else:
                 hitter = 606192
+        playerlook = st.text_input(" Last Name, First Name")
+        st.write(playerid_lookup(playerlook))
         pitcherdiv = st.radio("Select pitcher from the AL or NL.", ('AL', 'NL'))
         if pitcherdiv == 'AL':
                pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)'])
