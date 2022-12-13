@@ -202,12 +202,11 @@ def page2():
 
         if first_name and last_name:
             player_info = playerid_lookup(last_name, first_name)
-            if player_info['key_mlbam'].empty:
-                st.write(player_info)
-                name = first_name + " " + last_name
-                plot = st.text_input("Enter player's key_mlbam:")
-                stadium = st.text_input("Enter MLB team for stadium.")                               
-                if plot:
+            st.write(player_info)
+            name = first_name + " " + last_name
+            plot = st.text_input("Enter player's key_mlbam:")
+            stadium = st.text_input("Enter MLB team for stadium.")                               
+            if plot:
                     data = statcast_batter('2022-04-07', '2022-10-02', plot)
                     if stadium:
                         s = spraychart(data, stadium, title = name)
