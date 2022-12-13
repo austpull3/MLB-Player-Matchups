@@ -197,7 +197,7 @@ def page2():
     st.pyplot(fig)
     tot = data.events.value_counts()
     st.write(tot)
-    fig2 = px.bar(data, x = 'events', y = "events", animation_frame = "game_date", animation_group = "events")
+    fig2 = px.bar(data, x = 'events', y = tot, animation_frame = "game_date", animation_group = "events")
     st.write(fig2)
 
 page_names_to_funcs = {
