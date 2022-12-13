@@ -187,7 +187,7 @@ def page2():
             st.write(player_info)
             plot = st.text_input("Enter player's key_mlbam:")
             if plot:
-                data = statcast_batter('2022-04-07', '2022-10-02', plot)
+                data = statcast_batter('2022-04-07', '2022-10-02', plot, title = player_name)
                 s = spraychart(data, 'generic')
                 fig = s.figure
                 # Display the spraychart
