@@ -195,7 +195,8 @@ def page2():
     fig = s.figure
     # Display the spraychart
     st.pyplot(fig)
-    
+    tot = data.events.value_counts()
+    st.write(tot)
     fig2 = px.bar(data, x = 'events', y = "events", animation_frame = "game_date", animation_group = "events")
     st.write(fig2)
 
