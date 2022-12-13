@@ -205,9 +205,11 @@ def page2():
             st.write(player_info)
             name = first_name + " " + last_name
             plot = st.text_input("Enter player's key_mlbam:")
+            stadium = st.text_input("Enter MLB team for stadium.")
+                                              
             if plot:
                 data = statcast_batter('2022-04-07', '2022-10-02', plot)
-                s = spraychart(data, 'generic', title = name)
+                s = spraychart(data, stadium, title = name)
                 fig = s.figure
                 # Display the spraychart
                 st.pyplot(fig)
