@@ -202,10 +202,11 @@ def page2():
         if first_name and last_name:
             player_info = playerid_lookup(last_name, first_name)
             st.write(player_info)
+            name = first_name + " " + last_name
             plot = st.text_input("Enter player's key_mlbam:")
             if plot:
                 data = statcast_batter('2022-04-07', '2022-10-02', plot)
-                s = spraychart(data, 'generic', title = last_name, first_name)
+                s = spraychart(data, 'generic', title = name)
                 fig = s.figure
                 # Display the spraychart
                 st.pyplot(fig)
