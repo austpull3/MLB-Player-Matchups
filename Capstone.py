@@ -202,6 +202,17 @@ def page2():
         if first_name and last_name:
             player_info = playerid_lookup(last_name, first_name)
             st.write(player_info)
+            plot = st.text_input("Enter player's key_mlbam:")
+            if plot:
+                data = statcast_batter('2022-04-07', '2022-10-02', plot)
+                s = spraychart(data, 'generic', title = first_name, last_name)
+                fig = s.figure
+                # Display the spraychart
+                st.pyplot(fig)
+                tot = data.events.value_counts()
+                st.write(tot)
+                fig2 = px.bar(data, x = 'events', y = "pitch_type", animation_frame = "game_date", animation_group = "events")
+                st.write(fig2)
         
         pitcherdiv = st.radio("Select pitcher from the AL or NL.", ('AL', 'NL'))
         if pitcherdiv == 'AL':
