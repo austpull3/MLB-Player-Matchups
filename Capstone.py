@@ -196,8 +196,8 @@ def page2():
                 st.write(tot)
                 fig2 = px.bar(data, x = 'events', y = "pitch_type", animation_frame = "game_date", animation_group = "events")
                 st.write(fig2)
-        first_name = st.text_input('Enter a player's first name:')
-        last_name = st.text_input('Enter a player's last name:')
+        first_name = st.text_input('Enter a players first name:')
+        last_name = st.text_input('Enter a players last name:')
 
         if first_name and last_name:
             player_info = playerid_lookup(first_name, last_name)
