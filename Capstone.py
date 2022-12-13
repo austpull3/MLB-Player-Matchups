@@ -196,7 +196,12 @@ def page2():
                 st.write(tot)
                 fig2 = px.bar(data, x = 'events', y = "pitch_type", animation_frame = "game_date", animation_group = "events")
                 st.write(fig2)
-            
+        first_name = st.text_input('Enter a player's first name:')
+        last_name = st.text_input('Enter a player's last name:')
+
+        if first_name and last_name:
+            player_info = playerid_lookup(first_name, last_name)
+            st.write(player_info)
         
         pitcherdiv = st.radio("Select pitcher from the AL or NL.", ('AL', 'NL'))
         if pitcherdiv == 'AL':
