@@ -60,7 +60,7 @@ def page2():
                     fig2 = px.bar(data, x = 'events', y = "pitch_name", animation_frame = "game_date", animation_group = "pitch_name")
                     st.write(fig2)
            
-                    fig3 = px.bar(data, x = 'events', y = 'events, color = 'pitch_name', animation_frame = "game_date", animation_group = "event",
+                    fig3 = px.bar(data, x = 'events', y = 'events, color = "pitch_name", animation_frame = "game_date", animation_group = "event",
                                   range_y = [0, 400000000])
                     st.write(fig3) 
            
