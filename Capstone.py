@@ -60,11 +60,11 @@ def page2():
                     fig2 = px.bar(data, x = 'events', y = "pitch_name", animation_frame = "game_date", animation_group = "pitch_name")
                     fig2.update_layout(
                         animation_options = dict(
-                            frame = dict(duration = 1000
+                            frame = dict(duration = 1000),
                             transition = dict(duration = 500)
                         )
                     st.plotly_chart(fig2)
-                    st.write(fig2)
+                    #st.write(fig2)
            
        
 def page3():
