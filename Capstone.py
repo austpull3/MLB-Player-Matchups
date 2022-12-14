@@ -32,7 +32,7 @@ def main_page():
     with col3:
         st.image(image4)
         
-    <iframe src = "https://www.youtube.com/watch?v=clDXWm1jpfY" allowfullscreen></iframe>
+    <video src = "https://www.youtube.com/watch?v=clDXWm1jpfY" controls></video>
 
     st.sidebar.markdown("# Welcome!⚾️")
     st.sidebar.markdown(" ")
