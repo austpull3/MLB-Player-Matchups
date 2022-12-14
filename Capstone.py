@@ -256,18 +256,8 @@ def page3():
         prediction = model.predict(inputs)
         return prediction
         #start user input
+        
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
-    
-    b = batting_stats(2022, qual = 400)
-    
-    colval = b['Name'].tolist()
-    formatted = ['{}'.format(val) for val in colval]
-    st.write(formatted)
-    
-    st.write(len(formatted))
-    batter = st.selectbox('Please select a hitter:', (formatted))
-    '''
-   
     
     showzone = st.checkbox('Display Strike Zone')
     if showzone:
@@ -353,7 +343,7 @@ def page3():
 
     
     #inputs = pd.DataFrame([[release_speed, batter, pitcher, zone, balls, strikes, on_3b, on_2b, on_1b, outs_when_up, inning, inning_topbot, launch_speed, launch_angle, effective_speed, release_spin_rate, game_pk, pitch_name, bat_score, fld_score, win_exp, run_exp, hm1, speed]], columns = ['release_speed', 'batter', 'pitcher', 'zone', 'balls', 'strikes', 'on_3b', 'on_2b', 'on_1b', 'outs_when_up', 'inning', 'inning_topbot', 'launch_speed', 'launch_angle', 'effective_speed', 'release_spin_rate', 'game_pk', 'pitch_name', 'bat_score', 'fld_score',' win_exp', 'run_exp', 'hm1', 'speed'])
-    inputs = pd.DataFrame([[release_speed, batter, pitcher, zone, balls, strikes, on_3b, on_2b, on_1b, outs_when_up, inning, inning_topbot, launch_speed, launch_angle, effective_speed, release_spin_rate, game_pk, pitch_name, bat_score, fld_score, win_exp, run_exp, hm1, speed]], columns = ['release_speed', 'batter', 'pitcher', 'zone', 'balls', 'strikes', 'on_3b', 'on_2b', 'on_1b', 'outs_when_up', 'inning', 'inning_topbot', 'launch_speed', 'launch_angle', 'effective_speed', 'release_spin_rate', 'game_pk', 'pitch_name', 'bat_score', 'fld_score',' win_exp', 'run_exp', 'hm1', 'speed'])
+    inputs = pd.DataFrame([[release_speed, hitter, pitcheral, zone, balls, strikes, on_3b, on_2b, on_1b, outs_when_up, inning, inning_topbot, launch_speed, launch_angle, effective_speed, release_spin_rate, game_pk, pitch_name, bat_score, fld_score, win_exp, run_exp, hm1, speed]], columns = ['release_speed', 'hitter', 'pitcheral', 'zone', 'balls', 'strikes', 'on_3b', 'on_2b', 'on_1b', 'outs_when_up', 'inning', 'inning_topbot', 'launch_speed', 'launch_angle', 'effective_speed', 'release_spin_rate', 'game_pk', 'pitch_name', 'bat_score', 'fld_score',' win_exp', 'run_exp', 'hm1', 'speed'])
     #prediction1 = predict(inputs)
     #st.write(names[np.argmax(prediction1)])
     
@@ -365,7 +355,7 @@ def page3():
             return '{:.2f}'.format(num)
         predictions = np.vectorize(sci)(price)
         st.write(predictions)
-'''
+
     st.sidebar.markdown("# Make At-Bat Predictions ⚾️🔍")
     st.sidebar.markdown(" ")
     if st.sidebar.checkbox(" Select For Help ⚾️"): 
