@@ -192,7 +192,7 @@ def page3():
     model.add(Dense(9, activation = 'softmax'))
 
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    model.fit(X_train, y_train, epochs = 1, validation_split = 0.1, batch_size=10, verbose=1)
+    model.fit(X_train, y_train, epochs = 5, validation_split = 0.1, batch_size=10, verbose=1)
 
     pred = model.predict(X_test)
     
@@ -333,10 +333,10 @@ def page3():
 
         fld_score = st.number_input('Fielding Team Score: ', min_value=0, max_value=15)
 
-        win_exp = st.number_input('Win Exp: ', min_value=-0.25, max_value=0.25)
-
-        run_exp = st.number_input('Run Exp: ', min_value=0, max_value=3)
-
+        #win_exp = st.number_input('Win Exp: ', min_value=-0.25, max_value=0.25)
+        win_exp = 0.15
+        #run_exp = st.number_input('Run Exp: ', min_value=0, max_value=3)
+        run_exp = 1
         hm1 = st.slider("Home to First Time:  ", 4.0, 5.0)
 
         speed = st.slider("Sprint Speed: ", 23.0, 30.7)
