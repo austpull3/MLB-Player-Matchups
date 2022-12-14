@@ -65,8 +65,8 @@ def page2():
                 #fig2 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
                 #st.write(fig2)
                     
-                fig3 = px.histogram(data, x ="events", color = "pitch_name")
-                st.write(fig3)
+                #fig3 = px.histogram(data, x ="events", color = "pitch_name")
+                #st.write(fig3)
            
        
 def page3():
