@@ -241,7 +241,7 @@ def page3():
     from tensorflow.keras.layers import Dense, Activation, Dropout
     from tensorflow.keras.models import Sequential
 
-    df = pd.read_csv("/Users/austinpullar/Desktop/bsbc.csv")
+    df = pd.read_csv("bsbc.csv")
 
     print(df.head())
     print(df.shape)
