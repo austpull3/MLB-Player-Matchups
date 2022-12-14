@@ -325,9 +325,10 @@ def page3():
             mlbid = pid.iloc[0]
             st.write(mlbid)
             name = first_name + " " + last_name
+            global batter
             batter = mlbid
             st.write("Batter", mlbid)
-            global batter
+          
     except IndexError as e:
         st.error("Incorrect Input. Please try another input.")
         
