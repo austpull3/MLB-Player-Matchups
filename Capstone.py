@@ -330,7 +330,11 @@ def page3():
         predictions = np.vectorize(sci)(price)
         st.write(predictions)
 '''
-    
+    st.sidebar.markdown("# Make At-Bat Predictions ⚾️🔍")
+    st.sidebar.markdown(" ")
+    if st.sidebar.checkbox(" Select For Help ⚾️"): 
+         st.sidebar.info("Steps to make a prediction: ")
+         st.sidebar.info("1. Enter pitch release speed 2. Select a hitter 3. Select a pitcher 4. Select a strike zone location 5. Expand for more options 6. Click the 'Predict At-Bat' Button to display predicted outcome.")
 
 page_names_to_funcs = {
     "Welcome Page": main_page,
