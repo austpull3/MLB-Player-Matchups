@@ -302,7 +302,7 @@ def page3():
         return prediction
         #start user input
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
-
+    @st.cache(timeout = 30)
     def get_batter():
         try: 
             first_name = st.text_input('Enter a players first name:')
@@ -333,7 +333,7 @@ def page3():
             st.error("Incorrect Input. Please try another input.")
         return batter
     st.write(get_batter())
-    
+    @st.cache(timeout = 30)
     def get_pitcher():
         try: 
             first_name2 = st.text_input("Enter a pitcher's first name:")
