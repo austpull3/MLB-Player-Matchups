@@ -38,11 +38,11 @@ def main_page():
     
 def page2():
     st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
-     
-        first_name = st.text_input('Enter a players first name:')
-        last_name = st.text_input('Enter a players last name:')
+    
+    first_name = st.text_input('Enter a players first name:')
+    last_name = st.text_input('Enter a players last name:')
 
-        if first_name and last_name:
+    if first_name and last_name:
             player_info = playerid_lookup(last_name, first_name)
             st.write(player_info)
             name = first_name + " " + last_name
@@ -68,6 +68,7 @@ def page2():
            pitchernl = st.selectbox("Please select an NL pitcher.", ['Max Fried: ATL (L)', 'Sandy Alcantara: MIA (R)', 'Max Scherzer: NYM (R)', 'Paolo Espino: WSH (R)', 'Aaron Nola: PHI (R)', 'Corbin Burnes: MIL (R)', 'Miles Mikolas: STL (R)', 'Marcus Stroman: CHC (R)', 'Jose Quintana: PIT (L)', 'Nick Lodolo: CIN (L)', 'Zac Gallen: ARI (R)', 'Clayton Kershaw: LAD (L)', 'Carlos Rodon: SF (L)', 'Blake Snell: SD (L)', 'Ryan Feltner: COL (R)'])
 
 
+       
 def page3():
     st.title("Predict MLB At-Bat Outcomes ⚾️") 
     #Import necessary libraries
