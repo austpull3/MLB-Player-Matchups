@@ -319,9 +319,9 @@ def page3():
         pid2 = playerinfo2['key_mlbam']
         mlbid2 = pid2.iloc[0]
         st.write(mlbid2)
-        batter = batterf + " " + batterl
+        batter1 = batterf + " " + batterl
         data2 = statcast_batter('2022-04-07', '2022-10-02', mlbid2)
-        batter = data2
+        batter1 = data2
         st.write(batter)
 
     pitcher = st.selectbox('Select Pitcher:', ['Kyle Wright'])
