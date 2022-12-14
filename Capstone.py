@@ -57,12 +57,7 @@ def page2():
                     st.pyplot(fig)
                     tot = data.events.value_counts()
                     st.write(tot)
-                    fig2 = px.bar(data, x = 'events', y = "pitch_name", animation_frame = "game_date", animation_group = "pitch_name")
-                    st.write(fig2)
-           
-                    fig3 = px.bar(data, x = 'events', y = 'game_date', color = "pitch_name", animation_frame = "game_date", animation_group = "events", range_y = [0, 400000000])
-                    st.write(fig3) 
-                    
+                               
                     fig4 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
                     st.write(fig4)
            
