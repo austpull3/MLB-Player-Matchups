@@ -54,7 +54,7 @@ def page2():
             #plot = st.text_input("Enter player's key_mlbam:")
             stadium = st.text_input("Enter MLB team for stadium.")                               
             if stadium:
-                data = statcast_batter('2022-04-07', '2022-10-02', pid)
+                data = statcast_batter('2022-04-07', '2022-10-02', mlbid)
                 s = spraychart(data, stadium, title = name)
                 fig = s.figure
                 # Display the spraychart
