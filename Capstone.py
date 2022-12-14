@@ -58,8 +58,7 @@ def page2():
                     tot = data.events.value_counts()
                     st.write(tot)
                                
-                    fig4 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
-                    st.plotly_chart(fig4, use_container_width = True, frame_duration = 3000000)
+                    fig4 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'pitch_type', animation_group = 'events')
                     st.write(fig4)
            
        
