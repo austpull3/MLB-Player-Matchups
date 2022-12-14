@@ -63,7 +63,6 @@ def page2():
                 st.pyplot(fig)
                 tot = data.events.value_counts()
                 st.dataframe(tot)
-                st.write(tot)
                                
                 #fig2 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
                 #st.write(fig2)
@@ -147,7 +146,7 @@ def page3():
     model.add(Dense(9, activation = 'softmax'))
 
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    model.fit(X_train, y_train, epochs = 15, validation_split = 0.1, batch_size=10, verbose=1)
+    model.fit(X_train, y_train, epochs = 1, validation_split = 0.1, batch_size=10, verbose=1)
 
     pred = model.predict(X_test)
     
