@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import io
 
 
-@st.cache()
+
 def main_page():    
     st.title("Welcome to the MLB At-Bat Predictor")
     from PIL import Image 
