@@ -91,7 +91,7 @@ def page2():
                 #st.write(fig3)
                 
     except IndexError as e:
-        st.error("Please try another input.")
+        st.error("Please try another input. Look above at the acceptable field entries")
 
     st.sidebar.markdown("# Welcome!⚾️")
     st.sidebar.markdown(" ")
