@@ -39,7 +39,9 @@ def main_page():
     import io
     
 def page2():
-    st.title("Explore MLB Data and visualize spraycharts from your favorite players ⚾️") 
+    st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
+    
+    st.markdown("#### Enter players from the 2022 season only!')
     
     first_name = st.text_input('Enter a players first name:')
     last_name = st.text_input('Enter a players last name:')
@@ -59,7 +61,7 @@ def page2():
                 fig = s.figure
                 # Display the spraychart
                 st.pyplot(fig)
-                tot = data.events.value_counts()
+                tot = [[data.events.value_counts(), data.pitch_name.value_counts()]]
                 st.write(tot)
                                
                 #fig2 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
