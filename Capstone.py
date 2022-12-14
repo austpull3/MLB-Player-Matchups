@@ -420,7 +420,7 @@ def page3():
         return '{:.2f}'.format(num)
 
     predictions = np.vectorize(sci)(prediction1)
-    print(predictions)
+    st.write(predictions)
 
     '''
     if st.button('Predict At-Bat'):
