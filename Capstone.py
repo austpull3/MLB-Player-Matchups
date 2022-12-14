@@ -301,7 +301,7 @@ def page3():
         #start user input
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
     
-    hitter = statcast('2022-04-07','2022-10-02')
+    hitter = batting_stats('2022', qual = 400)
     
     player_names = hitter['player_name'].drop_duplicates().tolist()
     selectplayer = st.selectbox('Select a player: ', player_names)
