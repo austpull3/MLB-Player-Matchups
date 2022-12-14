@@ -58,16 +58,11 @@ def page2():
                     tot = data.events.value_counts()
                     st.write(tot)
                     fig2 = px.bar(data, x = 'events', y = "pitch_name", animation_frame = "game_date", animation_group = "pitch_name")
-                    fig2.update_layout(
-                    animation_options=dict(
-                        frame=dict(duration=1000),
-                        transition=dict(duration=500)
-                        )
-                    )
-
-                    # Show the plot
-                    st.plotly_chart(fig2)
                     st.write(fig2)
+           
+                    fig3 = px.bar(data, x = 'events', y = tot, color = 'pitch_name', animation_frame = "game_date", animation_group = "event",
+                                  range_y = [0, 400000000])
+                    st.write(fig3)
            
        
 def page3():
