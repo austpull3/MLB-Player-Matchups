@@ -301,7 +301,7 @@ def page3():
         prediction = model.predict(inputs)
         return prediction
         #start user input
-        release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
+    release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
 
 
     try: 
