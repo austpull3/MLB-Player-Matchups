@@ -2,6 +2,7 @@ import streamlit as st
 import plotly.express as px
 from pybaseball import playerid_lookup
 from pybaseball import statcast_batter, spraychart
+from pybaseball import batting_stats
 from pybaseball import statcast
 import pandas as pd
 
@@ -72,7 +73,7 @@ def page2():
                 
             if " " in stadium:
                 st.error("Please do not include whitespace in the input.")
-                field = statcast_batter('2022-04-07', '2022-10-02', mlbid)
+                field = batting_stats('2022-04-07', '2022-10-02', mlbid)
                 fieldnames = field.columns
                 st.write(fieldnames)
             if stadium:
