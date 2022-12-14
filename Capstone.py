@@ -5,6 +5,11 @@ from pybaseball import statcast_batter, spraychart
 from pybaseball import batting_stats
 from pybaseball import statcast
 import pandas as pd
+import plotly.graph_objects as go
+from matplotlib.figure import Figure 
+import matplotlib.pyplot as plt
+import io
+
 
 @st.cache()
 def main_page():    
@@ -33,13 +38,6 @@ def main_page():
         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
         
     
-    #Import necessary libraries
-    import pandas as pd
-    import plotly.graph_objects as go
-    from matplotlib.figure import Figure 
-    import matplotlib.pyplot as plt
-    import io
-
 def page2():
     st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
     st.markdown("#### Enter players from the 2022 season only!")
