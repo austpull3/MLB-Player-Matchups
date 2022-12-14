@@ -59,6 +59,7 @@ def page2():
                     st.write(tot)
                     fig2 = px.bar(data, x = 'events', y = "pitch_name", animation_frame = "game_date", animation_group = "pitch_name")
                     fig2.update_layout(transition = {'duration': 10000})
+                    fig2.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 10000
                     st.write(fig2)
            
        
