@@ -225,7 +225,7 @@ def page3():
 
     pitcher = st.selectbox('Select Pitcher:', ['Kyle Wright'])
     if  pitcher == 'Kyle Wright':
-        pitcher = 657140
+        pitcher = 657140 
     
     showzone = st.checkbox('Display Strike Zone')
     if showzone:
