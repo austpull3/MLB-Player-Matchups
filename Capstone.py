@@ -338,8 +338,8 @@ def page3():
          st.sidebar.info("2. Select a hitter")
          st.sidebar.info("3. Select a pitcher")
          st.sidebar.info("4. Select a strike zone location")
-         st.sidebar.info("5. Expand for more options")
-         st.sidebar.info("6. Click the 'Predict At-Bat' Button to display predicted outcome.")
+         st.sidebar.info("5. Expand for more options and select other input if desired")
+         st.sidebar.info("6. Click the 'Predict At-Bat' Button to display predicted outcome")
 
 page_names_to_funcs = {
     "Welcome Page": main_page,
