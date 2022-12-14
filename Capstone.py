@@ -40,14 +40,12 @@ def main_page():
     import io
 
 def page2():
-    with st.ignore_index_errors():
-        st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
+    st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
+    st.markdown("#### Enter players from the 2022 season only!")
 
-        st.markdown("#### Enter players from the 2022 season only!")
-
-        first_name = st.text_input('Enter a players first name:')
-        first_name = first_name.strip()
-        if " " in first_name:
+    first_name = st.text_input('Enter a players first name:')
+    first_name = first_name.strip()
+    if " " in first_name:
             st.error("Please do not include whitespace in the input.")
         if first_name.isspace():
             st.warning("Please enter a player's first name.")
@@ -58,7 +56,7 @@ def page2():
         if last_name.isspace():
             st.warning("Please enter a player's last name.")
 
-        if first_name and last_name:
+    if first_name and last_name:
                 player_info = playerid_lookup(last_name, first_name)
                 pid = player_info['key_mlbam']
                 st.markdown("#### Player ID")
@@ -90,13 +88,17 @@ def page2():
 
                     #fig3 = px.histogram(data, x ="events", color = "pitch_name")
                     #st.write(fig3)
-        st.sidebar.markdown("# Welcome!⚾️")
+      st.sidebar.markdown("# Welcome!⚾️")
         st.sidebar.markdown(" ")
         if st.sidebar.checkbox(" Select For Help ⚾️"):
             st.sidebar.info("Welcome to the MLB At-Bat Outcome prediction application. To explore player outcome data and display some spraycharts go to the next page. If you want to predict at-bat outcomes go to the last page.")
             st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
 
                
+
+
+       
+        
            
        
 def page3():
