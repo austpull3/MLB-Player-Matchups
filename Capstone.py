@@ -3,6 +3,7 @@ import plotly.express as px
 from pybaseball import playerid_lookup
 from pybaseball import statcast_batter, spraychart
 from pybaseball import batting_stats
+from pybaseball import pitching_stats
 from pybaseball import statcast
 import pandas as pd
 import plotly.graph_objects as go
