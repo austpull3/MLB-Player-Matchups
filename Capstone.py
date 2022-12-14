@@ -331,7 +331,7 @@ def page3():
             st.error("Incorrect Input. Please try another input.")
         return batter
     st.write(get_batter())
-    batter = get_batter()
+    
     
     def get_pitcher():
         try: 
@@ -360,8 +360,8 @@ def page3():
                 st.write("Pitcher", mlbid2)
         except IndexError as e:
             st.error("Incorrect Input. Please try another input.")
-        return pitcher
-    st.write("Pitcher", get_pitcher())
+      return pitcher
+    
     
     showzone = st.checkbox('Display Strike Zone')
     if showzone:
