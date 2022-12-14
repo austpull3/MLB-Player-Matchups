@@ -2,6 +2,7 @@ import streamlit as st
 import plotly.express as px
 from pybaseball import playerid_lookup
 from pybaseball import statcast_batter, spraychart
+from pybaseball import statcast
 
 
 
@@ -41,27 +42,6 @@ def main_page():
     df = pd.read_csv("bh2.csv") 
     st.write(df.head())
     
-    from pybaseball import statcast
-    data = pd.read_csv("dans.csv")
-    st.write(data.head())
-    from pybaseball import statcast_batter, spraychart
-    a = statcast_batter('2022-04-07', '2022-10-02', 621020)
-    st.write(a.events.value_counts())
-    a = a[a['pitcher']== 453286]
-    spraychart(a, 'braves', title='Dansby Swanson vs Max Scherser', colorby='player')
-    from pybaseball import playerid_lookup
-    if st.selectbox("Select player", ['Dansby Swanson']):
-        st.write(playerid_lookup('Swanson', 'Dansby'))
-    
-    from PIL import Image 
-    image7 = Image.open('Images/dansby.png')
-    st.image(image7)
-
-    
-    
-    
-    
-
 def page2():
     '''
     import base64
