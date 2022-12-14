@@ -33,14 +33,12 @@ def main_page():
         st.sidebar.markdown("### Above ⬆ is a drop down of different pages to navigate through. Select the page you are interested in exploring.")
         
     
-        #Import necessary libraries
+    #Import necessary libraries
     import pandas as pd
     import plotly.graph_objects as go
     from matplotlib.figure import Figure
     import matplotlib.pyplot as plt
     import io
-    df = pd.read_csv("bh2.csv") 
-    st.write(df.head())
     
 def page2():
     '''
