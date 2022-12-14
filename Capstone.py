@@ -339,6 +339,8 @@ def page3():
                 fig = s.figure
                 # Display the spraychart
                 st.pyplot(fig)
+      except IndexError as e:
+        st.error("Incorrect Input. Please try another input.")
     
     #start user input
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
