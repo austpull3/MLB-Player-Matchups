@@ -294,14 +294,14 @@ def page3():
              pitchernl = st.selectbox("Please select an NL pitcher.", ['Max Fried: ATL (L)', 'Sandy Alcantara: MIA (R)', 'Max Scherzer: NYM (R)', 'Paolo Espino: WSH (R)', 'Aaron Nola: PHI (R)', 'Corbin Burnes: MIL (R)', 'Miles Mikolas: STL (R)', 'Marcus Stroman: CHC (R)', 'Jose Quintana: PIT (L)', 'Nick Lodolo: CIN (L)', 'Zac Gallen: ARI (R)', 'Clayton Kershaw: LAD (L)', 'Carlos Rodon: SF (L)', 'Blake Snell: SD (L)', 'Ryan Feltner: COL (R)'])
 '''
 
-    
+    @st.cache
     def predict(inputs):
         inputs = s.transform(inputs)
         prediction = model.predict(inputs)
         return prediction
         #start user input
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
-    @st.cache()
+    
     def get_batter():
         try: 
             first_name = st.text_input('Enter a players first name:')
@@ -332,7 +332,7 @@ def page3():
             st.error("Incorrect Input. Please try another input.")
         return batter
     st.write(get_batter())
-    @st.cache()
+    
     def get_pitcher():
         try: 
             first_name2 = st.text_input("Enter a pitcher's first name:")
