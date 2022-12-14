@@ -321,7 +321,7 @@ def page3():
     # assign the text input variable to the player's key_mlbam ID
     if (first in player_info4["name_first"].tolist()) and (last in player_info4["name_last"].tolist()):
         player_id4 = player_info4.loc[(player_info4["name_first"] == first) & (player_info4["name_last"] == last), "key_mlbam"].iloc[0]
-        st.write(player_id4)
+    st.write(player_id4)
 
     
     '''
