@@ -361,20 +361,20 @@ def page3():
 
     #inputs = pd.DataFrame([[release_speed, batter, pitcher, zone, balls, strikes, on_3b, on_2b, on_1b, outs_when_up, inning, inning_topbot, launch_speed, launch_angle, effective_speed, release_spin_rate, game_pk, pitch_name, bat_score, fld_score, win_exp, run_exp, hm1, speed]], columns = ['release_speed', 'batter', 'pitcher', 'zone', 'balls', 'strikes', 'on_3b', 'on_2b', 'on_1b', 'outs_when_up', 'inning', 'inning_topbot', 'launch_speed', 'launch_angle', 'effective_speed', 'release_spin_rate', 'game_pk', 'pitch_name', 'bat_score', 'fld_score',' win_exp', 'run_exp', 'hm1', 'speed'])
     inputs = pd.DataFrame([[release_speed, batter, pitcher, zone, balls, strikes, on_3b, on_2b, on_1b, outs_when_up, inning, inning_topbot, launch_speed, launch_angle, effective_speed, release_spin_rate, game_pk, pitch_name, bat_score, fld_score, win_exp, run_exp, hm1, speed]], columns = ['release_speed', 'batter', 'pitcher', 'zone', 'balls', 'strikes', 'on_3b', 'on_2b', 'on_1b', 'outs_when_up', 'inning', 'inning_topbot', 'launch_speed', 'launch_angle', 'effective_speed', 'release_spin_rate', 'game_pk', 'pitch_name', 'bat_score', 'fld_score',' win_exp', 'run_exp', 'hm1', 'speed'])
-    prediction1 = predict(inputs)
-    st.write(names[np.argmax(prediction1)])
-
-    def sci(num):
+    #prediction1 = predict(inputs)
+    #st.write(names[np.argmax(prediction1)])
+    
+    if st.button('Predict At-Bat'):
+        price = predict(inputs)
+        st.success(names[np.argmax(price)])
+        
+        def sci(num):
         return '{:.2f}'.format(num)
 
-    predictions = np.vectorize(sci)(prediction1)
-    st.write(predictions)
+        predictions = np.vectorize(sci)(price)
+        st.write(price)
 
-    '''
-    if st.button('Predict At-Bat'):
-        price = predict(release_speed, batter, pitcher, zone, balls, strikes, on_3b, on_2b, on_1b, outs_when_up, inning, inning_topbot, launch_speed, launch_angle, effective_speed, release_spin_rate, game_pk, pitch_name, bat_score, fld_score, win_exp, run_exp, hm1, speed)
-        st.success(names[np.argmax(price)])
-    '''
+    
 
 page_names_to_funcs = {
     "Welcome Page": main_page,
