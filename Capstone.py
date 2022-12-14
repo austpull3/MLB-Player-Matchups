@@ -313,8 +313,8 @@ def page3():
     st.write(pitcher)
     st.write(pitcher.shape)
     
-    #player_names = hitter['Name'].drop_duplicates().tolist()
-    #selectplayer = st.selectbox('Select a player: ', player_names)
+    player_names2 = pitcher['Name'].drop_duplicates().tolist()
+    selectplayer2 = st.selectbox('Select a player: ', player_names2)
     
     '''
     first_name = st.text_input('Enter a players first name:')
