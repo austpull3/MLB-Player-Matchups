@@ -317,8 +317,9 @@ def page3():
     selectplayer2 = st.selectbox('Select a player: ', player_names2)
     
     if selectplayer2:
-        playn = playerid_lookup(selectplayer2)
-        playeri = playerid_lookup(playn)
+        play = playerid_lookup(selectplayer2)
+        pid3 = play['key_mlbam']
+        st.write(pid3)
         
     
     '''
