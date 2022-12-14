@@ -87,11 +87,12 @@ def page2():
 
             #fig3 = px.histogram(data, x ="events", color = "pitch_name")
             #st.write(fig3)
-      st.sidebar.markdown("# Welcome!⚾️")
-      st.sidebar.markdown(" ")
-      if st.sidebar.checkbox(" Select For Help ⚾️"): 
-           st.sidebar.info("Welcome to the MLB At-Bat Outcome prediction application. To explore player outcome data and display some spraycharts go to the next page. If you want to predict at-bat outcomes go to the last page.")
-           st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
+
+    st.sidebar.markdown("# Welcome!⚾️")
+    st.sidebar.markdown(" ")
+    if st.sidebar.checkbox(" Select For Help ⚾️"): 
+         st.sidebar.info("Welcome to the MLB At-Bat Outcome prediction application. To explore player outcome data and display some spraycharts go to the next page. If you want to predict at-bat outcomes go to the last page.")
+         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
 
                
 
