@@ -317,7 +317,7 @@ def page3():
     selectplayer2 = st.selectbox('Select a player: ', player_names2)
     
     if selectplayer2:
-        playn = st.selectbox("Select a player for input:", playerid_lookup(selectplayer2))
+        playn = playerid_lookup(selectplayer2)
         playeri = playerid_lookup(playn)
         st.table(playeri)
     
