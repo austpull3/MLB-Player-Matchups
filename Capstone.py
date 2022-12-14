@@ -302,24 +302,13 @@ def page3():
         #start user input
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
     
-    hitter = batting_stats('2022', qual = 400)
-    st.write(hitter)
-    st.write(hitter.shape)
+    b = batting_stats(2022, qual = 400)
     
-    player_names = hitter['Name'].drop_duplicates().tolist()
-    selectplayer = st.selectbox('Select a player: ', player_names)
+    colval = b['Name'].tolist()
+    formatted = ['{}'.format(val) for val in colval]
+    st.write(formatted)
     
-    pitcher = pitching_stats('2022')
-    st.write(pitcher)
-    st.write(pitcher.shape)
-    
-    player_names2 = pitcher['Name'].drop_duplicates().tolist()
-    selectplayer2 = st.selectbox('Select a player: ', player_names2)
-    
-    if selectplayer2:
-        play = playerid_lookup(selectplayer2)
-        pid3 = play['key_mlbam']
-        st.write(pid3)
+    batter = st.selectbox('Please select a hitter:', (formatted))
         
     
     '''
