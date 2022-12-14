@@ -151,7 +151,7 @@ def page3():
     
     names = ['Double', 'Field Error', 'Field Out', 'Hit by Pitch', 'Home Run', 'Single', 'Strikeout', 'Triple', 'Walk']
     
-        league = st.radio("Select National League or American League:", ("NL", "AL"))
+    league = st.radio("Select National League or American League:", ("NL", "AL"))
     if league == "NL":
         col4, col5, col6 = st.columns(3)
         with col4:
