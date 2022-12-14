@@ -325,6 +325,32 @@ def page3():
             st.write("Batter", mlbid)
     except IndexError as e:
         st.error("Incorrect Input. Please try another input.")
+        
+    try: 
+        first_name2 = st.text_input("Enter a pitcher's first name:")
+        first_name2 = first_name2.strip()
+        if " " in first_name2:
+            st.error("Please do not include whitespace in the input.")
+        if first_name2.isspace():
+            st.warning("Please enter a pitcher's first name.")
+        last_name2 = st.text_input('Enter a pitchers last name:')
+        last_name2 = last_name2.strip()
+        if " " in last_name2:
+            st.error("Please do not include whitespace in the input.")
+        if last_name2.isspace():
+            st.warning("Please enter a pitcher's last name.")
+
+        if first_name2 and last_name2:
+            player_info2 = playerid_lookup(last_name2, first_name2)
+            pid2 = player_info2['key_mlbam']
+            st.markdown("#### Player ID")
+            mlbid2 = pid2.iloc[0]
+            st.write(mlbid2)
+            name2 = first_name2 + " " + last_name2
+            pitcher = mlbid2
+            st.write("Pitcher", mlbid2)
+    except IndexError as e:
+        st.error("Incorrect Input. Please try another input.")
     
     #start user input
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
