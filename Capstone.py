@@ -58,6 +58,7 @@ def page2():
                     tot = data.events.value_counts()
                     st.write(tot)
                     fig2 = px.bar(data, x = 'events', y = "pitch_name", animation_frame = "game_date", animation_group = "pitch_name")
+                    fig2.update_layout(animation_options = dict(transition = dict(duration = 1000))
                     st.write(fig2)
            
        
