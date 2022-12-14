@@ -57,7 +57,7 @@ def page2():
                     st.pyplot(fig)
                     tot = data.events.value_counts()
                     st.write(tot)
-                    fig2 = px.bar(data, x = 'events', y = "pitch_type", animation_frame = "game_date", animation_group = "events")
+                    fig2 = px.bar(data, x = 'events', y = "pitch_name", animation_frame = "game_date", animation_group = "pitch_name")
                     st.write(fig2)
            
        
