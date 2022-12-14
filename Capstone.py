@@ -41,7 +41,7 @@ def main_page():
 def page2():
     st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
     
-    st.markdown("#### Enter players from the 2022 season only!')
+    st.markdown("#### Enter players from the 2022 season only!")
     
     first_name = st.text_input('Enter a players first name:')
     last_name = st.text_input('Enter a players last name:')
