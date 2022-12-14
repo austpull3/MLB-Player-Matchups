@@ -323,7 +323,7 @@ def page3():
                 mlbid = pid.iloc[0]
                 st.write(mlbid)
                 name = first_name + " " + last_name
-                global batter
+                #global batter
                 batter = mlbid
                 st.write("Batter", mlbid)
 
@@ -354,7 +354,7 @@ def page3():
                 mlbid2 = pid2.iloc[0]
                 st.write(mlbid2)
                 name2 = first_name2 + " " + last_name2
-                global pitcher
+                #global pitcher
                 pitcher = mlbid2
                 st.write("Pitcher", mlbid2)
         except IndexError as e:
