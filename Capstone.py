@@ -369,7 +369,7 @@ def page3():
         st.success(names[np.argmax(price)])
         
         def sci(num):
-        return '{:.2f}'.format(num)
+            return '{:.2f}'.format(num)
 
         predictions = np.vectorize(sci)(price)
         st.write(price)
