@@ -10,6 +10,7 @@ import plotly.graph_objects as go
 from matplotlib.figure import Figure 
 import matplotlib.pyplot as plt
 import io
+from streamlit_player import st_player
 
 
 
@@ -32,7 +33,7 @@ def main_page():
     with col3:
         st.image(image4)
         
-    <video src = "https://www.youtube.com/watch?v=clDXWm1jpfY" controls></video>
+    st_player("https://www.youtube.com/watch?v=clDXWm1jpfY")
 
     st.sidebar.markdown("# Welcome!⚾️")
     st.sidebar.markdown(" ")
