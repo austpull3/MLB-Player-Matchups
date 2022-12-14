@@ -45,6 +45,9 @@ def page2():
     st.markdown("#### Enter players from the 2022 season only!")
     
     first_name = st.text_input('Enter a players first name:')
+    first_name = first_name.strip()
+    if " " in first_name:
+        st.warning("Please do not include whitespace in the input.")
     last_name = st.text_input('Enter a players last name:')
 
     if first_name and last_name:
