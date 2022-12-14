@@ -63,6 +63,7 @@ def page2():
                             frame = dict(duration = 1000),
                             transition = dict(duration = 500)
                         )
+                    )
                     st.plotly_chart(fig2)
                     #st.write(fig2)
            
