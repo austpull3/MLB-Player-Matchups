@@ -315,7 +315,7 @@ def page3():
     last = st.text_input("Enter the player's last name")
 
     # Look up player information using the playerid_lookup function
-    player_info4 = playerid_lookup(first, last)
+    player_info4 = playerid_lookup(last, first)
 
     # If the entered player name matches a player in the player_info DataFrame,
     # assign the text input variable to the player's key_mlbam ID
