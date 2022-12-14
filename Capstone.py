@@ -49,6 +49,9 @@ def page2():
     if " " in first_name:
         st.warning("Please do not include whitespace in the input.")
     last_name = st.text_input('Enter a players last name:')
+    last_name = last_name.strip()
+    if " " in last_name:
+        st.warning("Please do not include whitespace in the input.")
 
     if first_name and last_name:
             player_info = playerid_lookup(last_name, first_name)
