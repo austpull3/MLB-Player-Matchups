@@ -308,6 +308,12 @@ def page3():
     player_names = hitter['Name'].drop_duplicates().tolist()
     selectplayer = st.selectbox('Select a player: ', player_names)
     
+    pitcher = pitching_stats('2022', qual = 400)
+    st.write(pitcher)
+    st.write(hitter.shape)
+    
+    #player_names = hitter['Name'].drop_duplicates().tolist()
+    #selectplayer = st.selectbox('Select a player: ', player_names)
     
     '''
     first_name = st.text_input('Enter a players first name:')
