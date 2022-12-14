@@ -47,8 +47,9 @@ def page2():
     if first_name and last_name:
             player_info = playerid_lookup(last_name, first_name)
             pid = player_info['key_mlbam']
-            st.write(pid)
-            st.write(pid.iloc[0])
+            st.markdown("#### Player ID")
+            mlbid = pid.iloc[0])
+            st.write(mlbid)
             name = first_name + " " + last_name
             #plot = st.text_input("Enter player's key_mlbam:")
             stadium = st.text_input("Enter MLB team for stadium.")                               
