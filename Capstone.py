@@ -55,6 +55,7 @@ def page2():
             st.error("Please do not include whitespace in the input.")
         if last_name.isspace():
             st.warning("Please enter a player's last name.")
+    
     except IndexError as e:
         st.error("Incorrect Input. Please try entering the player's name again or try another player.")
 
