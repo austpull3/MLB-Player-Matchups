@@ -73,11 +73,9 @@ def page2():
                 
             if " " in stadium:
                 st.error("Please do not include whitespace in the input.")
-                field = batting_stats(2022)
-                fieldnames = field.columns
-                fndf = pd.DataFrame(fieldnames)
-                st.dataframe(fndf.head())
-                #st.write(fieldnames)
+                fields = ['angels', 'astros', 'athletics', 'blue_jays', 'braves', 'brewers', 'cardinals', 'cubs', 'diamondbacks', 'dodgers', 'generic', 'giants', 'indians', 'mariners', 'marlins', 'mets', 'nationals', 'orioles', 'padres', 'phillies', 'pirates', 'rangers', 'rays', 'red_sox', 'reds', 'rockies', 'royals', 'tigers', 'twins', 'white_sox', 'yankees']
+                fieldnames = pd.DataFrame(fields, columns = ['Fields'])
+                st.dataframe(fieldnames)
             if stadium:
                 data = statcast_batter('2022-04-07', '2022-10-02', mlbid)
                 s = spraychart(data, stadium, title = name)
