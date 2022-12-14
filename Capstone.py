@@ -308,6 +308,7 @@ def page3():
     formatted = ['{}'.format(val) for val in colval]
     st.write(formatted)
     
+    st.write(len(formatted))
     batter = st.selectbox('Please select a hitter:', (formatted))
         
     
