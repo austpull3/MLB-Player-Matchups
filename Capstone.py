@@ -331,6 +331,7 @@ def page3():
             st.error("Incorrect Input. Please try another input.")
         return batter
     st.write(get_batter())
+    batter = get_batter()
     
     def get_pitcher():
         try: 
