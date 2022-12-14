@@ -60,7 +60,7 @@ def page2():
                                
                     fig4 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
                     tickvals = [i for i in range(0, len(data), 7)]
-                    ticktext = [df.loc[i, "game_date"].strftime("%Y-%m-%d") for i in tickvals]
+                    ticktext = [data.loc[i, "game_date"].strftime("%Y-%m-%d") for i in tickvals]
 
                     # update the layout object
                     fig4.update_layout(
