@@ -108,7 +108,7 @@ def page2():
          st.sidebar.info("1. Enter a hitter's first name and last name who played in the 2022 season. ")
          st.sidebar.info("2. Look to the acceptable field entries and select one to input in the stadium input box. ")
          st.sidebar.info("3. View player spray chart at the selected MLB Stadium and the frequency of each outcome. ")
-         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
+         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to make predictions.")
 
                
 
