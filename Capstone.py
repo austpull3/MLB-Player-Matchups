@@ -39,33 +39,31 @@ def main_page():
     import io
     
 def page2():
-    st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
+    st.title("Explore MLB Data and visualize spraycharts from your favorite players ⚾️") 
     
     first_name = st.text_input('Enter a players first name:')
     last_name = st.text_input('Enter a players last name:')
 
     if first_name and last_name:
             player_info = playerid_lookup(last_name, first_name)
-            st.write(player_info['key_mlbam'])
-          
+            pid = player_info['key_mlbam'])
             name = first_name + " " + last_name
-            plot = st.text_input("Enter player's key_mlbam:")
+            #plot = st.text_input("Enter player's key_mlbam:")
             stadium = st.text_input("Enter MLB team for stadium.")                               
-            if plot:
-                data = statcast_batter('2022-04-07', '2022-10-02', plot)
-                if stadium:
-                    s = spraychart(data, stadium, title = name)
-                    fig = s.figure
-                    # Display the spraychart
-                    st.pyplot(fig)
-                    tot = data.events.value_counts()
-                    st.write(tot)
+            if stadium:
+                data = statcast_batter('2022-04-07', '2022-10-02', pid)
+                s = spraychart(data, stadium, title = name)
+                fig = s.figure
+                # Display the spraychart
+                st.pyplot(fig)
+                tot = data.events.value_counts()
+                st.write(tot)
                                
-                    fig2 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
-                    st.write(fig2)
+                fig2 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
+                st.write(fig2)
                     
-                    fig3 = px.histogram(data, x ="events", color = "pitch_name")
-                    st.write(fig3)
+                fig3 = px.histogram(data, x ="events", color = "pitch_name")
+                st.write(fig3)
            
        
 def page3():
