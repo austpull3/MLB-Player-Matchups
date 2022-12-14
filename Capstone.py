@@ -5,7 +5,7 @@ from pybaseball import statcast_batter, spraychart
 from pybaseball import statcast
 
 def main_page():    
-    st.title("Welcome to the MLB At-Bat Prediction")
+    st.title("Welcome to the MLB At-Bat Predictor")
     from PIL import Image 
     image1 = Image.open('Images/mlb.png')
     st.image(image1, caption = "https://en.wikipedia.org/wiki/Major_League_Baseball_logo")
