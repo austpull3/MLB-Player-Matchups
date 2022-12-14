@@ -303,10 +303,26 @@ def page3():
     
     #start user input
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
-
+    '''
     batter = st.selectbox('Select Batter:', ['Bryce Harper'])
     if  batter == 'Bryce Harper':
         batter = 547180
+    '''
+    batterf = st.text_input("Enter a hitter's first name: ")
+    batterf = batterf.strip()
+    
+    batterl = st.text_input("Enter a hitter's last name: ")
+    batterl = batterl.strip()
+    
+    if batterf and batterl:
+        player_info2 = playerid_lookup(batterf, batterl)
+        pid2 = playerinfo2['key_mlbam']
+        mlbid2 = pid2.iloc[0]
+        st.write(mlbid2)
+        batter = batterf + " " + batterl
+        data2 = statcast_batter('2022-04-07', '2022-10-02', mlbid2)
+        batter = data2
+        st.write(batter)
 
     pitcher = st.selectbox('Select Pitcher:', ['Kyle Wright'])
     if  pitcher == 'Kyle Wright':
