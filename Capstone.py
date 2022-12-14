@@ -73,7 +73,7 @@ def page2():
                 
             if " " in stadium:
                 st.error("Please do not include whitespace in the input.")
-                field = batting_stats('2022-04-07', '2022-10-02', mlbid)
+                field = batting_stats(2022, mlbid)
                 fieldnames = field.columns
                 st.write(fieldnames)
             if stadium:
