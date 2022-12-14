@@ -72,6 +72,9 @@ def page2():
                 
             if " " in stadium:
                 st.error("Please do not include whitespace in the input.")
+                field = statcast_batter('2022-04-07', '2022-10-02', mlbid)
+                fieldnames = field.columns
+                st.write(fieldnames)
             if stadium:
                 data = statcast_batter('2022-04-07', '2022-10-02', mlbid)
                 s = spraychart(data, stadium, title = name)
