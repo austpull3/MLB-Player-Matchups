@@ -55,9 +55,6 @@ def page2():
             st.error("Please do not include whitespace in the input.")
         if last_name.isspace():
             st.warning("Please enter a player's last name.")
-    
-    except IndexError as e:
-        st.error("Incorrect Input. Please try entering the player's name again or try another player.")
 
         if first_name and last_name:
             player_info = playerid_lookup(last_name, first_name)
@@ -92,10 +89,10 @@ def page2():
 
                 #fig3 = px.histogram(data, x ="events", color = "pitch_name")
                 #st.write(fig3)
-    '''            
+                
     except IndexError as e:
         st.error("Incorrect Input. Please try another input.")
-        '''
+        
 
     st.sidebar.markdown("# Welcome!⚾️")
     st.sidebar.markdown(" ")
