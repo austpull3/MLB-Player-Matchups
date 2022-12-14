@@ -4,10 +4,6 @@ from pybaseball import playerid_lookup
 from pybaseball import statcast_batter, spraychart
 from pybaseball import statcast
 
-
-
-st.title("Predict MLB At-Bat Outcomes ⚾️") 
-
 def main_page():    
     from PIL import Image 
     image1 = Image.open('Images/mlb.png')
@@ -41,25 +37,7 @@ def main_page():
     import io
     
 def page2():
-    '''
-    import base64
-    def add_bg_from_local(image_file):
-        with open(image_file, "rb") as image_file:
-            encoded_string = base64.b64encode(image_file.read())
-            st.markdown(
-            f"""
-            <style>
-            .stApp {{
-                background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
-                background-size: cover
-            }}
-            </style>
-            """,
-            unsafe_allow_html=True
-            )
-    add_bg_from_local('Images/blue.webp')
-    '''
-    
+    st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
     league = st.radio("Select National League or American League:", ("NL", "AL"))
     if league == "NL":
         col4, col5, col6 = st.columns(3)
@@ -207,6 +185,7 @@ def page2():
 
 
 def page3():
+    st.title("Predict MLB At-Bat Outcomes ⚾️") 
     #Import necessary libraries
     from tensorflow import keras
     import matplotlib.pylab as plt
