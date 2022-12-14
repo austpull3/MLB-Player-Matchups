@@ -311,9 +311,17 @@ def page3():
     st.write(len(formatted))
     batter = st.selectbox('Please select a hitter:', (formatted))
     
-    pp = playerid_lookup(formatted)
-    st.write(pp)
-        
+    first = st.text_input("Enter the player's first name")
+    last = st.text_input("Enter the player's last name")
+
+    # Look up player information using the playerid_lookup function
+    player_info4 = playerid_lookup(first_name, last_name)
+
+    # If the entered player name matches a player in the player_info DataFrame,
+    # assign the text input variable to the player's key_mlbam ID
+    if (first in player_info4["name_first"].tolist()) and (last in player_info4["name_last"].tolist()):
+        player_id4 = player_info4.loc[(player_info4["name_first"] == first) & (player_info4["name_last"] == last), "key_mlbam"].iloc[0]
+
     
     '''
     first_name = st.text_input('Enter a players first name:')
