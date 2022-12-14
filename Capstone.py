@@ -406,7 +406,7 @@ def page3():
 page_names_to_funcs = {
     "Welcome Page": main_page,
     "Data Exploration and Visualization": page2,
-    "MLB At-Bat Predictor": page3
+    "MLB At-Bat Predictor": page3 
     }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
