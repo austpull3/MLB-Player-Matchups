@@ -339,7 +339,7 @@ def page3():
                 fig = s.figure
                 # Display the spraychart
                 st.pyplot(fig)
-      except IndexError as e:
+    except IndexError as e:
         st.error("Incorrect Input. Please try another input.")
     
     #start user input
