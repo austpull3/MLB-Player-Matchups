@@ -316,10 +316,10 @@ def page3():
     player_names2 = pitcher['Name'].drop_duplicates().tolist()
     selectplayer2 = st.selectbox('Select a player: ', player_names2)
     
-    
-    playn = st.selectbox("Select a player for input:", playerid_lookup(selectplayer2))
-    playeri = playerid_lookup(playn)
-    st.table(playeri)
+    if selectplayer2:
+        playn = st.selectbox("Select a player for input:", playerid_lookup(selectplayer2))
+        playeri = playerid_lookup(playn)
+        st.table(playeri)
     
     '''
     first_name = st.text_input('Enter a players first name:')
