@@ -310,6 +310,9 @@ def page3():
     
     st.write(len(formatted))
     batter = st.selectbox('Please select a hitter:', (formatted))
+    
+    pp = playerid_lookup(formatted)
+    st.write(pp)
         
     
     '''
