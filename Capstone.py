@@ -200,13 +200,22 @@ def page3():
     names = ['Double', 'Field Error', 'Field Out', 'Hit by Pitch', 'Home Run', 'Single', 'Strikeout', 'Triple', 'Walk']
     
     
-    hitter = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Teoscar Hernandez: TOR (RF/R)'])
-    if hitter == "Bo Bichette":
+    hitter = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Anthony Santander: BAL (RF/S)', 'Randy Arozarena: TB (LF/R)', 'Xander Bogaerts: BOS (SS/R)', 'Aaron Judge: NYY (CF/R)', 'Andres Gimenez: CLE (2B/L)'])
+    if hitter == "Bo Bichette: TOR (SS/R)":
         hitter = 666182
-    elif hitter == "Vladimir Guerrero Jr.":
+    elif hitter == "Vladimir Guerrero Jr.: TOR (1B/R)":
         hitter = 665489
-    else:
-        hitter = 606192
+    elif hitter == 'Anthony Santander: BAL (RF/S)':
+        hitter = 623993
+    elif hitter == 'Randy Arozarena: TB (LF/R)':
+        hitter = 668227
+    elif hitter == 'Xander Bogaerts: BOS (SS/R)':
+        hitter = 593428
+    elif hitter == 'Aaron Judge: NYY (CF/R)':
+        hitter = 592450
+    elif hitter == 'Andres Gimenez: CLE (2B/L)':
+        hitter = 665926
+  
     pitcherdiv = st.radio("Select pitcher from the AL or NL.", ('AL', 'NL'))
     if pitcherdiv == 'AL':
         pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)'])
