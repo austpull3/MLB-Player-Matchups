@@ -415,6 +415,15 @@ def page3():
     inputs = pd.DataFrame([[release_speed, batter, pitcher, zone, balls, strikes, on_3b, on_2b, on_1b, outs_when_up, inning, inning_topbot, launch_speed, launch_angle, effective_speed, release_spin_rate, game_pk, pitch_name, bat_score, fld_score, win_exp, run_exp, hm1, speed]], columns = ['release_speed', 'batter', 'pitcher', 'zone', 'balls', 'strikes', 'on_3b', 'on_2b', 'on_1b', 'outs_when_up', 'inning', 'inning_topbot', 'launch_speed', 'launch_angle', 'effective_speed', 'release_spin_rate', 'game_pk', 'pitch_name', 'bat_score', 'fld_score',' win_exp', 'run_exp', 'hm1', 'speed'])
     prediction1 = predict(inputs)
     st.write(names[np.argmax(prediction1)])
+    
+    for prediction in prediction1:
+    st.write("Here are the predictions: ", prediction)
+
+    def sci(num):
+        return '{:.2f}'.format(num)
+
+    predictions = np.vectorize(sci)(prediction)
+    st.write(predictions)
 
     '''
     if st.button('Predict At-Bat'):
