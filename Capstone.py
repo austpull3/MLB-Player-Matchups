@@ -308,9 +308,9 @@ def page3():
     player_names = hitter['Name'].drop_duplicates().tolist()
     selectplayer = st.selectbox('Select a player: ', player_names)
     
-    pitcher = pitching_stats('2022', qual = 400)
+    pitcher = pitching_stats('2022')
     st.write(pitcher)
-    st.write(hitter.shape)
+    st.write(pitcher.shape)
     
     #player_names = hitter['Name'].drop_duplicates().tolist()
     #selectplayer = st.selectbox('Select a player: ', player_names)
