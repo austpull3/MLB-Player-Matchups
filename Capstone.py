@@ -38,7 +38,7 @@ def main_page():
     from matplotlib.figure import Figure
     import matplotlib.pyplot as plt
     import io
-    
+@st.ignore_index_errors
 def page2():
     
     st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
