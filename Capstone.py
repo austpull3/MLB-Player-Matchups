@@ -28,9 +28,9 @@ def main_page():
 
     st.sidebar.markdown("# Welcome!⚾️")
     st.sidebar.markdown(" ")
-    if st.sidebar.checkbox(" Select For Help 🔍"):
-        st.sidebar.info("This is the welcome page which describes how to interact with the different pages and the purpose of the Streamlit app.")
-        st.sidebar.markdown("### Above ⬆ is a drop down of different pages to navigate through. Select the page you are interested in exploring.")
+    if st.sidebar.checkbox(" Select For Help ⚾️"):
+        st.sidebar.info("Welcome to the MLB At-Bat Outcome prediction application. To explore player outcome data and display some spraycharts go to the next page. If you want to predict at-bat outcomes go to the last page.")
+        st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
         
     
     #Import necessary libraries
