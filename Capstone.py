@@ -35,7 +35,7 @@ def main_page():
     #Import necessary libraries
     import pandas as pd
     import plotly.graph_objects as go
-    from matplotlib.figure import Figure
+    from matplotlib.figure import Figure 
     import matplotlib.pyplot as plt
     import io
 @ st.cache(suppress_st_warning = True)
