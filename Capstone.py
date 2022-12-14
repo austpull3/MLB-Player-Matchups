@@ -42,53 +42,55 @@ def main_page():
 def page2():
     st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
     st.markdown("#### Enter players from the 2022 season only!")
-
-    first_name = st.text_input('Enter a players first name:')
-    first_name = first_name.strip()
-    if " " in first_name:
-        st.error("Please do not include whitespace in the input.")
-    if first_name.isspace():
-        st.warning("Please enter a player's first name.")
-    last_name = st.text_input('Enter a players last name:')
-    last_name = last_name.strip()
-    if " " in last_name:
-        st.error("Please do not include whitespace in the input.")
-    if last_name.isspace():
-        st.warning("Please enter a player's last name.")
-        
-    if first_name and last_name:
-        player_info = playerid_lookup(last_name, first_name)
-        pid = player_info['key_mlbam']
-        st.markdown("#### Player ID")
-        mlbid = pid.iloc[0]
-        st.write(mlbid)
-        name = first_name + " " + last_name
-        #plot = st.text_input("Enter player's key_mlbam:")
-        st.markdown("#### Here is all the acceptable field entries:")
-        fields = ['angels', 'astros', 'athletics', 'blue_jays', 'braves', 'brewers', 'cardinals', 'cubs', 'diamondbacks', 'dodgers', 'generic', 'giants', 'indians', 'mariners', 'marlins', 'mets', 'nationals', 'orioles', 'padres', 'phillies', 'pirates', 'rangers', 'rays', 'red_sox', 'reds', 'rockies', 'royals', 'tigers', 'twins', 'white_sox', 'yankees']
-        fieldnames = pd.DataFrame(fields, columns = ['Fields'])
-        st.dataframe(fieldnames)
-        stadium = st.text_input("Enter MLB team for stadium.")
-        
-        stadium = stadium.strip()
-        if stadium.isspace():
-            st.warning("Please enter a stadium.")
-        if " " in stadium:
+    try: 
+        first_name = st.text_input('Enter a players first name:')
+        first_name = first_name.strip()
+        if " " in first_name:
             st.error("Please do not include whitespace in the input.")
-        if stadium:
-            data = statcast_batter('2022-04-07', '2022-10-02', mlbid)
-            s = spraychart(data, stadium, title = name)
-            fig = s.figure
-            # Display the spraychart
-            st.pyplot(fig)
-            tot = data.events.value_counts()
-            st.dataframe(tot)
+        if first_name.isspace():
+            st.warning("Please enter a player's first name.")
+        last_name = st.text_input('Enter a players last name:')
+        last_name = last_name.strip()
+        if " " in last_name:
+            st.error("Please do not include whitespace in the input.")
+        if last_name.isspace():
+            st.warning("Please enter a player's last name.")
 
-            #fig2 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
-            #st.write(fig2)
+        if first_name and last_name:
+            player_info = playerid_lookup(last_name, first_name)
+            pid = player_info['key_mlbam']
+            st.markdown("#### Player ID")
+            mlbid = pid.iloc[0]
+            st.write(mlbid)
+            name = first_name + " " + last_name
+            #plot = st.text_input("Enter player's key_mlbam:")
+            st.markdown("#### Here is all the acceptable field entries:")
+            fields = ['angels', 'astros', 'athletics', 'blue_jays', 'braves', 'brewers', 'cardinals', 'cubs', 'diamondbacks', 'dodgers', 'generic', 'giants', 'indians', 'mariners', 'marlins', 'mets', 'nationals', 'orioles', 'padres', 'phillies', 'pirates', 'rangers', 'rays', 'red_sox', 'reds', 'rockies', 'royals', 'tigers', 'twins', 'white_sox', 'yankees']
+            fieldnames = pd.DataFrame(fields, columns = ['Fields'])
+            st.dataframe(fieldnames)
+            stadium = st.text_input("Enter MLB team for stadium.")
 
-            #fig3 = px.histogram(data, x ="events", color = "pitch_name")
-            #st.write(fig3)
+            stadium = stadium.strip()
+            if stadium.isspace():
+                st.warning("Please enter a stadium.")
+            if " " in stadium:
+                st.error("Please do not include whitespace in the input.")
+            if stadium:
+                data = statcast_batter('2022-04-07', '2022-10-02', mlbid)
+                s = spraychart(data, stadium, title = name)
+                fig = s.figure
+                # Display the spraychart
+                st.pyplot(fig)
+                tot = data.events.value_counts()
+                st.dataframe(tot)
+
+                #fig2 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
+                #st.write(fig2)
+
+                #fig3 = px.histogram(data, x ="events", color = "pitch_name")
+                #st.write(fig3)
+        except IndexError as e:
+            st.exception("An error occured while running: %s % e)
 
     st.sidebar.markdown("# Welcome!⚾️")
     st.sidebar.markdown(" ")
