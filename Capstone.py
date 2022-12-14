@@ -301,6 +301,13 @@ def page3():
         #start user input
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
     
+    hitter = statcast(start_dt = '2022-04-07', end_dt = '2022-10-02')
+    
+    player_names = hitter['player_name'].drop_duplicates().tolist()
+    selectplayer = st.selectbox('Select a player: ', player_names)
+    
+    
+    '''
     first_name = st.text_input('Enter a players first name:')
     first_name = first_name.strip()
     if " " in first_name:
@@ -348,7 +355,7 @@ def page3():
         st.write("Pitcher", mlbid2)
             
     
-    '''
+    
     def get_batter():
         try: 
             first_name = st.text_input('Enter a players first name:')
@@ -409,7 +416,7 @@ def page3():
         except IndexError as e:
             st.error("Incorrect Input. Please try another input.")
         return pitcher
-    '''
+    
     
     showzone = st.checkbox('Display Strike Zone')
     if showzone:
@@ -507,7 +514,7 @@ def page3():
             return '{:.2f}'.format(num)
         predictions = np.vectorize(sci)(price)
         st.write(predictions)
-
+'''
     
 
 page_names_to_funcs = {
