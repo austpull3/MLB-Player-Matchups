@@ -64,15 +64,17 @@ def page2():
         st.write(mlbid)
         name = first_name + " " + last_name
         #plot = st.text_input("Enter player's key_mlbam:")
-        stadium = st.text_input("Enter MLB team for stadium.") 
+        st.markdown("#### Here is all the acceptable field entries:")
+        fields = ['angels', 'astros', 'athletics', 'blue_jays', 'braves', 'brewers', 'cardinals', 'cubs', 'diamondbacks', 'dodgers', 'generic', 'giants', 'indians', 'mariners', 'marlins', 'mets', 'nationals', 'orioles', 'padres', 'phillies', 'pirates', 'rangers', 'rays', 'red_sox', 'reds', 'rockies', 'royals', 'tigers', 'twins', 'white_sox', 'yankees']
+        fieldnames = pd.DataFrame(fields, columns = ['Fields'])
+        st.dataframe(fieldnames)
+        stadium = st.text_input("Enter MLB team for stadium.")
+        
         stadium = stadium.strip()
         if stadium.isspace():
             st.warning("Please enter a stadium.")
         if " " in stadium:
             st.error("Please do not include whitespace in the input.")
-            fields = ['angels', 'astros', 'athletics', 'blue_jays', 'braves', 'brewers', 'cardinals', 'cubs', 'diamondbacks', 'dodgers', 'generic', 'giants', 'indians', 'mariners', 'marlins', 'mets', 'nationals', 'orioles', 'padres', 'phillies', 'pirates', 'rangers', 'rays', 'red_sox', 'reds', 'rockies', 'royals', 'tigers', 'twins', 'white_sox', 'yankees']
-            fieldnames = pd.DataFrame(fields, columns = ['Fields'])
-            st.dataframe(fieldnames)
         if stadium:
             data = statcast_batter('2022-04-07', '2022-10-02', mlbid)
             s = spraychart(data, stadium, title = name)
