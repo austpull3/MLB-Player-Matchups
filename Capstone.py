@@ -319,7 +319,7 @@ def page3():
     if selectplayer2:
         playn = playerid_lookup(selectplayer2)
         playeri = playerid_lookup(playn)
-        st.table(playeri)
+        
     
     '''
     first_name = st.text_input('Enter a players first name:')
