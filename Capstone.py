@@ -62,7 +62,7 @@ def page2():
                 # Display the spraychart
                 st.pyplot(fig)
                 tot = [[data.events.value_counts(), data.pitch_name.value_counts()]]
-                st.write(tot)
+                st.dataframe(tot)
                                
                 #fig2 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
                 #st.write(fig2)
