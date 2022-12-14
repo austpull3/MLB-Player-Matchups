@@ -59,7 +59,7 @@ def page2():
                     st.write(tot)
                                
                     fig4 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
-                    st.plotly_chart(fig4, use_container_width = True, frame_duration = 10000)
+                    st.plotly_chart(fig4, use_container_width = True, frame_duration = 3000000)
                     st.write(fig4)
            
        
