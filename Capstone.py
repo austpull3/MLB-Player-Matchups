@@ -91,7 +91,7 @@ def page2():
                 #st.write(fig3)
                 
     except IndexError as e:
-        st.exception("An error occured while running: %s % e)
+        st.exception("An error occured while running: %s" % e)
 
     st.sidebar.markdown("# Welcome!⚾️")
     st.sidebar.markdown(" ")
