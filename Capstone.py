@@ -318,6 +318,8 @@ def page3():
     
     
     playn = st.selectbox("Select a player for input:", playerid_lookup(selectplayer2))
+    playeri = playerid_lookup(playn)
+    st.table(playeri)
     
     '''
     first_name = st.text_input('Enter a players first name:')
