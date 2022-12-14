@@ -310,10 +310,6 @@ def page3():
     
     def predict(inputs):
         inputs = s.transform(inputs)
-        st.write(inputs)
-        print(inputs)
-        un = s.inverse_transform(inputs)
-        st.write(un)
         prediction = model.predict(inputs)
         return prediction
     
