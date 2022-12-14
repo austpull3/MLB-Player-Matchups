@@ -301,7 +301,7 @@ def page3():
         #start user input
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
     
-    def get_batter():
+    def get_batter(batter):
         try: 
             first_name = st.text_input('Enter a players first name:')
             first_name = first_name.strip()
@@ -332,7 +332,7 @@ def page3():
         return batter
     st.write(get_batter())
     
-    def get_pitcher():
+    def get_pitcher(pitcher):
         try: 
             first_name2 = st.text_input("Enter a pitcher's first name:")
             first_name2 = first_name2.strip()
