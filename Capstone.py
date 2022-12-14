@@ -62,6 +62,9 @@ def page2():
            
                     fig3 = px.bar(data, x = 'events', y = 'game_date', color = "pitch_name", animation_frame = "game_date", animation_group = "events", range_y = [0, 400000000])
                     st.write(fig3) 
+                    
+                    fig4 = px.histogram(data, x ="events", color = "pitch_name")
+                    st.write(fig4)
            
        
 def page3():
