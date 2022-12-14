@@ -370,7 +370,6 @@ def page3():
         
         def sci(num):
             return '{:.2f}'.format(num)
-        st.write(inputs.columns)
         predictions = np.vectorize(sci)(price)
         st.write(predictions)
 
