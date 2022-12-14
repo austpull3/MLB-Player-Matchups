@@ -9,3 +9,4 @@ fpdf==1.7.2
 pybaseball==2.2.4
 tensorflow
 keras
+streamlit-player==0.1.5
