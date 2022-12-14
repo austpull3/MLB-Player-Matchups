@@ -89,8 +89,9 @@ def page2():
 
                 #fig3 = px.histogram(data, x ="events", color = "pitch_name")
                 #st.write(fig3)
-        except IndexError as e:
-            st.exception("An error occured while running: %s % e)
+                
+    except IndexError as e:
+        st.exception("An error occured while running: %s % e)
 
     st.sidebar.markdown("# Welcome!⚾️")
     st.sidebar.markdown(" ")
