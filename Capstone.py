@@ -6,7 +6,7 @@ from pybaseball import batting_stats
 from pybaseball import statcast
 import pandas as pd
 
-@st.cache(timeout=30)
+@st.cache()
 def main_page():    
     st.title("Welcome to the MLB At-Bat Predictor")
     from PIL import Image 
