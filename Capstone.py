@@ -58,7 +58,7 @@ def page2():
                     tot = data.events.value_counts()
                     st.write(tot)
                                
-                    fig4 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_year', animation_group = 'events')
+                    fig4 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
                     st.write(fig4)
            
        
