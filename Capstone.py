@@ -61,7 +61,10 @@ def page2():
             st.write(mlbid)
             name = first_name + " " + last_name
             #plot = st.text_input("Enter player's key_mlbam:")
-            stadium = st.text_input("Enter MLB team for stadium.")                               
+            stadium = st.text_input("Enter MLB team for stadium.") 
+            stadium = stadium.strip()
+            if " " in stadium:
+                st.error("Please do not include whitespace in the input.")
             if stadium:
                 data = statcast_batter('2022-04-07', '2022-10-02', mlbid)
                 s = spraychart(data, stadium, title = name)
