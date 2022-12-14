@@ -62,7 +62,7 @@ def page2():
                         animation_options = dict(
                             transition = dict(duration = 1000)
                         )
-                    fig2.show()
+                    
                     st.write(fig2)
            
        
