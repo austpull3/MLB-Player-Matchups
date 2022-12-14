@@ -48,10 +48,14 @@ def page2():
     first_name = first_name.strip()
     if " " in first_name:
         st.error("Please do not include whitespace in the input.")
+    if first_name.isspace():
+        st.warning("Please enter a player's first name.")
     last_name = st.text_input('Enter a players last name:')
     last_name = last_name.strip()
     if " " in last_name:
         st.error("Please do not include whitespace in the input.")
+    if last_name.isspace():
+        st.warning("Please enter a player's last name.")
 
     if first_name and last_name:
             player_info = playerid_lookup(last_name, first_name)
@@ -63,6 +67,9 @@ def page2():
             #plot = st.text_input("Enter player's key_mlbam:")
             stadium = st.text_input("Enter MLB team for stadium.") 
             stadium = stadium.strip()
+            if stadium.isspace():
+                st.warning("Please enter a stadium.")
+                
             if " " in stadium:
                 st.error("Please do not include whitespace in the input.")
             if stadium:
