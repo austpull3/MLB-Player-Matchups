@@ -207,7 +207,7 @@ def page2():
 
 
 def page3():
-    model = keras.models.load_model('model.h5')
+    model = keras.models.load_model('code.py/model.h5')
     
     names = ['Double', 'Field Error', 'Field Out', 'Hit by Pitch', 'Home Run', 'Single', 'Strikeout', 'Triple', 'Walk']
     
