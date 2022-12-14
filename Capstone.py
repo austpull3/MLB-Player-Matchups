@@ -3,6 +3,7 @@ import plotly.express as px
 from pybaseball import playerid_lookup
 from pybaseball import statcast_batter, spraychart
 from pybaseball import statcast
+import pandas as pd
 
 def main_page():    
     st.title("Welcome to the MLB At-Bat Predictor")
