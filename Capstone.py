@@ -39,6 +39,7 @@ def main_page():
     import io
     
 def page2():
+    
     st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
     
     st.markdown("#### Enter players from the 2022 season only!")
@@ -69,6 +70,7 @@ def page2():
                     
                 #fig3 = px.histogram(data, x ="events", color = "pitch_name")
                 #st.write(fig3)
+               
            
        
 def page3():
