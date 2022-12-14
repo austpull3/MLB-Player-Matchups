@@ -38,7 +38,7 @@ def main_page():
     from matplotlib.figure import Figure
     import matplotlib.pyplot as plt
     import io
-@st.cache(supress_st_warning = True)
+@ st.cache(supress_st_warning = True)
 def page2():
     st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
     st.markdown("#### Enter players from the 2022 season only!")
