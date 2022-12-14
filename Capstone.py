@@ -327,7 +327,10 @@ def page3():
     pitcher = st.selectbox('Select Pitcher:', ['Kyle Wright'])
     if  pitcher == 'Kyle Wright':
         pitcher = 657140
-        
+    
+    from PIL import Image 
+    zonepng = Image.open('Images/zone.png')
+    st.image(zonepng)
     #st.markdown("### Zone 5 is the middle of the strike zone. 1, 3, 7, and 9 are the corners. ")
     zone = st.number_input('Stike Zone Location: ', min_value=1, max_value=14, help = "Select a strike zone location - location of the ball when it crosses the plate from the catcher's perspective.")
 
