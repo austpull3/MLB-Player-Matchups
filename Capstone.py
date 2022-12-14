@@ -46,7 +46,7 @@ def page2():
     first_name = st.text_input('Enter a players first name:')
     first_name = first_name.strip()
     if " " in first_name:
-    st.error("Please do not include whitespace in the input.")
+        st.error("Please do not include whitespace in the input.")
     if first_name.isspace():
         st.warning("Please enter a player's first name.")
     last_name = st.text_input('Enter a players last name:')
