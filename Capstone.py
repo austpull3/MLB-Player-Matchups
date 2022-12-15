@@ -51,7 +51,7 @@ def main_page():
         
 #define page 2 for visualizing player spraycharts    
 def page2():
-    st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
+    st.title("Explore MLB Data and Visualize Spraycharts of your Favorite Players ⚾️") 
     st.markdown("#### Enter players from the 2022 season only!") #only 2022 players should be entered
     #try code for entering player names and displaying a spray chart plot
     try: 
@@ -77,7 +77,7 @@ def page2():
             name = first_name + " " + last_name #combine name for plot
            
             #provide acceptable entries for fields
-            st.markdown("#### Here is all the acceptable field entries:")
+            st.markdown("#### Here are the acceptable field entries:")
             fields = ['angels', 'astros', 'athletics', 'blue_jays', 'braves', 'brewers', 'cardinals', 'cubs', 'diamondbacks', 'dodgers', 'generic', 'giants', 'indians', 'mariners', 'marlins', 'mets', 'nationals', 'orioles', 'padres', 'phillies', 'pirates', 'rangers', 'rays', 'red_sox', 'reds', 'rockies', 'royals', 'tigers', 'twins', 'white_sox', 'yankees']
             fieldnames = pd.DataFrame(fields, columns = ['Fields']) 
             st.dataframe(fieldnames) #display fields
