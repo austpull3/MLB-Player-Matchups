@@ -250,38 +250,37 @@ def page3():
         hitter = 663993
     elif hitter == 'Sean Murphy: OAK (C/R)':
         hitter = 669221
-  
-    pitcherdiv = st.radio("Select pitcher from the AL:", ('AL', 'NL'))
-    if pitcherdiv == 'AL':
-        pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)'])
-        if pitcheral == 'Tyler Wells: BAL (R)':
-            pitcheral = 669330
-        elif pitcheral == 'Drew Rasmussen: TB (R)':
-            pitcheral = 656876
-        elif pitcheral == 'Nick Pivetta: BOS (R)':
-            pitcheral = 601713
-        elif pitcheral == 'Nestor Cortes: NYY (L)':
-            pitcheral = 6641482
-        elif pitcheral == 'Triston McKenzie: CLE (R)':
-            pitcheral = 663474
-        elif pitcheral == 'Brady Singer: KC (R)':
-            pitcheral = 6641482
-        elif pitcheral == 'Tarik Skubal: DET (L)':
-            pitcheral = 669373
-        elif pitcheral ==  'Sonny Gray: MIN (R)':
-            pitcheral = 543243
-        elif pitcheral ==  'Dylan Cease: CWS (R)':
-            pitcheral = 656302
-        elif pitcheral ==  'Shohei Ohtani: LAA (R)':
-            pitcheral = 660271
-        elif pitcheral ==  'Justin Verlander: HOU (R)':
-            pitcheral = 434378
-        elif pitcheral ==  'James Kaprielian: OAK (R)':
-            pitcheral = 621076
-        elif pitcheral ==  'Chris Flexen: SEA (R)':
-            pitcheral = 623167
-        elif pitcheral ==  'Martin Perez: TEX (L)':
-            pitcheral = 527048
+    pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)'])
+    if pitcheral == 'Tyler Wells: BAL (R)':
+        pitcheral = 669330
+    elif pitcheral == 'Drew Rasmussen: TB (R)':
+        pitcheral = 656876
+    elif pitcheral == 'Nick Pivetta: BOS (R)':
+        pitcheral = 601713
+    elif pitcheral == 'Nestor Cortes: NYY (L)':
+        pitcheral = 6641482
+    elif pitcheral == 'Triston McKenzie: CLE (R)':
+        pitcheral = 663474
+    elif pitcheral == 'Brady Singer: KC (R)':
+        pitcheral = 6641482
+    elif pitcheral == 'Tarik Skubal: DET (L)':
+        pitcheral = 669373
+    elif pitcheral ==  'Sonny Gray: MIN (R)':
+        pitcheral = 543243
+    elif pitcheral ==  'Dylan Cease: CWS (R)':
+        pitcheral = 656302
+    elif pitcheral ==  'Shohei Ohtani: LAA (R)':
+        pitcheral = 660271
+    elif pitcheral ==  'Justin Verlander: HOU (R)':
+        pitcheral = 434378
+    elif pitcheral ==  'James Kaprielian: OAK (R)':
+        pitcheral = 621076
+    elif pitcheral ==  'Chris Flexen: SEA (R)':
+        pitcheral = 623167
+    elif pitcheral ==  'Martin Perez: TEX (L)':
+        pitcheral = 527048
+        
+
     #else:
         #pitchernl = st.selectbox("Please select an NL pitcher.", ['Max Fried: ATL (L)', 'Sandy Alcantara: MIA (R)', 'Max Scherzer: NYM (R)', 'Paolo Espino: WSH (R)', 'Aaron Nola: PHI (R)', 'Corbin Burnes: MIL (R)', 'Miles Mikolas: STL (R)', 'Marcus Stroman: CHC (R)', 'Jose Quintana: PIT (L)', 'Nick Lodolo: CIN (L)', 'Zac Gallen: ARI (R)', 'Clayton Kershaw: LAD (L)', 'Carlos Rodon: SF (L)', 'Blake Snell: SD (L)', 'Ryan Feltner: COL (R)'])
     
