@@ -345,7 +345,7 @@ def page3():
             game_pk = 663222
         elif game_pk == 'ATL':
             game_pk = 661552
-         elif game_pk == 'KC':
+        elif game_pk == 'KC':
             game_pk = 662638
                                
 
