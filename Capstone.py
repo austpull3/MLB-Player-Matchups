@@ -199,7 +199,7 @@ def page3():
     model.add(Dense(9, activation = 'softmax')) #9 output possiblities
     #compile model and fit with 15 epochs
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    model.fit(X_train, y_train, epochs = 1, validation_split = 0.1, batch_size=1, verbose=1)
+    model.fit(X_train, y_train, epochs = 1, validation_split = 0.1, batch_size=10, verbose=1)
 
     pred = model.predict(X_test)
     
