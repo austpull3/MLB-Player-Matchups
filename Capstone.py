@@ -199,7 +199,7 @@ def page3():
     model.add(Dense(9, activation = 'softmax')) #9 output possiblities
     #compile model and fit with 15 epochs
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    model.fit(X_train, y_train, epochs = 1, validation_split = 0.1, batch_size=10, verbose=1)
+    model.fit(X_train, y_train, epochs = 5, validation_split = 0.1, batch_size=10, verbose=1)
 
     pred = model.predict(X_test)
     
@@ -215,7 +215,7 @@ def page3():
     
      
     #user input for the model
-    release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103, help = 'Pitch velocity.')
+    release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103, value = 88, help = 'Pitch velocity.')
    
     hitter = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Anthony Santander: BAL (RF/S)', 'Randy Arozarena: TB (LF/R)', 'Xander Bogaerts: BOS (SS/R)', 'Aaron Judge: NYY (CF/R)', 'Andres Gimenez: CLE (2B/L)', 'Salvador Perez: KC (C/R)', 'Javier Baez: DET (SS/R)', 'Carlos Correa: MIN (SS/R)', 'Jose Abreu: CWS (1B/R)', 'Mike Trout: LAA (CF/R)', 'Yordan Alvarez: HOU (DH/L)', 'Julio Rodriguez: SEA (CF/R)', 'Nathaniel Lowe: TEX (1B/L)', 'Sean Murphy: OAK (C/R)'], help = 'Current hitters are only from the AL.')
     if hitter == "Bo Bichette: TOR (SS/R)":
@@ -290,7 +290,7 @@ def page3():
         from PIL import Image 
         zonepng = Image.open('Images/zone.png')
         st.image(zonepng)
-    zone = st.number_input('Strike Zone Location: ', min_value=1, max_value=14, help = "Select a strike zone location - location of the ball when it crosses the plate from the catcher's perspective.")
+    zone = st.number_input('Strike Zone Location: ', min_value=1, max_value=14, value = 5, help = "Select a strike zone location - location of the ball when it crosses the plate from the catcher's perspective.")
 
     #select more options
     with st.expander('Select More Options'): 
@@ -332,13 +332,13 @@ def page3():
         else:
             inning_topbot = 0
 
-        launch_speed = st.number_input('Exit Velocity: ', min_value=60, max_value=114, help = 'Batter Exit Velocity')
+        launch_speed = st.number_input('Exit Velocity: ', min_value=60, max_value=114, value = 82, help = 'Batter Exit Velocity')
 
-        launch_angle = st.number_input('Launch Angle: ', min_value=5, max_value=50)
+        launch_angle = st.number_input('Launch Angle: ', min_value=5, max_value=50, value = 16)
 
-        effective_speed = st.number_input('Effective Speed: ', min_value=70, max_value=103, help = 'Speed based on extension of pitcher release')
+        effective_speed = st.number_input('Effective Speed: ', min_value=70, max_value=103, value = 88, help = 'Speed based on extension of pitcher release')
 
-        release_spin_rate = st.number_input('Release Spin Rate: ', min_value=1000, max_value=3200, help = 'Spin rate of pitch tracked by Statcast')
+        release_spin_rate = st.number_input('Release Spin Rate: ', min_value=1000, max_value=3200, value = 2200, help = 'Spin rate of pitch tracked by Statcast')
 
         #game_pk = st.number_input('MLB Stadium: ', min_value=663419, max_value=663419, help = 'Ballpark game is being played in.')
         game_pk = st.selectbox('MLB Stadium: ', ['CLE', 'CWS', 'CIN', 'MIL', 'BAL', 'MIA', 'LAA', 'TB', 'BOS', 'ATL', 'KC'])
@@ -382,7 +382,7 @@ def page3():
 
         fld_score = st.number_input('Fielding Team Score: ', min_value=0, max_value=15, help = 'The number of runs the fielding team has.')
 
-        win_exp = st.number_input('Win Exp: ', min_value=0.10, max_value=0.25, help = 'Win Expectancy')
+        win_exp = st.number_input('Win Exp: ', min_value=0.15, max_value=0.25, help = 'Win Expectancy')
     
         run_exp = st.number_input('Run Exp: ', min_value = 1, max_value=3, help = 'Run Expectancy')
   
