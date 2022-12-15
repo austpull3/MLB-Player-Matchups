@@ -1,3 +1,4 @@
+#import necessary libraries
 import streamlit as st
 import plotly.express as px
 from pybaseball import playerid_lookup
@@ -13,31 +14,34 @@ import io
 from streamlit_player import st_player
 
 
-
+#create first page/welcome page
 def main_page():    
     st.title("Welcome to the MLB At-Bat Predictor")
+    #load images for first page with justin verlander and aaron judge
     from PIL import Image 
     image1 = Image.open('Images/mlb.png')
     st.image(image1, caption = "https://en.wikipedia.org/wiki/Major_League_Baseball_logo")
     image3 = Image.open('Images/judgehitting.jpeg')
     image4 = Image.open('Images/justinv.jpeg')
-    image5 = Image.open('Images/vs.jpeg')
+    image5 = Image.open('Images/vs.jpeg') #versus image
     st.markdown("##")
     st.markdown("### Explore the predicted at-bat outcomes of the games best!")
+    #columns for having a good display of the images
     col, col2, col3 = st.columns(3)
    
     with col:
-        st.image(image3) 
+        st.image(image3) #judge
     with col2:
-        st.image(image5)
+        st.image(image5) #versus image
     with col3:
-        st.image(image4)
+        st.image(image4) #verlander
         
     st.write(" ")
     st.markdown("### Do you want to predict moments like this? Continue to the other pages.")
-    st_player("https://www.youtube.com/watch?v=clDXWm1jpfY")
-    st.write("Source: https://www.youtube.com/watch?v=clDXWm1jpfY")
-
+    st_player("https://www.youtube.com/watch?v=clDXWm1jpfY") #include youtube video 
+    st.write("Source: https://www.youtube.com/watch?v=clDXWm1jpfY") #link to the same video
+    
+    #sidebar instructions and layout
     st.sidebar.markdown("# Welcome!⚾️")
     st.sidebar.markdown(" ")
     if st.sidebar.checkbox(" Select For Help ⚾️"):
@@ -45,62 +49,65 @@ def main_page():
         st.sidebar.info("Play the video at the bottom of the page to see an exciting at-bat.")
         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
         
-    
+#define page 2 for visualizing player spraycharts    
 def page2():
     st.title("Explore MLB Data and visualize spraycharts of your favorite players ⚾️") 
-    st.markdown("#### Enter players from the 2022 season only!")
+    st.markdown("#### Enter players from the 2022 season only!") #only 2022 players should be entered
+    #try code for entering player names and displaying a spray chart plot
     try: 
         first_name = st.text_input('Enter a players first name:')
         first_name = first_name.strip()
         if " " in first_name:
-            st.error("Please do not include whitespace in the input.")
+            st.error("Please do not include whitespace in the input.") #address error
         if first_name.isspace():
-            st.warning("Please enter a player's first name.")
+            st.warning("Please enter a player's first name.") #address error
         last_name = st.text_input('Enter a players last name:')
         last_name = last_name.strip()
         if " " in last_name:
-            st.error("Please do not include whitespace in the input.")
+            st.error("Please do not include whitespace in the input.") #address error
         if last_name.isspace():
-            st.warning("Please enter a player's last name.")
+            st.warning("Please enter a player's last name.") #address error
 
         if first_name and last_name:
-            player_info = playerid_lookup(last_name, first_name)
+            player_info = playerid_lookup(last_name, first_name) #lookup player id to input into the statcast_batter()
             pid = player_info['key_mlbam']
             st.markdown("#### Player ID")
-            mlbid = pid.iloc[0]
-            st.write(mlbid)
-            name = first_name + " " + last_name
-            #plot = st.text_input("Enter player's key_mlbam:")
+            mlbid = pid.iloc[0] #get the player id value
+            st.write(mlbid) #display the id
+            name = first_name + " " + last_name #combine name for plot
+           
+            #provide acceptable entries for fields
             st.markdown("#### Here is all the acceptable field entries:")
             fields = ['angels', 'astros', 'athletics', 'blue_jays', 'braves', 'brewers', 'cardinals', 'cubs', 'diamondbacks', 'dodgers', 'generic', 'giants', 'indians', 'mariners', 'marlins', 'mets', 'nationals', 'orioles', 'padres', 'phillies', 'pirates', 'rangers', 'rays', 'red_sox', 'reds', 'rockies', 'royals', 'tigers', 'twins', 'white_sox', 'yankees']
-            fieldnames = pd.DataFrame(fields, columns = ['Fields'])
-            st.dataframe(fieldnames)
-            stadium = st.text_input("Enter MLB team for stadium.")
+            fieldnames = pd.DataFrame(fields, columns = ['Fields']) 
+            st.dataframe(fieldnames) #display fields
+            stadium = st.text_input("Enter MLB team for stadium.") #user input for field name that data is overlayed on
 
             stadium = stadium.strip()
             if stadium.isspace():
                 st.warning("Please enter a stadium.")
             if " " in stadium:
-                st.error("Please do not include whitespace in the input.")
+                st.error("Please do not include whitespace in the input.") #address error
             if stadium:
-                data = statcast_batter('2022-04-07', '2022-10-02', mlbid)
+                data = statcast_batter('2022-04-07', '2022-10-02', mlbid) #pull data with player select in input based on id
                 s = spraychart(data, stadium, title = name)
                 fig = s.figure
                 # Display the spraychart
                 st.pyplot(fig)
-                tot = data.events.value_counts()
+                tot = data.events.value_counts() #display event totals
                 st.dataframe(tot)
 
+                #animation plots not implemented
                 #fig2 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
                 #st.write(fig2)
 
                 #fig3 = px.histogram(data, x ="events", color = "pitch_name")
                 #st.write(fig3)
-                
+    #if the user causes an error let the user know to try new input            
     except IndexError as e:
         st.error("Incorrect Input. Please try another input.")
         
-
+    #set up sidebar
     st.sidebar.markdown("# Explore player spray charts 📈")
     st.sidebar.markdown(" ")
     if st.sidebar.checkbox(" Select For Help ⚾️"): 
@@ -116,7 +123,7 @@ def page2():
        
         
            
-       
+#define prediction page       
 def page3():
     st.title("Predict MLB At-Bat Outcomes ⚾️") 
     #Import necessary libraries
@@ -131,8 +138,8 @@ def page3():
     from tensorflow.keras.layers import Dense, Activation, Dropout
     from tensorflow.keras.models import Sequential
 
-    df = pd.read_csv("bsbc.csv")
-    
+    df = pd.read_csv("bsbc.csv") #read in the data
+    #drop variables not needed and trim data
     df = df.drop(['Unnamed: 0', 'game_year'], axis = 1)
     df = df.drop(['player_name'], axis = 1)
     df = df[df["release_speed"] > 75]
@@ -141,32 +148,32 @@ def page3():
     df = df[df['bat_score'] <= 15]
     df = df[df['fld_score'] <= 15]
     df = df[(df["release_spin_rate"] < 3200) & (df['release_spin_rate'] > 1000)]
-
+    #replace pitch name with number for easier user input
     df['pitch_name'] = df['pitch_name'].replace('4-Seam Fastball', 0)
     df['pitch_name'] = df['pitch_name'].replace('Slider', 1)
     df['pitch_name'] = df['pitch_name'].replace('Sinker', 2)
     df['pitch_name'] = df['pitch_name'].replace('Changeup', 3)
     df['pitch_name'] = df['pitch_name'].replace('Curveball', 4)
-
+    #replace top and bot to 1 and 0
     df['inning_topbot'] = df['inning_topbot'].replace('Top', 1)
     df['inning_topbot'] = df['inning_topbot'].replace('Bot', 0)
-
+    #if the baserunning variables are greater than zero there is someone on base
     df['on_1b'] = np.where(df['on_1b'] > 0, 1,0)
     df['on_2b'] = np.where(df['on_1b'] > 0, 1,0)
     df['on_3b'] = np.where(df['on_1b'] > 0, 1,0)
-
+    #encode and seperate out outcome events
     from sklearn.preprocessing import OneHotEncoder
     df = pd.get_dummies(df, columns = ['events'])
-
+    #get random sample of whole dataset
     df = df.sample(frac = 1)
-
+    #define X
     X = df.drop(['game_type', 'estimated_ba_using_speedangle', 'estimated_woba_using_speedangle', 
                  'events_double',
            'events_field_error', 'events_field_out', 'events_hit_by_pitch',
            'events_home_run', 'events_single', 'events_strikeout', 'events_triple',
            'events_walk', 'game_date'], 
                 axis = 1)
-
+    #define y
     y = df.drop(['release_speed', 'batter', 'pitcher', 'zone', 'balls', 'strikes',
            'on_3b', 'on_2b', 'on_1b', 'outs_when_up', 'inning', 'inning_topbot',
            'launch_speed', 'launch_angle', 'effective_speed', 'release_spin_rate',
@@ -187,19 +194,29 @@ def page3():
 
     #Building the artifical neural network
     model = Sequential()
-    model.add(Dense(22, activation = 'relu', input_shape = (24,)))
+    model.add(Dense(22, activation = 'relu', input_shape = (24,))) #24 input variables
     model.add(Dense(20, activation = 'relu'))
-    model.add(Dense(9, activation = 'softmax'))
-
+    model.add(Dense(9, activation = 'softmax')) #9 output possiblities
+    #compile model and fit with 15 epochs
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    model.fit(X_train, y_train, epochs = 5, validation_split = 0.1, batch_size=10, verbose=1)
+    model.fit(X_train, y_train, epochs = 15, validation_split = 0.1, batch_size=10, verbose=1)
 
     pred = model.predict(X_test)
     
-    
+    #define outcome names to use with prediction
     names = ['Double', 'Field Error', 'Field Out', 'Hit by Pitch', 'Home Run', 'Single', 'Strikeout', 'Triple', 'Walk']
     
+
+    #function to take in input data transform it and make prediction
+    def predict(inputs):
+        inputs = s.transform(inputs)
+        prediction = model.predict(inputs)
+        return prediction
     
+     
+    #user input for the model
+    release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
+   
     hitter = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Anthony Santander: BAL (RF/S)', 'Randy Arozarena: TB (LF/R)', 'Xander Bogaerts: BOS (SS/R)', 'Aaron Judge: NYY (CF/R)', 'Andres Gimenez: CLE (2B/L)'])
     if hitter == "Bo Bichette: TOR (SS/R)":
         hitter = 666182
@@ -250,15 +267,7 @@ def page3():
     else:
         pitchernl = st.selectbox("Please select an NL pitcher.", ['Max Fried: ATL (L)', 'Sandy Alcantara: MIA (R)', 'Max Scherzer: NYM (R)', 'Paolo Espino: WSH (R)', 'Aaron Nola: PHI (R)', 'Corbin Burnes: MIL (R)', 'Miles Mikolas: STL (R)', 'Marcus Stroman: CHC (R)', 'Jose Quintana: PIT (L)', 'Nick Lodolo: CIN (L)', 'Zac Gallen: ARI (R)', 'Clayton Kershaw: LAD (L)', 'Carlos Rodon: SF (L)', 'Blake Snell: SD (L)', 'Ryan Feltner: COL (R)'])
     
-
-    def predict(inputs):
-        inputs = s.transform(inputs)
-        prediction = model.predict(inputs)
-        return prediction
-        #start user input
-        
-    release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
-    
+    #display a strikezone image to help with user input selection
     showzone = st.checkbox('Display Strike Zone')
     if showzone:
         from PIL import Image 
@@ -333,29 +342,27 @@ def page3():
 
         fld_score = st.number_input('Fielding Team Score: ', min_value=0, max_value=15)
 
-        #win_exp = st.number_input('Win Exp: ', min_value=-0.25, max_value=0.25)
-        win_exp = 0.15
-        #run_exp = st.number_input('Run Exp: ', min_value=0, max_value=3)
-        run_exp = 1
+        win_exp = st.number_input('Win Exp: ', min_value=0.1, max_value=0.25)
+    
+        run_exp = st.number_input('Run Exp: ', min_value = 0, max_value=3)
+  
         hm1 = st.slider("Home to First Time:  ", 4.0, 5.0)
 
         speed = st.slider("Sprint Speed: ", 23.0, 30.7)
 
-    
-    #inputs = pd.DataFrame([[release_speed, batter, pitcher, zone, balls, strikes, on_3b, on_2b, on_1b, outs_when_up, inning, inning_topbot, launch_speed, launch_angle, effective_speed, release_spin_rate, game_pk, pitch_name, bat_score, fld_score, win_exp, run_exp, hm1, speed]], columns = ['release_speed', 'batter', 'pitcher', 'zone', 'balls', 'strikes', 'on_3b', 'on_2b', 'on_1b', 'outs_when_up', 'inning', 'inning_topbot', 'launch_speed', 'launch_angle', 'effective_speed', 'release_spin_rate', 'game_pk', 'pitch_name', 'bat_score', 'fld_score',' win_exp', 'run_exp', 'hm1', 'speed'])
+    #user inputs
     inputs = pd.DataFrame([[release_speed, hitter, pitcheral, zone, balls, strikes, on_3b, on_2b, on_1b, outs_when_up, inning, inning_topbot, launch_speed, launch_angle, effective_speed, release_spin_rate, game_pk, pitch_name, bat_score, fld_score, win_exp, run_exp, hm1, speed]], columns = ['release_speed', 'hitter', 'pitcheral', 'zone', 'balls', 'strikes', 'on_3b', 'on_2b', 'on_1b', 'outs_when_up', 'inning', 'inning_topbot', 'launch_speed', 'launch_angle', 'effective_speed', 'release_spin_rate', 'game_pk', 'pitch_name', 'bat_score', 'fld_score',' win_exp', 'run_exp', 'hm1', 'speed'])
-    #prediction1 = predict(inputs)
-    #st.write(names[np.argmax(prediction1)])
-    
+    #make predictions
     if st.button('Predict At-Bat'):
-        price = predict(inputs)
-        st.success(names[np.argmax(price)])
+        Abpredict = predict(inputs)
+        st.success(names[np.argmax(Abpredict)]) #display prediction
         
+        #probability that outcome will occur
         def sci(num):
             return '{:.2f}'.format(num)
-        predictions = np.vectorize(sci)(price)
+        predictions = np.vectorize(sci)(Abpredict)
         st.write(predictions)
-
+    #sidebar setup
     st.sidebar.markdown("# Make At-Bat Predictions ⚾️🔍")
     st.sidebar.markdown(" ")
     if st.sidebar.checkbox(" Select For Help ⚾️"): 
@@ -366,12 +373,12 @@ def page3():
          st.sidebar.info("4. Select a strike zone location")
          st.sidebar.info("5. Expand for more options and select other input if desired")
          st.sidebar.info("6. Click the 'Predict At-Bat' Button to display predicted outcome")
-
+#dict for pages
 page_names_to_funcs = {
     "Welcome Page": main_page,
     "Data Exploration and Visualization": page2,
     "MLB At-Bat Predictor": page3 
     }
-
+#select pages
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
 page_names_to_funcs[selected_page]()
