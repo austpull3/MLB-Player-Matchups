@@ -215,7 +215,7 @@ def page3():
     
      
     #user input for the model
-    release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103)
+    release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103, help = 'Pitch velocity.')
    
     hitter = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Anthony Santander: BAL (RF/S)', 'Randy Arozarena: TB (LF/R)', 'Xander Bogaerts: BOS (SS/R)', 'Aaron Judge: NYY (CF/R)', 'Andres Gimenez: CLE (2B/L)'])
     if hitter == "Bo Bichette: TOR (SS/R)":
@@ -273,7 +273,6 @@ def page3():
         from PIL import Image 
         zonepng = Image.open('Images/zone.png')
         st.image(zonepng)
-    #st.markdown("### Zone 5 is the middle of the strike zone. 1, 3, 7, and 9 are the corners. ")
     zone = st.number_input('Strike Zone Location: ', min_value=1, max_value=14, help = "Select a strike zone location - location of the ball when it crosses the plate from the catcher's perspective.")
 
     #select more options
@@ -300,7 +299,7 @@ def page3():
         else:
             on_3b = 0
 
-        outs_when_up = st.radio('Outs When Up: ', ('0','1', '2'))
+        outs_when_up = st.radio('Outs When Up: ', ('0','1', '2'), help = 'The number of outs during the at-bat.')
         if outs_when_up == '0':
             outs_when_up = 0
         elif outs_when_up == '1':
@@ -308,25 +307,49 @@ def page3():
         elif outs_when_up == '2':
             outs_when_up = 2
             
-        inning = st.number_input('Inning: ', min_value=1, max_value=10, value=1)
+        inning = st.number_input('Inning: ', min_value=1, max_value=10, value=1, help = 'Inning during at-bat.')
 
-        inning_topbot = st.radio('Top or Bottom of Inning: ', ('Top', 'Bottom'))
+        inning_topbot = st.radio('Top or Bottom of Inning: ', ('Top', 'Bottom'), help = 'Top or bottom of the inning.')
         if inning_topbot == 'Top':
             inning_topbot = 1
         else:
             inning_topbot = 0
 
-        launch_speed = st.number_input('Exit Velocity: ', min_value=60, max_value=114)
+        launch_speed = st.number_input('Exit Velocity: ', min_value=60, max_value=114, help = 'Batter Exit Velocity')
 
         launch_angle = st.number_input('Launch Angle: ', min_value=5, max_value=50)
 
-        effective_speed = st.number_input('Effective Speed: ', min_value=70, max_value=103)
+        effective_speed = st.number_input('Effective Speed: ', min_value=70, max_value=103, help = 'Speed based on extension of pitcher release')
 
-        release_spin_rate = st.number_input('Release Spin Rate: ', min_value=1000, max_value=3200)
+        release_spin_rate = st.number_input('Release Spin Rate: ', min_value=1000, max_value=3200, help = 'Spin rate of pitch tracked by Statcast')
 
-        game_pk = st.number_input('MLB Stadium: ', min_value=663419, max_value=663419)
+        #game_pk = st.number_input('MLB Stadium: ', min_value=663419, max_value=663419, help = 'Ballpark game is being played in.')
+        game_pk = st.selectbox('MLB Stadium: ', ['CLE', 'CWS', 'CIN', 'MIL', 'BAL', 'MIA', 'LAA', 'TB', 'BOS', 'ATL', 'KC'])
+        if game_pk == 'CLE':
+            game_pk = 662958
+        elif game_pk == 'CWS':
+            game_pk = 661481
+        elif game_pk == 'CIN':
+            game_pk = 662995
+        elif game_pk == 'MIL':
+            game_pk = 661193
+        elif game_pk == 'BAL':
+            game_pk = 661279
+        elif game_pk == 'MIA':
+            game_pk = 661355
+        elif game_pk == 'LAA':
+            game_pk = 663442
+        elif game_pk == 'TB':
+            game_pk = 661944
+        elif game_pk == 'BOS':
+            game_pk = 663222
+        elif game_pk == 'ATL':
+            game_pk = 661552
+         elif game_pk == 'KC':
+            game_pk = 662638
+                               
 
-        pitch_name = st.selectbox('Pitch Name: ', ['4-Seam Fastball', 'Slider', 'Sinker', 'Changeup', 'Curveball'])
+        pitch_name = st.selectbox('Pitch Name: ', ['4-Seam Fastball', 'Slider', 'Sinker', 'Changeup', 'Curveball'], help = "The name of pitch thrown.")
         if  pitch_name == '4-Seam Fastball':
             pitch_name = 0
         elif  pitch_name == 'Slider':
@@ -338,17 +361,17 @@ def page3():
         elif  pitch_name == 'Curveball':
             pitch_name = 4
 
-        bat_score = st.number_input('Hitting Team Score: ', min_value=0, max_value=15)
+        bat_score = st.number_input('Hitting Team Score: ', min_value=0, max_value=15, help = 'The number of runs the hitting team has.')
 
-        fld_score = st.number_input('Fielding Team Score: ', min_value=0, max_value=15)
+        fld_score = st.number_input('Fielding Team Score: ', min_value=0, max_value=15, help = 'The number of runs the fielding team has.')
 
-        win_exp = st.number_input('Win Exp: ', min_value=0.10, max_value=0.25)
+        win_exp = st.number_input('Win Exp: ', min_value=0.10, max_value=0.25, help = 'Win Expectancy')
     
-        run_exp = st.number_input('Run Exp: ', min_value = 1, max_value=3)
+        run_exp = st.number_input('Run Exp: ', min_value = 1, max_value=3, help = 'Run Expectancy')
   
-        hm1 = st.slider("Home to First Time:  ", 4.0, 5.0)
+        hm1 = st.slider("Home to First Time:  ", 4.0, 5.0, help = "Batter's time it takes to run to first base.")
 
-        speed = st.slider("Sprint Speed: ", 23.0, 30.7)
+        speed = st.slider("Sprint Speed: ", 23.0, 30.7, help = 'How fast the batter can run.')
 
     #user inputs
     inputs = pd.DataFrame([[release_speed, hitter, pitcheral, zone, balls, strikes, on_3b, on_2b, on_1b, outs_when_up, inning, inning_topbot, launch_speed, launch_angle, effective_speed, release_spin_rate, game_pk, pitch_name, bat_score, fld_score, win_exp, run_exp, hm1, speed]], columns = ['release_speed', 'hitter', 'pitcheral', 'zone', 'balls', 'strikes', 'on_3b', 'on_2b', 'on_1b', 'outs_when_up', 'inning', 'inning_topbot', 'launch_speed', 'launch_angle', 'effective_speed', 'release_spin_rate', 'game_pk', 'pitch_name', 'bat_score', 'fld_score',' win_exp', 'run_exp', 'hm1', 'speed'])
