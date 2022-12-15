@@ -384,7 +384,7 @@ def page3():
 
         win_exp = st.number_input('Win Exp: ', min_value=0.0, max_value=0.25, help = 'Win Expectancy')
     
-        run_exp = st.number_input('Run Exp: ', min_value = 1, max_value=3, help = 'Run Expectancy')
+        run_exp = st.number_input('Run Exp: ', min_value = 0, max_value=3, help = 'Run Expectancy')
   
         hm1 = st.slider("Home to First Time:  ", 4.0, 5.0, help = "Batter's time it takes to run to first base.")
 
