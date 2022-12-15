@@ -217,7 +217,7 @@ def page3():
     #user input for the model
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103, help = 'Pitch velocity.')
    
-    hitter = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Anthony Santander: BAL (RF/S)', 'Randy Arozarena: TB (LF/R)', 'Xander Bogaerts: BOS (SS/R)', 'Aaron Judge: NYY (CF/R)', 'Andres Gimenez: CLE (2B/L)'])
+    hitter = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Anthony Santander: BAL (RF/S)', 'Randy Arozarena: TB (LF/R)', 'Xander Bogaerts: BOS (SS/R)', 'Aaron Judge: NYY (CF/R)', 'Andres Gimenez: CLE (2B/L)', 'Salvador Perez: KC (C/R)', 'Javier Baez: DET (SS/R)', 'Carlos Correa: MIN (SS/R)', 'Jose Abreu: CWS (1B/R)', 'Mike Trout: LAA (CF/R)', 'Yordan Alvarez: HOU (DH/L)', 'Julio Rodriguez: SEA (CF/R)', 'Nathaniel Lowe: TEX (1B/L)', 'Sean Murphy: OAK (C/R)'])
     if hitter == "Bo Bichette: TOR (SS/R)":
         hitter = 666182
     elif hitter == "Vladimir Guerrero Jr.: TOR (1B/R)":
@@ -232,8 +232,26 @@ def page3():
         hitter = 592450
     elif hitter == 'Andres Gimenez: CLE (2B/L)':
         hitter = 665926
+    elif hitter == 'Salvador Perez: KC (C/R)':
+        hitter = 521692
+    elif hitter == 'Javier Baez: DET (SS/R)':
+        hitter = 595879
+    elif hitter == 'Carlos Correa: MIN (SS/R)':
+        hitter = 621043
+    elif hitter == 'Jose Abreu: CWS (1B/R)':
+        hitter = 547989
+    elif hitter == 'Mike Trout: LAA (CF/R)':
+        hitter = 545361
+    elif hitter == 'Yordan Alvarez: HOU (DH/L)':
+        hitter = 670541
+    elif hitter == 'Julio Rodriguez: SEA (CF/R)':
+        hitter = 677594
+    elif hitter == 'Nathaniel Lowe: TEX (1B/L)':
+        hitter = 663993
+    elif hitter == 'Sean Murphy: OAK (C/R)':
+        hitter = 669221
   
-    pitcherdiv = st.radio("Select pitcher from the AL or NL.", ('AL', 'NL'))
+    pitcherdiv = st.radio("Select pitcher from the AL", ('AL'))
     if pitcherdiv == 'AL':
         pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)'])
         if pitcheral == 'Tyler Wells: BAL (R)':
@@ -264,8 +282,8 @@ def page3():
             pitcheral = 623167
         elif pitcheral ==  'Martin Perez: TEX (L)':
             pitcheral = 527048
-    else:
-        pitchernl = st.selectbox("Please select an NL pitcher.", ['Max Fried: ATL (L)', 'Sandy Alcantara: MIA (R)', 'Max Scherzer: NYM (R)', 'Paolo Espino: WSH (R)', 'Aaron Nola: PHI (R)', 'Corbin Burnes: MIL (R)', 'Miles Mikolas: STL (R)', 'Marcus Stroman: CHC (R)', 'Jose Quintana: PIT (L)', 'Nick Lodolo: CIN (L)', 'Zac Gallen: ARI (R)', 'Clayton Kershaw: LAD (L)', 'Carlos Rodon: SF (L)', 'Blake Snell: SD (L)', 'Ryan Feltner: COL (R)'])
+    #else:
+        #pitchernl = st.selectbox("Please select an NL pitcher.", ['Max Fried: ATL (L)', 'Sandy Alcantara: MIA (R)', 'Max Scherzer: NYM (R)', 'Paolo Espino: WSH (R)', 'Aaron Nola: PHI (R)', 'Corbin Burnes: MIL (R)', 'Miles Mikolas: STL (R)', 'Marcus Stroman: CHC (R)', 'Jose Quintana: PIT (L)', 'Nick Lodolo: CIN (L)', 'Zac Gallen: ARI (R)', 'Clayton Kershaw: LAD (L)', 'Carlos Rodon: SF (L)', 'Blake Snell: SD (L)', 'Ryan Feltner: COL (R)'])
     
     #display a strikezone image to help with user input selection
     showzone = st.checkbox('Display Strike Zone')
