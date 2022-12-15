@@ -251,8 +251,8 @@ def page3():
     elif hitter == 'Sean Murphy: OAK (C/R)':
         hitter = 669221
   
-    pitcherdiv = st.checkbox("Select pitcher from the AL:")
-    if pitcherdiv:
+    pitcherdiv = st.radio("Select pitcher from the AL:", ('AL', 'NL'))
+    if pitcherdiv == 'AL':
         pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)'])
         if pitcheral == 'Tyler Wells: BAL (R)':
             pitcheral = 669330
