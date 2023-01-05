@@ -302,10 +302,16 @@ def page3():
     pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)'], help = 'Current pitchers are only from the AL. More players will be added.')
     if pitcheral == 'Tyler Wells: BAL (R)':
         pitcheral = 669330
+        wells = Image.open('Images/wells.jpeg')
+        st.image(wells)
     elif pitcheral == 'Drew Rasmussen: TB (R)':
         pitcheral = 656876
+        ras = Image.open('Images/ras.jpeg')
+        st.image(ras)
     elif pitcheral == 'Nick Pivetta: BOS (R)':
         pitcheral = 601713
+        piv = Image.open('Images/piv.jpeg')
+        st.image(piv)
     elif pitcheral == 'Nestor Cortes: NYY (L)':
         pitcheral = 6641482
         from PIL import Image 
@@ -313,24 +319,44 @@ def page3():
         st.image(nestor)
     elif pitcheral == 'Triston McKenzie: CLE (R)':
         pitcheral = 663474
+        tmck = Image.open('Images/tmck.jpeg')
+        st.image(tmck)
     elif pitcheral == 'Brady Singer: KC (R)':
         pitcheral = 6641482
+        singer = Image.open('Images/singer.jpeg')
+        st.image(singer)
     elif pitcheral == 'Tarik Skubal: DET (L)':
         pitcheral = 669373
+        tarik = Image.open('Images/tarik.jpeg')
+        st.image(tarik)
     elif pitcheral ==  'Sonny Gray: MIN (R)':
         pitcheral = 543243
+        gray = Image.open('Images/gray.jpeg')
+        st.image(gray)
     elif pitcheral ==  'Dylan Cease: CWS (R)':
         pitcheral = 656302
+        cease = Image.open('Images/cease.jpeg')
+        st.image(cease)
     elif pitcheral ==  'Shohei Ohtani: LAA (R)':
         pitcheral = 660271
+        sho = Image.open('Images/sho.jpeg')
+        st.image(sho)
     elif pitcheral ==  'Justin Verlander: HOU (R)':
         pitcheral = 434378
+        ver = Image.open('Images/ver.jpeg')
+        st.image(ver)
     elif pitcheral ==  'James Kaprielian: OAK (R)':
         pitcheral = 621076
+        kap = Image.open('Images/kap.jpeg')
+        st.image(kap)
     elif pitcheral ==  'Chris Flexen: SEA (R)':
         pitcheral = 623167
+        flexen = Image.open('Images/flexen.jpeg')
+        st.image(flexen)
     elif pitcheral ==  'Martin Perez: TEX (L)':
         pitcheral = 527048
+        mperez = Image.open('Images/mperez.jpeg')
+        st.image(mperez)
         
 
     #else:
