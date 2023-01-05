@@ -285,7 +285,6 @@ def page3():
         pitcheral = 623167
     elif pitcheral ==  'Martin Perez: TEX (L)':
         pitcheral = 527048
-    st.image(image5) #versus image
         
 
     #else:
