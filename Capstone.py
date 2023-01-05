@@ -221,7 +221,7 @@ def page3():
     if hitter == "Bo Bichette: TOR (SS/R)":
         hitter = 666182
         from PIL import Image 
-        bo = Image.open('bo.jpeg')
+        bo = Image.open('Images/bo.jpeg')
     elif hitter == "Vladimir Guerrero Jr.: TOR (1B/R)":
         hitter = 665489
     elif hitter == 'Anthony Santander: BAL (RF/S)':
@@ -262,7 +262,7 @@ def page3():
     elif pitcheral == 'Nestor Cortes: NYY (L)':
         pitcheral = 6641482
         from PIL import Image 
-        nestor = Image.open('nestor.jpeg')
+        nestor = Image.open('Images/nestor.jpeg')
     elif pitcheral == 'Triston McKenzie: CLE (R)':
         pitcheral = 663474
     elif pitcheral == 'Brady Singer: KC (R)':
