@@ -216,7 +216,8 @@ def page3():
      
     #user input for the model
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103, value = 88, help = 'Pitch velocity.')
-   
+    st.info("Keep in mind that data and information is coming from the 2022 season and roster changes are only reflected for player images.")
+    
     hitter = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Anthony Santander: BAL (RF/S)', 'Randy Arozarena: TB (LF/R)', 'Xander Bogaerts: BOS (SS/R)', 'Aaron Judge: NYY (CF/R)', 'Andres Gimenez: CLE (2B/L)', 'Salvador Perez: KC (C/R)', 'Javier Baez: DET (SS/R)', 'Carlos Correa: MIN (SS/R)', 'Jose Abreu: CWS (1B/R)', 'Mike Trout: LAA (CF/R)', 'Yordan Alvarez: HOU (DH/L)', 'Julio Rodriguez: SEA (CF/R)', 'Nathaniel Lowe: TEX (1B/L)', 'Sean Murphy: OAK (C/R)'], help = 'Current hitters are only from the AL.')
     if hitter == "Bo Bichette: TOR (SS/R)":
         hitter = 666182
@@ -225,34 +226,79 @@ def page3():
         st.image(bo)
     elif hitter == "Vladimir Guerrero Jr.: TOR (1B/R)":
         hitter = 665489
+        from PIL import Image 
+        vlad = Image.open('Images/vlad.jpeg')
+        st.image(vlad)
     elif hitter == 'Anthony Santander: BAL (RF/S)':
         hitter = 623993
+        from PIL import Image 
+        AS = Image.open('Images/AS.jpeg')
+        st.image(AS)
     elif hitter == 'Randy Arozarena: TB (LF/R)':
         hitter = 668227
+        from PIL import Image 
+        randy = Image.open('Images/randy.jpeg')
+        st.image(randy)
     elif hitter == 'Xander Bogaerts: BOS (SS/R)':
         hitter = 593428
+        from PIL import Image 
+        xander = Image.open('Images/xander.jpeg')
+        st.image(xander)
     elif hitter == 'Aaron Judge: NYY (CF/R)':
         hitter = 592450
+        from PIL import Image 
+        judge = Image.open('Images/judge.jpeg')
+        st.image(judge)
     elif hitter == 'Andres Gimenez: CLE (2B/L)':
         hitter = 665926
+        from PIL import Image 
+        ag = Image.open('Images/ag.jpeg')
+        st.image(ag)
     elif hitter == 'Salvador Perez: KC (C/R)':
         hitter = 521692
+        from PIL import Image 
+        salv = Image.open('Images/salv.jpeg')
+        st.image(salv)
     elif hitter == 'Javier Baez: DET (SS/R)':
         hitter = 595879
+        from PIL import Image 
+        javi = Image.open('Images/javi.jpeg')
+        st.image(javi)
     elif hitter == 'Carlos Correa: MIN (SS/R)':
         hitter = 621043
+        from PIL import Image 
+        correa = Image.open('Images/correa.jpeg')
+        st.image(correa)
     elif hitter == 'Jose Abreu: CWS (1B/R)':
         hitter = 547989
+        from PIL import Image 
+        abreu = Image.open('Images/abreu.jpeg')
+        st.image(abreu)
     elif hitter == 'Mike Trout: LAA (CF/R)':
         hitter = 545361
+        from PIL import Image 
+        trout = Image.open('Images/trout.jpeg')
+        st.image(trout)
     elif hitter == 'Yordan Alvarez: HOU (DH/L)':
         hitter = 670541
+        from PIL import Image 
+        yordan = Image.open('Images/yordan.jpeg')
+        st.image(yordan)
     elif hitter == 'Julio Rodriguez: SEA (CF/R)':
         hitter = 677594
+        from PIL import Image 
+        julio = Image.open('Images/julio.jpeg')
+        st.image(julio)
     elif hitter == 'Nathaniel Lowe: TEX (1B/L)':
         hitter = 663993
+        from PIL import Image 
+        lowe = Image.open('Images/lowe.jpeg')
+        st.image(lowe)
     elif hitter == 'Sean Murphy: OAK (C/R)':
         hitter = 669221
+        from PIL import Image 
+        murphy = Image.open('Images/murphy.jpeg')
+        st.image(murphy)
     pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)'], help = 'Current pitchers are only from the AL. More players will be added.')
     if pitcheral == 'Tyler Wells: BAL (R)':
         pitcheral = 669330
