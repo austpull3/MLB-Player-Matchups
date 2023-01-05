@@ -220,6 +220,8 @@ def page3():
     hitter = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Anthony Santander: BAL (RF/S)', 'Randy Arozarena: TB (LF/R)', 'Xander Bogaerts: BOS (SS/R)', 'Aaron Judge: NYY (CF/R)', 'Andres Gimenez: CLE (2B/L)', 'Salvador Perez: KC (C/R)', 'Javier Baez: DET (SS/R)', 'Carlos Correa: MIN (SS/R)', 'Jose Abreu: CWS (1B/R)', 'Mike Trout: LAA (CF/R)', 'Yordan Alvarez: HOU (DH/L)', 'Julio Rodriguez: SEA (CF/R)', 'Nathaniel Lowe: TEX (1B/L)', 'Sean Murphy: OAK (C/R)'], help = 'Current hitters are only from the AL.')
     if hitter == "Bo Bichette: TOR (SS/R)":
         hitter = 666182
+        from PIL import Image 
+        bo = Image.open('bo.jpeg')
     elif hitter == "Vladimir Guerrero Jr.: TOR (1B/R)":
         hitter = 665489
     elif hitter == 'Anthony Santander: BAL (RF/S)':
@@ -259,6 +261,8 @@ def page3():
         pitcheral = 601713
     elif pitcheral == 'Nestor Cortes: NYY (L)':
         pitcheral = 6641482
+        from PIL import Image 
+        nestor = Image.open('nestor.jpeg')
     elif pitcheral == 'Triston McKenzie: CLE (R)':
         pitcheral = 663474
     elif pitcheral == 'Brady Singer: KC (R)':
