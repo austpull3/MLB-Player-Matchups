@@ -330,7 +330,7 @@ def page3():
         rhys = Image.open('Images/rhys.jpeg')
         st.image(rhys)  
    
-    pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)', 'Max Fried: ATL (L)', 'Sandy Alcantara: MIA (R)', 'Max Scherzer: NYM (R)', 'Aaron Nola: PHI (R)', 'Paolo Espino: WSH (R)'], help = 'Select an American or National League Pitcher.')
+    pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)', 'Max Fried: ATL (L)', 'Sandy Alcantara: MIA (R)', 'Max Scherzer: NYM (R)', 'Aaron Nola: PHI (R)', 'Paolo Espino: WSH (R)', 'Corbin Burnes: MIL (R)', 'Marcus Stroman: CHC (R)', 'Nick Lodolo: CIN (L)', 'Miles Mikolas: STL (R)', 'Jose Quintana: PIT (L)'], help = 'Select an American or National League Pitcher.')
     if pitcheral == 'Tyler Wells: BAL (R)':
         pitcheral = 669330
         wells = Image.open('Images/wells.jpeg')
@@ -408,6 +408,26 @@ def page3():
         pitcheral = 502179
         espino = Image.open('Images/espino.jpeg')
         st.image(espino)
+    elif pitcheral == 'Corbin Burnes: MIL (R)':
+        pitcheral = 669203
+        burnes = Image.open('Images/burnes.jpeg')
+        st.image(burnes)
+    elif pitcheral == 'Marcus Stroman: CHC (R)':
+        pitcheral = 573186
+        stroman = Image.open('Images/stroman.jpeg')
+        st.image(stroman)
+    elif pitcheral == 'Nick Lodolo: CIN (L)':
+        pitcheral = 666157
+        lodolo = Image.open('Images/lodolo.jpeg')
+        st.image(lodolo)
+    elif pitcheral == 'Miles Mikolas: STL (R)':
+        pitcheral = 571945
+        miles = Image.open('Images/miles.jpeg')
+        st.image(miles)
+    elif pitcheral == 'Jose Quintana: PIT (L)':
+        pitcheral = 500779
+        quin = Image.open('Images/quin.jpeg')
+        st.image(quin)
         
 
     #else:
