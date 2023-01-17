@@ -330,7 +330,7 @@ def page3():
         rhys = Image.open('Images/rhys.jpeg')
         st.image(rhys)  
    
-    pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)'], help = 'Current pitchers are only from the AL. More players will be added.')
+    pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)', 'Max Fried: ATL (L)', 'Sandy Alcantara: MIA (R)', 'Max Scherzer: NYM (R)', 'Aaron Nola: PHI (R)', 'Paolo Espino: WSH (R)'], help = 'Select an American or National League Pitcher.')
     if pitcheral == 'Tyler Wells: BAL (R)':
         pitcheral = 669330
         wells = Image.open('Images/wells.jpeg')
@@ -388,6 +388,26 @@ def page3():
         pitcheral = 527048
         mperez = Image.open('Images/mperez.jpeg')
         st.image(mperez)
+    elif pitcheral == 'Max Fried: ATL (L)':
+        pitcheral = 608331
+        fried= Image.open('Images/fried.jpeg')
+        st.image(fried) 
+    elif pitcheral == 'Sandy Alcantara: MIA (R)':
+        pitcheral = 645261
+        sandy = Image.open('Images/sandy.jpeg')
+        st.image(sandy) 
+    elif pitcheral == 'Max Scherzer: NYM (R)':
+        pitcheral = 453286
+        maxs = Image.open('Images/maxs.jpeg')
+        st.image(maxs)
+    elif pitcheral == 'Aaron Nola: PHI (R)':
+        pitcheral = 605400
+        nola = Image.open('Images/nola.jpeg')
+        st.image(nola)
+    elif pitcheral == 'Paolo Espino: WSH (R)':
+        pitcheral = 502179
+        espino = Image.open('Images/espino.jpeg')
+        st.image(espino)
         
 
     #else:
