@@ -218,7 +218,7 @@ def page3():
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103, value = 88, help = 'Pitch velocity.')
     st.info("Keep in mind that data and information is coming from the 2022 season and roster changes are only reflected for player images.")
     
-    hitter = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Anthony Santander: BAL (RF/S)', 'Randy Arozarena: TB (LF/R)', 'Xander Bogaerts: BOS (SS/R)', 'Aaron Judge: NYY (CF/R)', 'Andres Gimenez: CLE (2B/L)', 'Salvador Perez: KC (C/R)', 'Javier Baez: DET (SS/R)', 'Carlos Correa: MIN (SS/R)', 'Jose Abreu: CWS (1B/R)', 'Mike Trout: LAA (CF/R)', 'Yordan Alvarez: HOU (DH/L)', 'Julio Rodriguez: SEA (CF/R)', 'Nathaniel Lowe: TEX (1B/L)', 'Sean Murphy: OAK (C/R)'], help = 'Current hitters are only from the AL.')
+    hitter = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Anthony Santander: BAL (RF/S)', 'Randy Arozarena: TB (LF/R)', 'Xander Bogaerts: BOS (SS/R)', 'Aaron Judge: NYY (CF/R)', 'Andres Gimenez: CLE (2B/L)', 'Salvador Perez: KC (C/R)', 'Javier Baez: DET (SS/R)', 'Carlos Correa: MIN (SS/R)', 'Jose Abreu: CWS (1B/R)', 'Mike Trout: LAA (CF/R)', 'Yordan Alvarez: HOU (DH/L)', 'Julio Rodriguez: SEA (CF/R)', 'Nathaniel Lowe: TEX (1B/L)', 'Sean Murphy: OAK (C/R)', 'Dansby Swanson: ATL (SS/R)', 'Austin Riley: ATL (3B/R)'], help = 'Current hitters are only from the AL.')
     if hitter == "Bo Bichette: TOR (SS/R)":
         hitter = 666182
         from PIL import Image 
@@ -299,6 +299,16 @@ def page3():
         from PIL import Image 
         murphy = Image.open('Images/murphy.jpeg')
         st.image(murphy)
+    elif hitter == 'Dansby Swanson: ATL (SS/R)':
+        hitter = 621020
+        from PIL import Image 
+        swanson = Image.open('Images/swanson.jpeg')
+        st.image(swanson)
+    elif hitter == 'Austin Riley: ATL (3B/R)':
+        hitter = 663586
+        from PIL import Image 
+        riley = Image.open('Images/riley.jpeg')
+        st.image(riley)
     pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)'], help = 'Current pitchers are only from the AL. More players will be added.')
     if pitcheral == 'Tyler Wells: BAL (R)':
         pitcheral = 669330
