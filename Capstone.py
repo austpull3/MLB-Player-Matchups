@@ -494,7 +494,7 @@ def page3():
         pitcheral = 607074
         rodon = Image.open('Images/rodon.jpeg')
         st.image(rodon)
-    elif pitcheral == 'Ryan Feltner: COL. (R)':
+    elif pitcheral == 'Ryan Feltner: COL (R)':
         pitcheral = 663372
         felt = Image.open('Images/felt.jpeg')
         st.image(felt)
