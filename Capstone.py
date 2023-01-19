@@ -218,7 +218,7 @@ def page3():
     release_speed = st.number_input('Pitch Release Speed:', min_value=70, max_value=103, value = 88, help = 'Pitch velocity.')
     st.info("Keep in mind that data and information is coming from the 2022 season and roster changes are only reflected for player images.")
     
-    hitter = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Anthony Santander: BAL (RF/S)', 'Randy Arozarena: TB (LF/R)', 'Xander Bogaerts: BOS (SS/R)', 'Aaron Judge: NYY (CF/R)', 'Andres Gimenez: CLE (2B/L)', 'Salvador Perez: KC (C/R)', 'Javier Baez: DET (SS/R)', 'Carlos Correa: MIN (SS/R)', 'Jose Abreu: CWS (1B/R)', 'Mike Trout: LAA (CF/R)', 'Yordan Alvarez: HOU (DH/L)', 'Julio Rodriguez: SEA (CF/R)', 'Nathaniel Lowe: TEX (1B/L)', 'Sean Murphy: OAK (C/R)', 'Dansby Swanson: ATL (SS/R)', 'Austin Riley: ATL (3B/R)', 'Garrett Cooper: MIA (1B/R)', 'Pete Alonso: NYM (1B/R)', 'Juan Soto: WSH (RF/L)','Rhys Hoskins: PHI (1B/R)', 'Paul Goldschmidt: STL (1B/R)', 'Willy Adames: MIL (SS/R)'], help = 'Select an AL or NL Hitter.')
+    hitter = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Anthony Santander: BAL (RF/S)', 'Randy Arozarena: TB (LF/R)', 'Xander Bogaerts: BOS (SS/R)', 'Aaron Judge: NYY (CF/R)', 'Andres Gimenez: CLE (2B/L)', 'Salvador Perez: KC (C/R)', 'Javier Baez: DET (SS/R)', 'Carlos Correa: MIN (SS/R)', 'Jose Abreu: CWS (1B/R)', 'Mike Trout: LAA (CF/R)', 'Yordan Alvarez: HOU (DH/L)', 'Julio Rodriguez: SEA (CF/R)', 'Nathaniel Lowe: TEX (1B/L)', 'Sean Murphy: OAK (C/R)', 'Dansby Swanson: ATL (SS/R)', 'Austin Riley: ATL (3B/R)', 'Garrett Cooper: MIA (1B/R)', 'Pete Alonso: NYM (1B/R)', 'Juan Soto: WSH (RF/L)','Rhys Hoskins: PHI (1B/R)', 'Paul Goldschmidt: STL (1B/R)', 'Willy Adames: MIL (SS/R)', 'Bryan Reynolds: PIT (CF/S)', 'Nico Hoerner: CHC (SS/R)','Kyle Farmer: CIN (SS/R)', 'Freddie Freeman: LAD (1B/L)', 'Christian Walker: ARI (1B/R)', 'Manny Machado: SD (3B/R)', 'Joc Pederson: SF (LF/L)', 'CJ Cron: COL (1B/R)'], help = 'Select an AL or NL Hitter.')
     if hitter == "Bo Bichette: TOR (SS/R)":
         hitter = 666182
         from PIL import Image 
@@ -315,32 +315,72 @@ def page3():
         coop = Image.open('Images/coop.jpeg')
         st.image(coop)
     elif hitter == 'Pete Alonso: NYM (1B/R)':
-        pete = 624413
+        hitter = 624413
         from PIL import Image 
         pete = Image.open('Images/pete.jpeg')
         st.image(pete)  
     elif hitter == 'Juan Soto: WSH (RF/L)':
-        soto = 665742
+        hitter = 665742
         from PIL import Image 
         soto = Image.open('Images/soto.jpeg')
         st.image(soto) 
     elif hitter == 'Rhys Hoskins: PHI (1B/R)':
-        rhys = 656555
+        hitter = 656555
         from PIL import Image 
         rhys = Image.open('Images/rhys.jpeg')
         st.image(rhys)  
     elif hitter == 'Paul Goldschmidt: STL (1B/R)':
-        gold = 502671
+        hitter = 502671
         from PIL import Image 
         gold = Image.open('Images/gold.jpeg')
         st.image(gold)  
     elif hitter == 'Willy Adames: MIL (SS/R)':
-        willy = 642715
+        hitter = 642715
         from PIL import Image 
         willy = Image.open('Images/willy.jpeg')
         st.image(willy)  
+    elif hitter == 'Bryan Reynolds: PIT (CF/S)':
+        hitter = 668804
+        from PIL import Image 
+        bryan = Image.open('Images/bryan.jpeg')
+        st.image(bryan)  
+    elif hitter == 'Nico Hoerner: CHC (SS/R)':
+        hitter = 663538
+        from PIL import Image 
+        nico = Image.open('Images/nico.jpeg')
+        st.image(nico)  
+    elif hitter == 'Kyle Farmer: CIN (SS/R)':
+        hitter = 571657
+        from PIL import Image 
+        farmer = Image.open('Images/farmer.jpeg')
+        st.image(farmer)  
+    elif hitter == 'Freddy Freeman: LAD (1B/L)':
+        hitter = 518692
+        from PIL import Image 
+        freddy = Image.open('Images/freddy.jpeg')
+        st.image(freddy)  
+    elif hitter == 'Christian Walker: ARI (1B/R)':
+        hitter = 572233
+        from PIL import Image 
+        cwalker = Image.open('Images/cwalker.jpeg')
+        st.image(cwalker)  
+    elif hitter == 'Manny Machado: SD (3B/R)':
+        hitter = 592518
+        from PIL import Image 
+        manny = Image.open('Images/manny.jpeg')
+        st.image(manny)  
+    elif hitter == 'Joc Pederson: SF (LF/L)':
+        hitter = 592626
+        from PIL import Image 
+        joc = Image.open('Images/joc.jpeg')
+        st.image(joc)  
+    elif hitter == 'CJ Cron: COL (1B/R)':
+        hitter = 543068
+        from PIL import Image 
+        cron = Image.open('Images/cron.jpeg')
+        st.image(cron)  
    
-    pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)', 'Max Fried: ATL (L)', 'Sandy Alcantara: MIA (R)', 'Max Scherzer: NYM (R)', 'Aaron Nola: PHI (R)', 'Paolo Espino: WSH (R)', 'Corbin Burnes: MIL (R)', 'Marcus Stroman: CHC (R)', 'Nick Lodolo: CIN (L)', 'Miles Mikolas: STL (R)', 'Jose Quintana: PIT (L)'], help = 'Select an American or National League Pitcher.')
+    pitcheral = st.selectbox("Please select an AL pitcher.", ['Tyler Wells: BAL (R)', 'Drew Rasmussen: TB (R)', 'Nick Pivetta: BOS (R)', 'Nestor Cortes: NYY (L)', 'Triston McKenzie: CLE (R)', 'Brady Singer: KC (R)', 'Tarik Skubal: DET (L)', 'Sonny Gray: MIN (R)', 'Dylan Cease: CWS (R)', 'Shohei Ohtani: LAA (R)', 'Justin Verlander: HOU (R)', 'James Kaprielian: OAK (R)', 'Chris Flexen: SEA (R)', 'Martin Perez: TEX (L)', 'Max Fried: ATL (L)', 'Sandy Alcantara: MIA (R)', 'Max Scherzer: NYM (R)', 'Aaron Nola: PHI (R)', 'Paolo Espino: WSH (R)', 'Corbin Burnes: MIL (R)', 'Marcus Stroman: CHC (R)', 'Nick Lodolo: CIN (L)', 'Miles Mikolas: STL (R)', 'Jose Quintana: PIT (L)', 'Tony Gonsolin: LAD (R)', 'Zac Gallen: ARI (R)', 'Yu Darvish: SD (R)','Carlos Rodon: SF (L)', 'Ryan Feltner: COL (R)'], help = 'Select an American or National League Pitcher.')
     if pitcheral == 'Tyler Wells: BAL (R)':
         pitcheral = 669330
         wells = Image.open('Images/wells.jpeg')
@@ -438,6 +478,26 @@ def page3():
         pitcheral = 500779
         quin = Image.open('Images/quin.jpeg')
         st.image(quin)
+    elif pitcheral == 'Tony Gonsolin: LAD (R)':
+        pitcheral = 664062
+        gons = Image.open('Images/gons.jpeg')
+        st.image(gons)
+    elif pitcheral == 'Zac Gallen: ARI (R)':
+        pitcheral = 668678
+        gallen = Image.open('Images/gallen.jpeg')
+        st.image(gallen)
+    elif pitcheral == 'Yu Darvish: SD (R)':
+        pitcheral = 506433
+        yu = Image.open('Images/yu.jpeg')
+        st.image(yu)
+    elif pitcheral == 'Carlos Rodon: SF (L)':
+        pitcheral = 607074
+        rodon = Image.open('Images/rodon.jpeg')
+        st.image(rodon)
+     elif pitcheral == 'Ryan Feltner: COL. (R)':
+        pitcheral = 663372
+        felt = Image.open('Images/felt.jpeg')
+        st.image(felt)
         
 
     #else:
