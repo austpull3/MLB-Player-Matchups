@@ -12,6 +12,7 @@ from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
 import io
 from streamlit_player import st_player
+import requests
 
 st.set_page_config(page_icon=":baseball:", page_title="MLB At-Bat Predictor") 
 #create first page/welcome page
