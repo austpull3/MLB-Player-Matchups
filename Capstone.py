@@ -72,6 +72,9 @@ def page2():
         st.error("Please do not include whitespace in the input.") #address error
     if last_name.isspace():
         st.warning("Please enter a player's last name.") #address error
+    if first_name and last_name:
+        player_info = playerid_lookup(last_name, first_name) #lookup player id to input into the statcast_batter()
+       
            
         
            
