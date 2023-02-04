@@ -61,8 +61,6 @@ def main_page():
     
     # Test that the video can be displayed in Streamlit
     assert st.video(video_url, st.write("Hey there")), "Failed to display video in Streamlit"
-    
-    import streamlit as st
 
     def test_youtube_video():
         video_url = "https://www.youtube.com/watch?v=clDXWm1jpfY"
