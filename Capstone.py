@@ -60,8 +60,22 @@ def main_page():
         assert st_player("https://www.youtube.com/watch?v=clDXWm1jpfY", st.write("This is the actual information hereheheheheh")), "Fail!!!"
 
         # Test if the link to the video is displayed
-        assert st.write("https://www.youtube.com/watch?v=clDXWm1jpfY"), "Failed to display link to video"
+        #assert st.write("https://www.youtube.com/watch?v=clDXWm1jpfY"), "Failed to display link to video"
     test_youtube_video()
+    
+
+    def test_youtube_link():
+        video_url = "https://www.youtube.com/watch?v=clDXWm1jpfY"
+
+        # Display the link to the video in Streamlit
+        st.write("Watch the video on YouTube:", st.markdown(f"[{video_url}](video_url)"))
+
+        # Check if the link is clickable by testing if it can be loaded
+        result = st.cache(st.internet.check_link, url=video_url, interval=60 * 60 * 24)
+        assert result, "Failed to load video link"
+        
+    test_youtube_link()
+
 
 
 
