@@ -55,7 +55,6 @@ def page2():
     st.title("Explore MLB Data and Visualize Spraycharts of your Favorite Players ⚾️") 
     st.markdown("#### Enter players from the 2022 season only!") #only 2022 players should be entered
     #try code for entering player names and displaying a spray chart plot
-    import streamlit as st
     from pybaseball import playerid_lookup, spraychart
 
     st.title("Hitter Spray Chart")
