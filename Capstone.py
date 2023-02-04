@@ -82,36 +82,7 @@ def page2():
             st.write(mlbid) #display the id 
             name = first_name + " " + last_name #combine name for plot
            
-            #provide acceptable entries for fields
-            st.markdown("#### Here are the acceptable field entries:")
-            fields = ['angels', 'astros', 'athletics', 'blue_jays', 'braves', 'brewers', 'cardinals', 'cubs', 'diamondbacks', 'dodgers', 'generic', 'giants', 'indians', 'mariners', 'marlins', 'mets', 'nationals', 'orioles', 'padres', 'phillies', 'pirates', 'rangers', 'rays', 'red_sox', 'reds', 'rockies', 'royals', 'tigers', 'twins', 'white_sox', 'yankees']
-            fieldnames = pd.DataFrame(fields, columns = ['Fields']) 
-            st.dataframe(fieldnames) #display fields
-            stadium = st.text_input("Enter MLB team for stadium.") #user input for field name that data is overlayed on
-
-            stadium = stadium.strip()
-            if stadium.isspace():
-                st.warning("Please enter a stadium.")
-            if " " in stadium:
-                st.error("Please do not include whitespace in the input.") #address error
-            if stadium:
-                data = statcast_batter('2022-04-07', '2022-10-02', mlbid) #pull data with player select in input based on id
-                s = spraychart(data, stadium, title = name)
-                fig = s.figure
-                # Display the spraychart
-                st.pyplot(fig)
-                tot = data.events.value_counts() #display event totals
-                st.dataframe(tot)
-
-                #animation plots not implemented
-                #fig2 = px.histogram(data, x ="events", color = "pitch_name", animation_frame = 'game_date', animation_group = 'events')
-                #st.write(fig2)
-
-                #fig3 = px.histogram(data, x ="events", color = "pitch_name")
-                #st.write(fig3)
-    #if the user causes an error let the user know to try new input            
-    except IndexError as e:
-        st.error("Incorrect Input. Please try another input.")
+           
         
     #set up sidebar
     st.sidebar.markdown("# Explore player spray charts 📈")
