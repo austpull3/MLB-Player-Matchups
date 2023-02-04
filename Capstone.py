@@ -66,8 +66,8 @@ def main_page():
         st.write("Source:", "https://www.youtube.com/watch?v=clDXWm1jpfY")
         # Check if the link is valid by sending a GET request
         response = requests.get("https://www.youtube.com/watch?v=clDXWm1jpfY")
-        assert response.status_code == 500, "Failed to load video link"
-        if response.status_code == 500:
+        assert response.status_code == 200, "Failed to load video link"
+        if response.status_code == 200:
             st.write("The link works!")
 
     test_youtube_link()
