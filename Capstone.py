@@ -62,12 +62,12 @@ def main_page():
     # Test that the video can be displayed in Streamlit
     assert st.video(video_url, st.write("Hey there")), "Failed to display video in Streamlit"
 
+    
+    
+    #Module testing
     def test_youtube_video():
-        video_url2 = "https://www.youtube.com/watch?v=clDXWm1jpfY"
 
         # Test if the video is displayed in Streamlit
-        assert st.video(video_url2, st.write("This function is working!!!!")), "Failed to display video in Streamlit"
-        
         assert st_player("https://www.youtube.com/watch?v=clDXWm1jpfY", st.write("This is the actual information hereheheheheh")), "Fail!!!"
 
         # Test if the link to the video is displayed
