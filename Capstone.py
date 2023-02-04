@@ -51,10 +51,10 @@ def main_page():
         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
     x = 5
     assert x == 5, "x is not equal to 5"
-    video_url = "https://www.youtube.com/watch?v=MPacja3hGdAA"
+    #video_url = "https://www.youtube.com/watch?v=MPacja3hGdA"
 
     # Check if the video URL is valid by sending a GET request
-    response = requests.get(video_url)
+    #response = requests.get(video_url)
     
     # Check if the response is 200 OK, meaning the URL is valid
     assert response.status_code == 200, f"Failed to load video. Response code: {response.status_code}"
