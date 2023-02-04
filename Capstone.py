@@ -55,16 +55,9 @@ def page2():
     st.title("Explore MLB Data and Visualize Spraycharts of your Favorite Players ⚾️") 
     st.markdown("#### Enter players from the 2022 season only!") #only 2022 players should be entered
     #try code for entering player names and displaying a spray chart plot
-    from pybaseball import playerid_lookup, spraychart
-
-    st.title("Hitter Spray Chart")
-
-    # Get the first and last name of the hitter
-    first_name = st.text_input("Enter first name:")
-    last_name = st.text_input("Enter last name:")
-
-    # Get the player ID for the specified hitter
-    player_id = playerid_lookup(last_name, first_name)
+    data1 = statcast_batter('2019-05-01', '2019-07-01', 514888)
+    sub_data = data1[data1['home_team'] == 'HOU']
+    spraychart(sub_data, 'astros', title='Jose Altuve: May-June 2019')
 
 
         
