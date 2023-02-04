@@ -39,8 +39,8 @@ def main_page():
         
     st.write(" ")
     st.markdown("### Do you want to predict moments like this? Continue to the other pages.")
-    st_player("https://www.youtube.com/watch?v=clDXWm1jpfY") #include youtube video 
-    st.write("Source: https://www.youtube.com/watch?v=clDXWm1jpfY") #link to the same video
+    #st_player("https://www.youtube.com/watch?v=clDXWm1jpfY") #include youtube video 
+    #st.write("Source: https://www.youtube.com/watch?v=clDXWm1jpfY") #link to the same video
     
     #sidebar instructions and layout
     st.sidebar.markdown("# Welcome!⚾️")
