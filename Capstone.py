@@ -66,18 +66,6 @@ def page2():
     # Get the player ID for the specified hitter
     player_id = playerid_lookup(last_name, first_name)
 
-    if player_id is not None:
-        player_id = player_id.iloc[0, 0]
-
-        # Create a spray chart for the specified hitter
-        fig = spraychart(player_id, year='2022')
-
-        if fig is not None:
-            st.pyplot(fig)
-        else:
-            st.write("No spray chart data found for the specified hitter.")
-    else:
-        st.write("Could not find player ID for the specified hitter.")
 
         
            
