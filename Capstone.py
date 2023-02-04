@@ -49,40 +49,6 @@ def main_page():
         st.sidebar.info("Welcome to the MLB At-Bat Outcome prediction application. To explore player outcome data and display some spraycharts go to the next page. If you want to predict at-bat outcomes go to the last page.")
         st.sidebar.info("Play the video at the bottom of the page to see an exciting at-bat.")
         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
- 
-
-    
-    
-    #Module testing
-    def test_youtube_video():
-        # Test if the video is displayed in Streamlit
-        dansbyyt = st_player("https://www.youtube.com/watch?v=clDXWm1jpfY")
-        assert dansbyyt, "Failed to load the video!"
-        if dansbyyt:
-            st.write("The youtube video loaded!")
-                         
-    test_youtube_video()
-    
-    def test_youtube_link():
-        #Test if the youtube populates and works
-        import requests
-        st.write("Source:", "https://www.youtube.com/watch?v=clDXWm1jpfY")
-        # Check if the link is valid by sending a GET request
-        response = requests.get("https://www.youtube.com/watch?v=clDXWm1jpfY")
-        assert response.status_code == 200, "Failed to load video link"
-        if response.status_code == 200:
-            st.write("The link works!")
-    test_youtube_link()
-
-    #the assert statement checks if the value of checkbox_value is either True or False, indicating whether the checkbox is checked or not. 
-    #If the value is neither True nor False, the assert statement will raise an error.
-    def test_help_checkbox():
-        checkboxcheck = st.sidebar.checkbox(" Select For Help ⚾️!")
-        assert checkboxcheck == True or checkboxcheck == False
-    test_help_checkbox()
-
-
-
 
 #define page 2 for visualizing player spraycharts    
 def page2():
