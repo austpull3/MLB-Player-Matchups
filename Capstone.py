@@ -66,6 +66,7 @@ def main_page():
         expected_video = "https://www.youtube.com/watch?v=clDXWm1jpfY"
         assert video == expected_video, f"Unexpected video: {video}"
         st.write("This is excecuting.")
+    test_main_page_content()
 #define page 2 for visualizing player spraycharts    
 def page2():
     st.title("Explore MLB Data and Visualize Spraycharts of your Favorite Players ⚾️") 
