@@ -50,7 +50,6 @@ def main_page():
         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
  
     import pytest
-
     def test_youtube_video():
         @st.cache
         def load_video(video_id):
@@ -60,6 +59,7 @@ def main_page():
 
         assert video is not None, "Video should not be None"
         assert video.video_id == "clDXWm1jpfY", "Incorrect video id"
+    test_youtube_video()
 
 #define page 2 for visualizing player spraycharts    
 def page2():
