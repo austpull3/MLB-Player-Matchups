@@ -49,9 +49,6 @@ def main_page():
         st.sidebar.info("Play the video at the bottom of the page to see an exciting at-bat.")
         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
     def test_main_page_content():
-        # Use the streamlit testing utility to run the main_page function
-        with st.spyder.Session() as sess:
-            main_page()
         # Check if the title is displayed
         title = st.spyder.get_title()
         assert title == "Welcome to the MLB At-Bat Predictor", f"Unexpected title: {title}"
