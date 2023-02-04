@@ -67,6 +67,8 @@ def main_page():
 
         # Test if the video is displayed in Streamlit
         assert st.video(video_url2, st.write("This function is working!!!!")), "Failed to display video in Streamlit"
+        
+        assert st_player("https://www.youtube.com/watch?v=clDXWm1jpfY", st.write("This is the actual information hereheheheheh")), "Fail!!!"
 
         # Test if the link to the video is displayed
         #output = st.write("Source: https://www.youtube.com/watch?v=clDXWm1jpfY")
