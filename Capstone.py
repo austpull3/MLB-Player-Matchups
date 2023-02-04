@@ -48,37 +48,6 @@ def main_page():
         st.sidebar.info("Welcome to the MLB At-Bat Outcome prediction application. To explore player outcome data and display some spraycharts go to the next page. If you want to predict at-bat outcomes go to the last page.")
         st.sidebar.info("Play the video at the bottom of the page to see an exciting at-bat.")
         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
-import pytest
-from PIL import Image
-
-def test_main_page_title():
-    main_page()
-    assert st.get_page_content_str().startswith("<!DOCTYPE html><html><head>\n    <meta charset=utf-8>\n    <meta content=IE=edge")
-
-def test_main_page_images():
-    main_page()
-    assert isinstance(Image.open('Images/mlb.png'), Image.Image)
-    assert isinstance(Image.open('Images/judgehitting.jpeg'), Image.Image)
-    assert isinstance(Image.open('Images/justinv.jpeg'), Image.Image)
-    assert isinstance(Image.open('Images/vs.jpeg'), Image.Image)
-
-def test_main_page_markdown_text():
-    main_page()
-    assert "Welcome to the MLB At-Bat Predictor" in st.get_page_content_str()
-    assert "Explore the predicted at-bat outcomes of the games best!" in st.get_page_content_str()
-    assert "Do you want to predict moments like this? Continue to the other pages." in st.get_page_content_str()
-
-def test_main_page_sidebar():
-    main_page()
-    assert "Welcome!⚾️" in st.get_page_content_str()
-    assert "Select For Help ⚾️" in st.get_page_content_str()
-    assert "Welcome to the MLB At-Bat Outcome prediction application." in st.get_page_content_str()
-    assert "Play the video at the bottom of the page to see an exciting at-bat." in st.get_page_content_str()
-    assert "The drop down above ↑ includes different pages to navigate through." in st.get_page_content_str()
-
-if __name__ == "__main__":
-    pytest.main()
-
 
 #define page 2 for visualizing player spraycharts    
 def page2():
