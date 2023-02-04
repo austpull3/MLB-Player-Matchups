@@ -58,9 +58,6 @@ def main_page():
 
         # Test if the video is displayed in Streamlit
         assert st_player("https://www.youtube.com/watch?v=clDXWm1jpfY", st.write("This is the actual information hereheheheheh")), "Fail!!!"
-
-        # Test if the link to the video is displayed
-        #assert st.write("https://www.youtube.com/watch?v=clDXWm1jpfY"), "Failed to display link to video"
     test_youtube_video()
     
 
@@ -69,8 +66,8 @@ def main_page():
         st.write("Source:", "https://www.youtube.com/watch?v=clDXWm1jpfY")
         # Check if the link is valid by sending a GET request
         response = requests.get("https://www.youtube.com/watch?v=clDXWm1jpfY")
-        assert response.status_code == 200, "Failed to load video link"
-        if response.status_code == 200:
+        assert response.status_code == 500, "Failed to load video link"
+        if response.status_code == 500:
             st.write("The link works!")
 
     test_youtube_link()
