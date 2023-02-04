@@ -53,6 +53,7 @@ def main_page():
 #define page 2 for visualizing player spraycharts    
 def page2():
     st.title("Explore MLB Data and Visualize Spraycharts of your Favorite Players ⚾️") 
+    st.info("Players will be avaliable as for predictions due to current issues with the pybaseball playerid_lookup.")
     st.markdown("#### Enter players from the 2022 season only!") #only 2022 players should be entered
     #try code for entering player names and displaying a spray chart plot
     data1 = statcast_batter('2019-05-01', '2019-07-01', 514888)
