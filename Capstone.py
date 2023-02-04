@@ -74,6 +74,13 @@ def main_page():
             st.write("The link works!")
     test_youtube_link()
 
+    #the assert statement checks if the value of checkbox_value is either True or False, indicating whether the checkbox is checked or not. 
+    #If the value is neither True nor False, the assert statement will raise an error.
+    def test_help_checkbox():
+        checkboxcheck = st.sidebar.checkbox(" Select For Help ⚾️")
+        assert checkboxcheck == True or checkboxcheck == False
+    test_help_checkbox()
+
 
 
 
