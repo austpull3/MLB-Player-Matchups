@@ -51,7 +51,7 @@ def main_page():
         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
     x = 5
     assert x == 5, "x is not equal to 5"
-    video_url = "https://www.youtube.com/watch?v=MPacja3hGdA"
+    video_url = "https://www.youtube.com/watch?v=MPacja3hGdAA"
 
     # Check if the video URL is valid by sending a GET request
     response = requests.get(video_url)
