@@ -48,7 +48,7 @@ def main_page():
         st.sidebar.info("Welcome to the MLB At-Bat Outcome prediction application. To explore player outcome data and display some spraycharts go to the next page. If you want to predict at-bat outcomes go to the last page.")
         st.sidebar.info("Play the video at the bottom of the page to see an exciting at-bat.")
         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
-    x = 6
+    x = 5
     assert x == 5, "x is not equal to 5"
     video_url = "https://www.youtube.com/watch?v=MPacja3hGdA"
 
