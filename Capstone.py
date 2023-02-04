@@ -58,6 +58,13 @@ def page2():
     data1 = statcast_batter('2019-05-01', '2019-07-01', 514888)
     sub_data = data1[data1['home_team'] == 'HOU']
     spraychart(sub_data, 'astros', title='Jose Altuve: May-June 2019')
+    s = spraychart(sub_data, 'astros, title = 'Jose Altuve')
+    fig = s.figure
+    # Display the spraychart
+    st.pyplot(fig)
+    tot = data.events.value_counts() #display event totals
+    st.dataframe(tot)
+
 
 
         
