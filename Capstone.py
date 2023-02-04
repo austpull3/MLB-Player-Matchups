@@ -52,31 +52,34 @@ def main_page():
 
 #define page 2 for visualizing player spraycharts    
 def page2():
-    from pybaseball import playerid_lookup
-    from pybaseball import statcast_batter, spraychart
-    from pybaseball import batting_stats
-    from pybaseball import pitching_stats
-    from pybaseball import statcast
     st.title("Explore MLB Data and Visualize Spraycharts of your Favorite Players ⚾️") 
     st.markdown("#### Enter players from the 2022 season only!") #only 2022 players should be entered
     #try code for entering player names and displaying a spray chart plot
-    from pybaseball import playerid_lookup
-    first_name = st.text_input('Enter a players first name:')
-    first_name = first_name.strip()
-    if " " in first_name:
-        st.error("Please do not include whitespace in the input.") #address error
-    if first_name.isspace():
-        st.warning("Please enter a player's first name.") #address error
-    last_name = st.text_input('Enter a players last name:')
-    last_name = last_name.strip()
-    if " " in last_name:
-        st.error("Please do not include whitespace in the input.") #address error
-    if last_name.isspace():
-        st.warning("Please enter a player's last name.") #address error
-    if first_name and last_name:
-        player_info = playerid_lookup(last_name, first_name) #lookup player id to input into the statcast_batter()
-       
-           
+    import streamlit as st
+    from pybaseball import playerid_lookup, spraychart
+
+    st.title("Hitter Spray Chart")
+
+    # Get the first and last name of the hitter
+    first_name = st.text_input("Enter first name:")
+    last_name = st.text_input("Enter last name:")
+
+    # Get the player ID for the specified hitter
+    player_id = playerid_lookup(last_name, first_name)
+
+    if player_id is not None:
+        player_id = player_id.iloc[0, 0]
+
+        # Create a spray chart for the specified hitter
+        fig = spraychart(player_id, year='2022')
+
+        if fig is not None:
+            st.pyplot(fig)
+        else:
+            st.write("No spray chart data found for the specified hitter.")
+    else:
+        st.write("Could not find player ID for the specified hitter.")
+
         
            
         
