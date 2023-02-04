@@ -89,7 +89,7 @@ def page2():
             pid = player_info['key_mlbam']
             st.markdown("#### Player ID")
             mlbid = pid.iloc[0] #get the player id value
-            st.write(mlbid) #display the id
+            st.write(mlbid) #display the id 
             name = first_name + " " + last_name #combine name for plot
            
             #provide acceptable entries for fields
