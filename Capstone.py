@@ -55,13 +55,15 @@ def main_page():
     
     #Module testing
     def test_youtube_video():
-
         # Test if the video is displayed in Streamlit
-        assert st_player("https://www.youtube.com/watch?v=clDXWm1jpfY", st.write("This is the actual information hereheheheheh")), "Fail!!!"
+        assert st_player("https://www.youtube.com/watch?v=clDXWm1jpfY"), "Failed to load the video!"
+        if st_player("https://www.youtube.com/watch?v=clDXWm1jpfY"):
+            st.write('The video loaded!')
+                         
     test_youtube_video()
     
-
     def test_youtube_link():
+        #Test if the youtube populates and works
         import requests
         st.write("Source:", "https://www.youtube.com/watch?v=clDXWm1jpfY")
         # Check if the link is valid by sending a GET request
@@ -69,7 +71,6 @@ def main_page():
         assert response.status_code == 200, "Failed to load video link"
         if response.status_code == 200:
             st.write("The link works!")
-
     test_youtube_link()
 
 
