@@ -56,10 +56,78 @@ def page2():
     st.info("Limited players will currently be avaliable due to issues with the pybaseball playerid_lookup. All players will be searchable when this issue is resolved with the Python package.")
     st.markdown("#### Enter players from the 2022 season only!") #only 2022 players should be entered
     #try code for entering player names and displaying a spray chart plot
-    data1 = statcast_batter('2019-05-01', '2019-07-01', 514888)
+    selectedplayer = st.selectbox("Please select a hitter.", ['Bo Bichette: TOR (SS/R)', 'Vladimir Guerrero Jr.: TOR (1B/R)', 'Anthony Santander: BAL (RF/S)', 'Randy Arozarena: TB (LF/R)', 'Xander Bogaerts: BOS (SS/R)', 'Aaron Judge: NYY (CF/R)', 'Andres Gimenez: CLE (2B/L)', 'Salvador Perez: KC (C/R)', 'Javier Baez: DET (SS/R)', 'Carlos Correa: MIN (SS/R)', 'Jose Abreu: CWS (1B/R)', 'Mike Trout: LAA (CF/R)', 'Yordan Alvarez: HOU (DH/L)', 'Julio Rodriguez: SEA (CF/R)', 'Nathaniel Lowe: TEX (1B/L)', 'Sean Murphy: OAK (C/R)', 'Dansby Swanson: ATL (SS/R)', 'Austin Riley: ATL (3B/R)', 'Garrett Cooper: MIA (1B/R)', 'Pete Alonso: NYM (1B/R)', 'Juan Soto: WSH (RF/L)','Rhys Hoskins: PHI (1B/R)', 'Paul Goldschmidt: STL (1B/R)', 'Willy Adames: MIL (SS/R)', 'Bryan Reynolds: PIT (CF/S)', 'Nico Hoerner: CHC (SS/R)','Kyle Farmer: CIN (SS/R)', 'Freddie Freeman: LAD (1B/L)', 'Christian Walker: ARI (1B/R)', 'Manny Machado: SD (3B/R)', 'Joc Pederson: SF (LF/L)', 'CJ Cron: COL (1B/R)'], help = 'Select an AL or NL Hitter.')
+    if selectedplayer == "Bo Bichette: TOR (SS/R)":
+        selectedplayer = 666182
+    elif selectedplayer == "Vladimir Guerrero Jr.: TOR (1B/R)":
+        selectedplayer = 665489
+    elif selectedplayer == 'Anthony Santander: BAL (RF/S)':
+        selectedplayer = 623993
+    elif selectedplayer == 'Randy Arozarena: TB (LF/R)':
+        selectedplayer = 668227
+    elif selectedplayer == 'Xander Bogaerts: BOS (SS/R)':
+        selectedplayer = 593428
+    elif selectedplayer == 'Aaron Judge: NYY (CF/R)':
+        selectedplayer = 592450
+    elif selectedplayer == 'Andres Gimenez: CLE (2B/L)':
+        selectedplayer = 665926
+    elif selectedplayer == 'Salvador Perez: KC (C/R)':
+        selectedplayer = 521692
+    elif selectedplayer == 'Javier Baez: DET (SS/R)':
+        selectedplayer = 595879
+    elif selectedplayer == 'Carlos Correa: MIN (SS/R)':
+        selectedplayer = 621043
+    elif selectedplayer == 'Jose Abreu: CWS (1B/R)':
+        selectedplayer = 547989
+    elif selectedplayer == 'Mike Trout: LAA (CF/R)':
+        selectedplayer = 545361
+    elif selectedplayer == 'Yordan Alvarez: HOU (DH/L)':
+        selectedplayer = 670541
+    elif selectedplayer == 'Julio Rodriguez: SEA (CF/R)':
+        selectedplayer = 677594
+    elif selectedplayer == 'Nathaniel Lowe: TEX (1B/L)':
+        selectedplayer = 663993
+        from PIL import Image 
+        lowe = Image.open('Images/lowe.jpeg')
+        st.image(lowe)
+    elif selectedplayer == 'Sean Murphy: OAK (C/R)':
+        selectedplayer = 669221
+    elif selectedplayer == 'Dansby Swanson: ATL (SS/R)':
+        selectedplayer = 621020
+    elif selectedplayer == 'Austin Riley: ATL (3B/R)':
+        selectedplayer = 663586
+    elif selectedplayer == 'Garrett Cooper: MIA (1B/R)':
+        selectedplayer = 643265
+    elif selectedplayer == 'Pete Alonso: NYM (1B/R)':
+        selectedplayer = 624413 
+    elif selectedplayer == 'Juan Soto: WSH (RF/L)':
+        selectedplayer = 665742
+    elif selectedplayer == 'Rhys Hoskins: PHI (1B/R)':
+        selectedplayer = 656555
+    elif selectedplayer == 'Paul Goldschmidt: STL (1B/R)':
+        selectedplayer = 502671 
+    elif selectedplayer == 'Willy Adames: MIL (SS/R)':
+        selectedplayer = 642715
+    elif selectedplayer == 'Bryan Reynolds: PIT (CF/S)':
+        selectedplayer = 668804
+    elif selectedplayer == 'Nico Hoerner: CHC (SS/R)':
+        selectedplayer = 663538 
+    elif selectedplayer == 'Kyle Farmer: CIN (SS/R)':
+        selectedplayer = 571657 
+    elif selectedplayer == 'Freddy Freeman: LAD (1B/L)':
+        selectedplayer = 518692  
+    elif selectedplayer == 'Christian Walker: ARI (1B/R)':
+        selectedplayer = 572233
+    elif selectedplayer == 'Manny Machado: SD (3B/R)':
+        selectedplayer = 592518
+    elif selectedplayer == 'Joc Pederson: SF (LF/L)':
+        selectedplayer = 592626
+    elif selectedplayer == 'CJ Cron: COL (1B/R)':
+        selectedplayer = 543068
+
+    data1 = statcast_batter('2022-04-07', '2022-10-02', selectedplayer)
     sub_data = data1[data1['home_team'] == 'HOU']
-    spraychart(sub_data, 'astros', title='Jose Altuve: May-June 2019')
-    s = spraychart(sub_data, 'astros', title = 'Jose Altuve')
+    s = spraychart(sub_data, 'astros', title = selectedplayer)
     fig = s.figure
     # Display the spraychart
     st.pyplot(fig)
