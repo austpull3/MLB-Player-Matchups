@@ -65,15 +65,17 @@ def main_page():
     
 
     def test_youtube_link():
-        video_url = "https://www.youtube.com/watch?v=clDXWm1jpfY"
+        import requests
+        video_url33 = "https://www.youtube.com/watch?v=clDXWm1jpfY"
 
         # Display the link to the video in Streamlit
-        st.write("Watch the video on YouTube:", st.markdown(f"[{video_url}](video_url)"))
+        st.write("Watch the video on YouTube:", st.markdown(f"[{video_url33}](video_url33)"))
 
-        # Check if the link is clickable by testing if it can be loaded
-        result = st.cache(st.internet.check_link, url=video_url, interval=60 * 60 * 24)
-        assert result, "Failed to load video link"
-        
+        # Check if the link is valid by sending a GET request
+        response = requests.get(video_url33)
+        assert response.status_code == 200, "Failed to load video link"
+
+
     test_youtube_link()
 
 
