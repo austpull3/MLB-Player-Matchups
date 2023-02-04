@@ -48,18 +48,9 @@ def main_page():
         st.sidebar.info("Welcome to the MLB At-Bat Outcome prediction application. To explore player outcome data and display some spraycharts go to the next page. If you want to predict at-bat outcomes go to the last page.")
         st.sidebar.info("Play the video at the bottom of the page to see an exciting at-bat.")
         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
- 
-    import pytest
-    def test_youtube_video():
-        @st.cache
-        def load_video(video_id):
-            return st.YouTubeVideo(video_id)
+    x = 6
+    assert x == 5, "x is not equal to 5"
 
-        video = load_video("clDXWm1jpfY")
-
-        assert video is not None, "Video should not be None"
-        assert video.video_id == "clDXWm1jpfY", "Incorrect video id"
-    test_youtube_video()
 
 #define page 2 for visualizing player spraycharts    
 def page2():
@@ -129,12 +120,6 @@ def page2():
          st.sidebar.info("3. View player spray chart at the selected MLB Stadium and the frequency of each outcome. ")
          st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to make predictions.")
 
-               
-
-
-       
-        
-           
 #define prediction page       
 def page3():
     st.title("Predict MLB At-Bat Outcomes ⚾️") 
