@@ -56,7 +56,10 @@ def main_page():
     #Module testing
     def test_youtube_video():
         # Test if the video is displayed in Streamlit
-        assert st_player("https://www.youtube.com/watch?v=clDXWm1jpfY"), "Failed to load the video!"
+        dansbyyt = st_player("https://www.youtube.com/watch?v=clDXWm1jpfY")
+        assert dansbyyt, "Failed to load the video!"
+        if dansbyyt:
+            st.write("The youtube video loaded!")
                          
     test_youtube_video()
     
