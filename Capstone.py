@@ -60,28 +60,27 @@ def page2():
     st.title("Explore MLB Data and Visualize Spraycharts of your Favorite Players ⚾️") 
     st.markdown("#### Enter players from the 2022 season only!") #only 2022 players should be entered
     #try code for entering player names and displaying a spray chart plot
-    try: 
-        first_name = st.text_input('Enter a players first name:')
-        first_name = first_name.strip()
-        if " " in first_name:
-            st.error("Please do not include whitespace in the input.") #address error
-        if first_name.isspace():
-            st.warning("Please enter a player's first name.") #address error
-        last_name = st.text_input('Enter a players last name:')
-        last_name = last_name.strip()
-        if " " in last_name:
-            st.error("Please do not include whitespace in the input.") #address error
-        if last_name.isspace():
-            st.warning("Please enter a player's last name.") #address error
-
-        if first_name and last_name:
-            player_info = playerid_lookup(last_name, first_name) #lookup player id to input into the statcast_batter()
-            pid = player_info['key_mlbam']
-            st.markdown("#### Player ID")
-            mlbid = pid.iloc[0] #get the player id value
-            st.write(mlbid) #display the id 
-            name = first_name + " " + last_name #combine name for plot
+    first_name = st.text_input('Enter a players first name:')
+    first_name = first_name.strip()
+    if " " in first_name:
+        st.error("Please do not include whitespace in the input.") #address error
+    if first_name.isspace():
+        st.warning("Please enter a player's first name.") #address error
+    last_name = st.text_input('Enter a players last name:')
+    last_name = last_name.strip()
+    if " " in last_name:
+        st.error("Please do not include whitespace in the input.") #address error
+    if last_name.isspace():
+        st.warning("Please enter a player's last name.") #address error
+    if first_name and last_name:
+        player_info = playerid_lookup(last_name, first_name) #lookup player id to input into the statcast_batter()
+        pid = player_info['key_mlbam']
+        st.markdown("#### Player ID")
+        mlbid = pid.iloc[0] #get the player id value
+        st.write(mlbid) #display the id 
+        name = first_name + " " + last_name #combine name for plot
            
+        
            
         
     #set up sidebar
