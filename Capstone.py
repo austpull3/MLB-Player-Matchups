@@ -52,7 +52,6 @@ def main_page():
         # Use the streamlit testing utility to run the main_page function
         with st.spyder.Session() as sess:
             main_page()
-
         # Check if the title is displayed
         title = st.spyder.get_title()
         assert title == "Welcome to the MLB At-Bat Predictor", f"Unexpected title: {title}"
@@ -66,6 +65,7 @@ def main_page():
         video = st.spyder.get_video()
         expected_video = "https://www.youtube.com/watch?v=clDXWm1jpfY"
         assert video == expected_video, f"Unexpected video: {video}"
+        st.write("This is excecuting".)
 #define page 2 for visualizing player spraycharts    
 def page2():
     st.title("Explore MLB Data and Visualize Spraycharts of your Favorite Players ⚾️") 
