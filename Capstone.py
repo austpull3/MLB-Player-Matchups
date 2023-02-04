@@ -48,7 +48,24 @@ def main_page():
         st.sidebar.info("Welcome to the MLB At-Bat Outcome prediction application. To explore player outcome data and display some spraycharts go to the next page. If you want to predict at-bat outcomes go to the last page.")
         st.sidebar.info("Play the video at the bottom of the page to see an exciting at-bat.")
         st.sidebar.markdown("### The drop down above ↑ includes different pages to navigate through. Select the next page to explore MLB data or the last page to make predictions. Enjoy!")
+def test_main_page_content():
+    # Use the streamlit testing utility to run the main_page function
+    with st.spyder.Session() as sess:
+        main_page()
 
+    # Check if the title is displayed
+    title = st.spyder.get_title()
+    assert title == "Welcome to the MLB At-Bat Predictor", f"Unexpected title: {title}"
+
+    # Check if the side bar info is displayed
+    sidebar_info = st.spyder.get_sidebar_info()
+    expected_sidebar_info = "Welcome to the MLB At-Bat Outcome prediction application. To explore player outcome data and display some spraycharts go to the next page. If you want to predict at-bat outcomes go to the last page."
+    assert expected_sidebar_info in sidebar_info, f"Unexpected sidebar info: {sidebar_info}"
+
+    # Check if the video is displayed
+    video = st.spyder.get_video()
+    expected_video = "https://www.youtube.com/watch?v=clDXWm1jpfY"
+    assert video == expected_video, f"Unexpected video: {video}"
 #define page 2 for visualizing player spraycharts    
 def page2():
     st.title("Explore MLB Data and Visualize Spraycharts of your Favorite Players ⚾️") 
