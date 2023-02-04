@@ -72,13 +72,6 @@ def page2():
         st.error("Please do not include whitespace in the input.") #address error
     if last_name.isspace():
         st.warning("Please enter a player's last name.") #address error
-    if first_name and last_name:
-        player_info = playerid_lookup(last_name, first_name) #lookup player id to input into the statcast_batter()
-        pid = player_info['key_mlbam']
-        st.markdown("#### Player ID")
-        mlbid = pid.iloc[0] #get the player id value
-        st.write(mlbid) #display the id 
-        name = first_name + " " + last_name #combine name for plot
            
         
            
