@@ -641,3 +641,37 @@ page_names_to_funcs = {
 #select pages
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
 page_names_to_funcs[selected_page]()
+
+
+import pytest
+import streamlit as st
+from PIL import Image
+
+def test_main_page_title():
+    main_page()
+    assert st.get_page_content_str().startswith("<!DOCTYPE html><html><head>\n    <meta charset=utf-8>\n    <meta content=IE=edge")
+
+def test_main_page_images():
+    main_page()
+    assert isinstance(Image.open('Images/mlb.png'), Image.Image)
+    assert isinstance(Image.open('Images/judgehitting.jpeg'), Image.Image)
+    assert isinstance(Image.open('Images/justinv.jpeg'), Image.Image)
+    assert isinstance(Image.open('Images/vs.jpeg'), Image.Image)
+
+def test_main_page_markdown_text():
+    main_page()
+    assert "Welcome to the MLB At-Bat Predictor" in st.get_page_content_str()
+    assert "Explore the predicted at-bat outcomes of the games best!" in st.get_page_content_str()
+    assert "Do you want to predict moments like this? Continue to the other pages." in st.get_page_content_str()
+
+def test_main_page_sidebar():
+    main_page()
+    assert "Welcome!⚾️" in st.get_page_content_str()
+    assert "Select For Help ⚾️" in st.get_page_content_str()
+    assert "Welcome to the MLB At-Bat Outcome prediction application." in st.get_page_content_str()
+    assert "Play the video at the bottom of the page to see an exciting at-bat." in st.get_page_content_str()
+    assert "The drop down above ↑ includes different pages to navigate through." in st.get_page_content_str()
+
+if __name__ == "__main__":
+    pytest.main()
+
