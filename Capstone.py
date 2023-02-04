@@ -60,8 +60,8 @@ def main_page():
         assert st_player("https://www.youtube.com/watch?v=clDXWm1jpfY", st.write("This is the actual information hereheheheheh")), "Fail!!!"
 
         # Test if the link to the video is displayed
-        #output = st.write("Source: https://www.youtube.com/watch?v=clDXWm1jpfY")
-        #assert output == "Source: https://www.youtube.com/watch?v=clDXWm1jpfY", "Failed to display link to video"
+        st.write("Source: https://www.youtube.com/watch?v=clDXWm1jpfY")
+        assert st.write("Source: https://www.youtube.com/watch?v=clDXWm1jpfY"), "Failed to display link to video"
     test_youtube_video()
 
 
