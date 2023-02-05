@@ -39,8 +39,8 @@ def main_page():
         
     st.write(" ")
     st.markdown("### Do you want to predict moments like this? Continue to the other pages.")
-    #st_player("https://www.youtube.com/watch?v=clDXWm1jpfY") #include youtube video 
-    #st.write("Source: https://www.youtube.com/watch?v=clDXWm1jpfY") #link to the same video
+    st_player("https://www.youtube.com/watch?v=clDXWm1jpfY") #include youtube video 
+    st.write("Source: https://www.youtube.com/watch?v=clDXWm1jpfY") #link to the same video
     
     #sidebar instructions and layout
     st.sidebar.markdown("# Welcome!⚾️")
@@ -643,11 +643,7 @@ def page3():
         def sci(num):
             return '{:.2f}'.format(num)
         predictions = np.vectorize(sci)(Abpredict)
-        st.write("Here",predictions)
         
-        # Assert that the probability of the prediction is within a valid range (e.g. 0 <= probability <= 1)
-        prediction_probability = get_prediction_probability(prediction)
-        assert 0 <= predictions <= 1, f"Invalid prediction probability: {predictions}"
     
     #sidebar setup
     st.sidebar.markdown("# Make At-Bat Predictions ⚾️🔍")
