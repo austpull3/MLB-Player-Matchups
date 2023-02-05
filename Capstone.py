@@ -135,7 +135,7 @@ def page2():
     tot = data1.events.value_counts() #display event totals
     st.dataframe(tot)
     # Assert that the spray chart visualization is not None
-    assert spray_chart is not None, "Spray chart visualization is not generated"
+    assert s is not None, "Spray chart visualization is not generated"
     
 
 
