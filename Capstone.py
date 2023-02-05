@@ -637,9 +637,6 @@ def page3():
     if st.button('Predict At-Bat'):
         Abpredict = predict(inputs)
         st.success(names[np.argmax(Abpredict)]) #display prediction
-        # Assert that the prediction is one of the expected outcome options (e.g. single, home run, strikeout, etc.)
-        expected_outcomes = ['Double', 'Field Error', 'Field Out', 'Hit by Pitch', 'Home Run', 'Single', 'Strikeout', 'Triple', 'Walk']
-        assert Abpredict in expected_outcomes, f"Unexpected prediction: {Abpredict}"
 
         
         #probability that outcome will occur
@@ -647,6 +644,11 @@ def page3():
             return '{:.2f}'.format(num)
         predictions = np.vectorize(sci)(Abpredict)
         st.write("Here",predictions)
+        
+        # Assert that the probability of the prediction is within a valid range (e.g. 0 <= probability <= 1)
+        prediction_probability = get_prediction_probability(prediction)
+        assert 0 <= predictions <= 1, f"Invalid prediction probability: {predictions}"
+    
     #sidebar setup
     st.sidebar.markdown("# Make At-Bat Predictions ⚾️🔍")
     st.sidebar.markdown(" ")
