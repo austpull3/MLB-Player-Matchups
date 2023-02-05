@@ -126,7 +126,7 @@ def page2():
         selectedplayer = 543068
 
     data1 = statcast_batter('2022-04-07', '2022-10-02', selectedplayer)
-    stadium = st.selectbox("Please an MLB Stadium:",['angels', 'astros', 'athletics', 'blue_jays', 'braves', 'brewers', 'cardinals', 'cubs', 'diamondbacks', 'dodgers', 'generic', 'giants', 'indians', 'mariners', 'marlins', 'mets', 'nationals', 'orioles', 'padres', 'phillies', 'pirates', 'rangers', 'rays', 'red_sox', 'reds', 'rockies', 'royals', 'tigers', 'twins', 'white_sox', 'yankees'])
+    stadium = st.selectbox("Please select an MLB Stadium:",['angels', 'astros', 'athletics', 'blue_jays', 'braves', 'brewers', 'cardinals', 'cubs', 'diamondbacks', 'dodgers', 'generic', 'giants', 'indians', 'mariners', 'marlins', 'mets', 'nationals', 'orioles', 'padres', 'phillies', 'pirates', 'rangers', 'rays', 'red_sox', 'reds', 'rockies', 'royals', 'tigers', 'twins', 'white_sox', 'yankees'])
     #sub_data = data1[data1['home_team'] == 'HOU']
     s = spraychart(data1, stadium, title = stadium)
     fig = s.figure
