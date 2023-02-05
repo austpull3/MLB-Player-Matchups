@@ -131,7 +131,7 @@ def page2():
     fig = s.figure
     # Display the spraychart
     st.pyplot(fig)
-    tot = sub_data.events.value_counts() #display event totals
+    tot = data1.events.value_counts() #display event totals
     st.dataframe(tot)
 
 
