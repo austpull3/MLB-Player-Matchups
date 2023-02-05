@@ -126,8 +126,8 @@ def page2():
         selectedplayer = 543068
 
     data1 = statcast_batter('2022-04-07', '2022-10-02', selectedplayer)
-    sub_data = data1[data1['home_team'] == 'HOU']
-    s = spraychart(sub_data, 'astros', title = selectedplayer)
+    #sub_data = data1[data1['home_team'] == 'HOU']
+    s = spraychart(data1, 'astros', title = selectedplayer)
     fig = s.figure
     # Display the spraychart
     st.pyplot(fig)
