@@ -637,6 +637,10 @@ def page3():
     if st.button('Predict At-Bat'):
         Abpredict = predict(inputs)
         st.success(names[np.argmax(Abpredict)]) #display prediction
+        # Assert that the prediction is one of the expected outcome options (e.g. single, home run, strikeout, etc.)
+        expected_outcomes = ['Double', 'Field Error', 'Field Out', 'Hit by Pitch', 'Home Run', 'Single', 'Strikeout', 'Triple', 'Walk']
+        assert Abpredict in expected_outcomes, f"Unexpected prediction: {Abpredict}"
+
         
         #probability that outcome will occur
         def sci(num):
