@@ -134,16 +134,7 @@ def page2():
     st.pyplot(fig)
     tot = data1.events.value_counts() #display event totals
     st.dataframe(tot)
-    # Assert that the spray chart visualization is not None
-    assert s is None, "Spray chart visualization is not generated"
-    
-
-
-
-
-        
-           
-        
+   
     #set up sidebar
     st.sidebar.markdown("# Explore player spray charts 📈")
     st.sidebar.markdown(" ")
@@ -651,7 +642,7 @@ def page3():
         def sci(num):
             return '{:.2f}'.format(num)
         predictions = np.vectorize(sci)(Abpredict)
-        st.write(predictions)
+        st.write("Here",predictions)
     #sidebar setup
     st.sidebar.markdown("# Make At-Bat Predictions ⚾️🔍")
     st.sidebar.markdown(" ")
@@ -672,3 +663,5 @@ page_names_to_funcs = {
 #select pages
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
 page_names_to_funcs[selected_page]()
+
+
